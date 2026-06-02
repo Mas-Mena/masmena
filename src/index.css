@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ffffff;
+  --color-bg: #000000;
+  --color-accent: #00ff00; /* Glow green */
+  
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-cursive: "Great Vibes", cursive;
+  --font-display: "Cormorant Garamond", serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --border-color: rgba(0,0,0,0.1);
+    --accent-color: #BFA356;
+    --grid-opacity: 0.05;
+  }
+
+  .dark {
+    --bg-primary: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --border-color: rgba(255,255,255,0.05);
+    --accent-color: #BFA356;
+    --grid-opacity: 0.03;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans antialiased selection:bg-[var(--text-primary)] selection:text-[var(--bg-primary)] transition-colors duration-700;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    font-size: 32px;
+    @media (min-width: 768px) {
+      font-size: 42px;
+    }
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 28px;
+    @media (min-width: 768px) {
+      font-size: 38px;
+    }
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Immersive Background Grid */
+  .grid-lines {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 10vw 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1440px] mx-auto px-8 md:px-16;
+  }
+
+  /* Standardized Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Standardized Content Gaps */
+  .content-spacing {
+    @apply space-y-6;
+  }
+
+  /* 3D Stack Container */
+  .perspective-container {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  /* Luxury Typo Mix */
+  .luxury-headline {
+    @apply font-display text-6xl md:text-8xl lg:text-[8rem] font-bold leading-[0.85] tracking-[-0.04em];
+  }
+
+  .luxury-serif {
+    @apply font-serif italic font-light text-[1.2em] -ml-2 leading-none inline-block;
+  }
+
+  /* Interactive CTA */
+  .cta-link {
+    @apply relative text-[10px] uppercase tracking-[0.5em] font-black pb-2;
+  }
+  
+  .cta-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-white/40 transition-all duration-500;
+  }
+  
+  .cta-link:hover::after {
+    @apply w-full bg-white;
+  }
+}
+
+/* Scrollbar and Lenis */
+::-webkit-scrollbar { display: none; }
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+
+/* Custom Status Ping Animation */
+@keyframes StatusIndicator_ping {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+.status-ping {
+  animation: StatusIndicator_ping 3s ease-in-out infinite;
+}
