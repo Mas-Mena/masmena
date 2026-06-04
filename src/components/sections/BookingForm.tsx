@@ -15,15 +15,46 @@ const BookingForm: React.FC = () => {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setIsSubmitting(true);
+
+    const webhookUrl = import.meta.env.VITE_BOOKING_WEBHOOK_URL || '';
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      notes: formData.message,
+      date: `2026-06-${selectedDate}`,
+      time: selectedTime,
+      dateTime: `June ${selectedDate}, 2026 at ${selectedTime}`,
+      timezone: 'Asia/Amman'
+    };
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (webhookUrl) {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to submit booking');
+        }
+      } else {
+        // Fallback for local development simulation
+        console.warn('VITE_BOOKING_WEBHOOK_URL is not defined. Simulating API request with data:', payload);
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }
       setStep(3);
     } catch (error) {
       console.error('Submission failed', error);
+      setSubmitError('Failed to schedule call. Please check your connection or contact us directly at Info@masmena.com.');
     } finally {
       setIsSubmitting(false);
     }
@@ -200,6 +231,9 @@ const BookingForm: React.FC = () => {
                     <div className="w-4 h-4 border-2 border-black/20 border-t-black rounded-full animate-spin" />
                   ) : 'Schedule Call'}
                 </button>
+                {submitError && (
+                  <p className="text-red-500 text-xs mt-2 text-center font-medium">{submitError}</p>
+                )}
               </form>
             </motion.div>
           ) : (
