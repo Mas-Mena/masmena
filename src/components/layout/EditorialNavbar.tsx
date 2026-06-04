@@ -13,9 +13,13 @@ const EditorialNavbar: React.FC = () => {
             href="/"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[14px] uppercase tracking-[0.5em] font-black text-white pointer-events-auto"
+            className="pointer-events-auto flex items-center"
           >
-            MAS MENA®
+            <img 
+              src="/logo-masmena.png" 
+              alt="MAS MENA" 
+              className="h-7 w-auto object-contain" 
+            />
           </motion.a>
           
           <div className="flex gap-16 items-center pointer-events-auto">

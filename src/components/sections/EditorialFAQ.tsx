@@ -45,11 +45,7 @@ const EditorialFAQ: React.FC = () => {
           {/* Heading Structure */}
           <div className="relative mb-6">
             <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)]">
-              <span
-                className="inline-block font-normal text-[var(--text-primary)] select-none mr-1 relative -top-[0.05em]"
-                style={{ fontFamily: '"Great Vibes", cursive', fontSize: '1.3em', lineHeight: 0.8 }}
-              >F</span>
-              requently Asked<br />
+              Frequently Asked<br />
               <span className="inline-block">Questions</span>
             </h2>
           </div>

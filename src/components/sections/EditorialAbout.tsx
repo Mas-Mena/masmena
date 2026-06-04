@@ -10,7 +10,7 @@ const EditorialAbout: React.FC = () => {
 
   useEffect(() => {
     if (textRef.current) {
-      const textToSplit = "bout MAS &";
+      const textToSplit = "About MAS &";
       textRef.current.innerHTML = textToSplit
         .split("")
         .map(char => `<span class="char inline-block">${char === " " ? "&nbsp;" : char}</span>`)
@@ -73,11 +73,7 @@ const EditorialAbout: React.FC = () => {
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Who We Are</p>
             
             <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
-              <span
-                className="inline-block font-normal text-[var(--text-primary)] select-none mr-1 relative -top-[0.05em]"
-                style={{ fontFamily: '"Great Vibes", cursive', fontSize: '1.35em', lineHeight: 0.8 }}
-              >A</span>
-              <span ref={textRef}>bout MAS &</span><br />
+              <span ref={textRef}>About MAS &</span><br />
               our creative impact
             </h2>
 

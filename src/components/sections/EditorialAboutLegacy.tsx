@@ -72,10 +72,7 @@ const EditorialAboutLegacy: React.FC = () => {
               <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">About MAS MENA</p>
               
               <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] mb-8">
-                <span
-                  className="inline-block font-normal text-[var(--text-primary)] select-none mr-1 relative -top-[0.05em]"
-                  style={{ fontFamily: '"Great Vibes", cursive', fontSize: '1.3em', lineHeight: 0.8 }}
-                >E</span>mpowering Brands<br />
+                Empowering Brands<br />
                 in the <span className="font-serif italic font-light text-[var(--accent-color)]">Digital Era</span>
               </h2>
 

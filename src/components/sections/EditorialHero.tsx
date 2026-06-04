@@ -432,8 +432,7 @@ const EditorialHero: React.FC = () => {
 
         {/* Hero Title */}
         <h1 className="heading-reveal font-display text-[28px] md:text-[42px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[340px] md:max-w-[493px] mb-6 tracking-tight text-center md:text-left">
-          <span className="font-cursive text-[40px] md:text-[55px] font-normal leading-[1.1] mr-1 select-none text-[var(--accent-color)]">C</span>
-          onnect. Create. Thrive.
+          Connect. Create. Thrive.
         </h1>
 
         {/* Description Subtext */}

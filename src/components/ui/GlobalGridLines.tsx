@@ -100,11 +100,11 @@ const DynamicGridLines: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Soft Periodic Gold Scan (Background ambient animation, unrelated to mouse hover) */}
+        {/* Soft Periodic Purple Scan (Background ambient animation, unrelated to mouse hover) */}
         <motion.div 
           animate={{ top: ["0%", "100%"] }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#BFA356]/10 to-transparent blur-[2px]"
+          className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#a673ff]/10 to-transparent blur-[2px]"
         />
       </div>
     </div>

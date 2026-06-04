@@ -27,11 +27,7 @@ const EditorialWorkflow: React.FC = () => {
             
             <div className="relative">
               <h2 className="mb-8">
-                <span
-                  className="inline-block font-normal text-[var(--text-primary)] select-none mr-1 relative -top-[0.05em]"
-                  style={{ fontFamily: '"Great Vibes", cursive', fontSize: '1.3em', lineHeight: 0.8 }}
-                >C</span>
-                ampaign Strategy<br />& Planning
+                Campaign Strategy<br />& Planning
               </h2>
             </div>
 
@@ -185,11 +181,7 @@ const EditorialWorkflow: React.FC = () => {
             
             <div className="relative">
               <h2 className="mb-8">
-                <span
-                  className="inline-block font-normal text-[var(--text-primary)] select-none mr-1 relative -top-[0.05em]"
-                  style={{ fontFamily: '"Great Vibes", cursive', fontSize: '1.3em', lineHeight: 0.8 }}
-                >S</span>
-                eamless Async<br />Collaboration
+                Seamless Async<br />Collaboration
               </h2>
             </div>
 
