@@ -5,19 +5,19 @@ import { Draggable } from 'gsap/Draggable';
 gsap.registerPlugin(Draggable);
 
 const projectImages = [
-  '/images/projects/projects1.webp',
-  '/images/projects/projects2.webp',
-  '/images/projects/projects3.webp',
-  '/images/projects/projects4.webp',
-  '/images/projects/projects5.webp',
-  '/images/projects/projects6.webp',
-  '/images/projects/projects7.webp',
-  '/images/projects/projects8.webp',
-  '/images/projects/projects9.webp',
-  '/images/projects/projects10.webp',
-  '/images/projects/projects11.webp',
-  '/images/projects/projects12.webp',
-  '/images/projects/projects13.webp',
+  '/images/slider/1.jpg (2).jpeg',
+  '/images/slider/4 copy.jpg.jpeg',
+  '/images/slider/666302381_122338516772004270_5506523807941303202_n (1).jpg',
+  '/images/slider/687838465_1442414564596877_2028476801204187225_n (1).jpg',
+  '/images/slider/693244983_1266918772300084_1982613868510845945_n.jpg',
+  '/images/slider/694972112_1266914805633814_3070081091375989752_n.jpg',
+  '/images/slider/696031192_122327612432011899_812203234923126045_n.jpg',
+  '/images/slider/696262064_1285304923805548_5528331151315293819_n.jpg',
+  '/images/slider/696449032_122327606114011899_6697255110228129700_n.jpg',
+  '/images/slider/a2 (1).png',
+  '/images/slider/a4 (1).png',
+  '/images/slider/s1 copy.jpg.jpeg',
+  '/images/slider/s2 copy.jpg.jpeg',
 ];
 
 const CARDS_COUNT = 24;
