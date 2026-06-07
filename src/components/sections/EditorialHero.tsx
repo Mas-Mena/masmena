@@ -16,6 +16,8 @@ const projectImages = [
   '/images/slider/slider (5).jpeg',
   '/images/slider/slider (5).png',
   '/images/slider/slider (6).png',
+  '/images/slider/slider.jpeg',
+  '/images/slider/slider.png',
 ];
 
 const CARDS_COUNT = 24;
