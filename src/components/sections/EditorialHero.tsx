@@ -394,7 +394,7 @@ const EditorialHero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
       {/* 3D Wave Interactive Background Carousel */}
-      <div className="absolute top-[132px] md:top-[96px] lg:top-[132px] left-0 lg:left-auto lg:right-0 w-full lg:w-[80%] h-[calc(100svh-132px)] lg:h-full z-[1] lg:translate-x-[15%] flex items-center select-none pointer-events-auto">
+      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 lg:left-auto lg:right-0 w-full lg:w-[80%] h-[calc(100svh-170px)] lg:h-full z-[1] lg:translate-x-[15%] flex items-center select-none pointer-events-auto">
         <div 
           className="w-full h-[400px] md:h-[520px] lg:h-[700px] relative cursor-grab z-[10000]" 
           ref={containerRef}
@@ -404,7 +404,7 @@ const EditorialHero: React.FC = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="absolute left-1/2 top-[36%] origin-center will-change-transform transform-style-preserve-3d"
+              className="absolute left-1/2 top-[46%] origin-center will-change-transform transform-style-preserve-3d"
             >
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
