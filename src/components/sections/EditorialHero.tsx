@@ -420,15 +420,7 @@ const EditorialHero: React.FC = () => {
       {/* Hero Content Section */}
       <div className="hidden md:flex container-custom relative z-10 w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
-        {/* Status Indicator */}
-        <div className="heading-reveal flex items-center gap-2 mb-6 pointer-events-auto select-none w-fit">
-          <span className="status-ping inline-block w-[6px] h-[6px] bg-[#00ff00] rounded-full shadow-[0_0_8px_#00ff00] relative">
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full bg-[#00ff00] status-ping" />
-          </span>
-          <span className="text-[12px] md:text-[14px] font-medium text-[var(--text-secondary)] tracking-wider">
-            Currently Open
-          </span>
-        </div>
+
 
         {/* Hero Title */}
         <h1 className="heading-reveal font-display text-[28px] md:text-[42px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[340px] md:max-w-[493px] mb-6 tracking-tight text-center md:text-left">
