@@ -44,7 +44,7 @@ const EditorialPricing: React.FC = () => {
                   Basic
                 </h3>
                 <div className="flex flex-col mt-2">
-                  <span className="text-[32px] font-bold text-white tracking-tight">$2,499<span className="text-[14px] text-white/40 font-normal"> / mo</span></span>
+                  <span className="text-[32px] font-bold text-white tracking-tight">700 JOD<span className="text-[14px] text-white/40 font-normal"> / mo</span></span>
                   <span className="text-[12px] text-white/50 font-normal mt-1">Perfect for brand presence & social growth</span>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const EditorialPricing: React.FC = () => {
                   Premium
                 </h3>
                 <div className="flex flex-col mt-2">
-                  <span className="text-[32px] font-bold text-white tracking-tight">$4,999<span className="text-[14px] text-white/40 font-normal"> / mo</span></span>
+                  <span className="text-[32px] font-bold text-white tracking-tight">1,000 JOD<span className="text-[14px] text-white/40 font-normal"> / mo</span></span>
                   <span className="text-[12px] text-white/50 font-normal mt-1">Complete social growth & digital presence</span>
                 </div>
               </div>
@@ -173,7 +173,7 @@ const EditorialPricing: React.FC = () => {
                   Ultimate
                 </h3>
                 <div className="flex flex-col mt-2 h-[48px] justify-center">
-                  <span className="text-[28px] font-bold text-white tracking-tight">Contact Sales</span>
+                  <span className="text-[28px] font-bold text-white tracking-tight">Custom</span>
                   <span className="text-[12px] text-white/50 font-normal mt-1">For details & custom enterprise scaling</span>
                 </div>
               </div>

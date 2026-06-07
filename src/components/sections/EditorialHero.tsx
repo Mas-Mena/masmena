@@ -5,9 +5,10 @@ import { Draggable } from 'gsap/Draggable';
 gsap.registerPlugin(Draggable);
 
 const projectImages = [
-  '/images/slider/slider (1).jpeg',
+  '/images/slider/slider (1).webp',
   '/images/slider/slider (1).png',
   '/images/slider/slider (2).jpeg',
+  '/images/slider/slider (2).webp',
   '/images/slider/slider (2).png',
   '/images/slider/slider (3).jpeg',
   '/images/slider/slider (3).png',
