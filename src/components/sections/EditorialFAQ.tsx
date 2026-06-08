@@ -49,43 +49,17 @@ const EditorialFAQ: React.FC = () => {
               <span className="inline-block">Questions</span>
             </h2>
           </div>
-
-          {/* Premium Editorial Image Collage */}
-          <div className="relative w-full h-[280px] md:h-[400px] mb-10 group/collage">
-             {/* 1. Main Anchor (Laptop/Project) */}
-             <motion.div 
-               whileHover={{ scale: 1.02 }}
+          
+          {/* Premium Widescreen Image Showcase */}
+          <div className="relative w-full aspect-[16/10] mb-10 overflow-hidden border border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]">
+             <motion.img 
+               src="/images/projects/projects1.webp" 
+               className="w-full h-full object-cover" 
+               whileHover={{ scale: 1.04 }}
                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-               className="absolute top-[30px] left-[70px] md:top-[40px] md:left-[140px] w-[200px] md:w-[460px] aspect-[16/11] overflow-hidden border border-white/10 z-10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]"
-             >
-                <img src="/images/projects/projects1.webp" className="w-full h-full object-cover transition-transform duration-[3s] group-hover/collage:scale-110" alt="UI Design" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/5" />
-             </motion.div>
-             
-             {/* 2. Left Feature (Person/Happy) */}
-             <motion.div 
-               initial={{ rotate: -2 }}
-               whileHover={{ rotate: 0, scale: 1.05, x: -10 }}
-               className="absolute top-[90px] left-0 w-[110px] md:w-[240px] aspect-square overflow-hidden border border-white/20 z-30 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.9)]"
-             >
-                <img src="/images/projects/projects2.webp" className="w-full h-full object-cover" alt="Happy Partner" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/20" />
-             </motion.div>
- 
-             {/* 3. Right Feature (Design Asset) */}
-             <motion.div 
-               initial={{ rotate: 3 }}
-               whileHover={{ rotate: 0, scale: 1.05, x: 10 }}
-               className="absolute top-[10px] right-[20px] md:right-[40px] w-[80px] md:w-[180px] aspect-[3/4] overflow-hidden border border-white/20 z-40 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.9)]"
-             >
-                <img src="/images/projects/projects3.webp" className="w-full h-full object-cover" alt="Creative Asset" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
-             </motion.div>
- 
-             {/* 4. Background Accent (Project Stack) */}
-             <div className="absolute top-[15px] right-0 w-[60px] md:w-[140px] h-[240px] md:h-[380px] overflow-hidden opacity-30 grayscale blur-[1px] z-0 border border-white/5">
-                <img src="/images/projects/projects4.webp" className="w-full h-full object-cover" alt="Portfolio" />
-             </div>
+               alt="MAS MENA Work" 
+             />
+             <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Indented Text Area */}
