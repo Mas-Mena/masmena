@@ -31,7 +31,7 @@ const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
           <div className="w-full py-12 px-8 md:px-16 flex justify-between items-center">
             <a href="/" className="flex items-center">
               <img 
-                src="/logo-masmena.png" 
+                src="logo-masmena.png" 
                 alt="MAS MENA" 
                 className="h-7 w-auto object-contain" 
               />

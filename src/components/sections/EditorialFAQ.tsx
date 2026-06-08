@@ -29,19 +29,19 @@ const faqData = [
 ];
 
 const gridImages = [
-  { src: '/images/slider/dr-farah.slider.webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10]', alt: 'Dr. Farah Brand Identity' },
-  { src: '/images/slider/slider (1).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-square', alt: 'MAS MENA Digital Campaign' },
-  { src: '/images/slider/slider (2).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-[3/4]', alt: 'Creative Visual Design' },
-  { src: '/images/slider/slider (3).webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10] md:aspect-[16/7]', alt: 'Social Media Management' },
-  { src: '/images/slider/slider (4).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-[16/10]', alt: 'Brand Presence Campaign' },
-  { src: '/images/slider/slider (5).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-[16/10]', alt: 'FMCG Product Marketing' },
-  { src: '/images/slider/slider (6).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-square', alt: 'Corporate Event Coverage' },
-  { src: '/images/slider/slider (8).webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10]', alt: 'MENA Strategy Blueprint' },
-  { src: '/images/slider/slider-(1).webp', span: 'col-span-12 md:col-span-5', aspect: 'aspect-[3/4]', alt: 'Digital Asset Activation' },
-  { src: '/images/slider/slider-(2).webp', span: 'col-span-12 md:col-span-7', aspect: 'aspect-[16/10]', alt: 'Video Campaign Asset' },
-  { src: '/images/slider/slider-(4).png', span: 'col-span-12 md:col-span-6', aspect: 'aspect-square', alt: 'B2B Creative Project' },
-  { src: '/images/slider/slider-(5).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-square', alt: 'Consumer Brand Activation' },
-  { src: '/images/slider/slider.webp', span: 'col-span-12', aspect: 'aspect-[16/10] md:aspect-[21/9]', alt: 'MAS MENA Integrated Campaign' }
+  { src: 'images/slider/dr-farah.slider.webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10]', alt: 'Dr. Farah Brand Identity' },
+  { src: 'images/slider/slider (1).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-square', alt: 'MAS MENA Digital Campaign' },
+  { src: 'images/slider/slider (2).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-[3/4]', alt: 'Creative Visual Design' },
+  { src: 'images/slider/slider (3).webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10] md:aspect-[16/7]', alt: 'Social Media Management' },
+  { src: 'images/slider/slider (4).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-[16/10]', alt: 'Brand Presence Campaign' },
+  { src: 'images/slider/slider (5).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-[16/10]', alt: 'FMCG Product Marketing' },
+  { src: 'images/slider/slider (6).webp', span: 'col-span-12 md:col-span-4', aspect: 'aspect-square', alt: 'Corporate Event Coverage' },
+  { src: 'images/slider/slider (8).webp', span: 'col-span-12 md:col-span-8', aspect: 'aspect-[16/10]', alt: 'MENA Strategy Blueprint' },
+  { src: 'images/slider/slider-(1).webp', span: 'col-span-12 md:col-span-5', aspect: 'aspect-[3/4]', alt: 'Digital Asset Activation' },
+  { src: 'images/slider/slider-(2).webp', span: 'col-span-12 md:col-span-7', aspect: 'aspect-[16/10]', alt: 'Video Campaign Asset' },
+  { src: 'images/slider/slider-(4).png', span: 'col-span-12 md:col-span-6', aspect: 'aspect-square', alt: 'B2B Creative Project' },
+  { src: 'images/slider/slider-(5).webp', span: 'col-span-12 md:col-span-6', aspect: 'aspect-square', alt: 'Consumer Brand Activation' },
+  { src: 'images/slider/slider.webp', span: 'col-span-12', aspect: 'aspect-[16/10] md:aspect-[21/9]', alt: 'MAS MENA Integrated Campaign' }
 ];
 
 const EditorialFAQ: React.FC = () => {

@@ -16,7 +16,7 @@ const EditorialNavbar: React.FC = () => {
             className="pointer-events-auto flex items-center"
           >
             <img 
-              src="/logo-masmena.png" 
+              src="logo-masmena.png" 
               alt="MAS MENA" 
               className="h-7 w-auto object-contain" 
             />

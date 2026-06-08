@@ -117,7 +117,7 @@ const EditorialAbout: React.FC = () => {
             style={{ transformOrigin: 'center center' }}
           >
             <video
-              src="/images/show-case.mp4"
+              src="images/show-case.mp4"
               autoPlay
               loop
               muted

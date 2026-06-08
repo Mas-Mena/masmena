@@ -5,19 +5,19 @@ import { Draggable } from 'gsap/Draggable';
 gsap.registerPlugin(Draggable);
 
 const projectImages = [
-  '/images/slider/dr-farah.slider.webp',
-  '/images/slider/slider (1).webp',
-  '/images/slider/slider (2).webp',
-  '/images/slider/slider (3).webp',
-  '/images/slider/slider (4).webp',
-  '/images/slider/slider (5).webp',
-  '/images/slider/slider (6).webp',
-  '/images/slider/slider (8).webp',
-  '/images/slider/slider-(1).webp',
-  '/images/slider/slider-(2).webp',
-  '/images/slider/slider-(4).png',
-  '/images/slider/slider-(5).webp',
-  '/images/slider/slider.webp',
+  'images/slider/dr-farah.slider.webp',
+  'images/slider/slider (1).webp',
+  'images/slider/slider (2).webp',
+  'images/slider/slider (3).webp',
+  'images/slider/slider (4).webp',
+  'images/slider/slider (5).webp',
+  'images/slider/slider (6).webp',
+  'images/slider/slider (8).webp',
+  'images/slider/slider-(1).webp',
+  'images/slider/slider-(2).webp',
+  'images/slider/slider-(4).png',
+  'images/slider/slider-(5).webp',
+  'images/slider/slider.webp',
 ];
 
 const CARDS_COUNT = 24;
