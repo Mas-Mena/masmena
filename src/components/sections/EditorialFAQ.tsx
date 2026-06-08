@@ -50,16 +50,55 @@ const EditorialFAQ: React.FC = () => {
             </h2>
           </div>
           
-          {/* Premium Widescreen Image Showcase */}
-          <div className="relative w-full aspect-[16/10] mb-10 overflow-hidden border border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]">
-             <motion.img 
-               src="/images/projects/projects1.webp" 
-               className="w-full h-full object-cover" 
-               whileHover={{ scale: 1.04 }}
-               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-               alt="MAS MENA Work" 
-             />
-             <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent pointer-events-none" />
+          {/* Premium Editorial Asymmetrical Grid Showcase */}
+          <div className="grid grid-cols-12 gap-3 mb-10 w-full">
+            {/* 1. Large Wide Landscape (col-span-8) */}
+            <div className="col-span-8 relative aspect-[16/10] overflow-hidden border border-white/10 shadow-lg">
+              <motion.img 
+                src="/images/projects/projects1.webp" 
+                className="w-full h-full object-cover" 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                alt="MAS MENA Project 1" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* 2. Small Square (col-span-4) */}
+            <div className="col-span-4 relative aspect-square overflow-hidden border border-white/10 shadow-lg">
+              <motion.img 
+                src="/images/projects/projects2.webp" 
+                className="w-full h-full object-cover" 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                alt="MAS MENA Project 2" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* 3. Tall Portrait (col-span-4) */}
+            <div className="col-span-4 relative aspect-[3/4] overflow-hidden border border-white/10 shadow-lg">
+              <motion.img 
+                src="/images/projects/projects3.webp" 
+                className="w-full h-full object-cover" 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                alt="MAS MENA Project 3" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* 4. Long Panoramic Landscape (col-span-8) */}
+            <div className="col-span-8 relative aspect-[16/7] overflow-hidden border border-white/10 shadow-lg">
+              <motion.img 
+                src="/images/projects/projects4.webp" 
+                className="w-full h-full object-cover" 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                alt="MAS MENA Project 4" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
 
           {/* Indented Text Area */}
