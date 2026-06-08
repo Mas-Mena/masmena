@@ -99,7 +99,7 @@ const EditorialPricing: React.FC = () => {
             <div className="px-6 py-10 sm:px-8 md:px-10 md:py-12 flex flex-col flex-1 z-10">
               {/* Popular Badge */}
               <div className="flex justify-between items-center mb-2">
-                <span className="text-[8px] font-bold tracking-[0.25em] text-white/40 uppercase bg-white/5 px-2.5 py-1 rounded-full border border-white/5">MOST POPULAR</span>
+                <span className="text-[8px] font-bold tracking-[0.25em] text-white/40 uppercase bg-white/5 px-2.5 py-1 rounded-none border border-white/5">MOST POPULAR</span>
               </div>
               
               {/* Card Title */}
