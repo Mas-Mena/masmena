@@ -2,6 +2,7 @@ import SmoothScroll from './components/layout/SmoothScroll';
 import EditorialNavbar from './components/layout/EditorialNavbar';
 import EditorialHero from './components/sections/EditorialHero';
 import EditorialClients from './components/sections/EditorialClients';
+import EditorialWhyUs from './components/sections/EditorialWhyUs';
 import EditorialAbout from './components/sections/EditorialAbout';
 import EditorialWorkflow from './components/sections/EditorialWorkflow';
 import EditorialTestimonials from './components/sections/EditorialTestimonials';
@@ -22,6 +23,7 @@ function App() {
         <main>
           <EditorialHero />
           <EditorialClients />
+          <EditorialWhyUs />
           <EditorialAbout />
           <EditorialWorkflow />
           <EditorialTestimonials />
