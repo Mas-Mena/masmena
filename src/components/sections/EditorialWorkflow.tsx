@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const EditorialWorkflow: React.FC = () => {
   return (
-    <section id="process" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] section-padding border-t border-[var(--border-color)] overflow-hidden transition-colors duration-700">
+    <section id="process" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] py-24 md:py-32 border-t border-[var(--border-color)] overflow-hidden transition-colors duration-700">
       
       {/* Background Vertical Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -16,7 +16,55 @@ const EditorialWorkflow: React.FC = () => {
 
       <div className="container-custom relative z-10 flex flex-col gap-24 md:gap-32">
         
-        {/* Step 01: Notion */}
+        {/* Section Header Block */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4 border-b border-[var(--border-color)]">
+          
+          {/* Background Faded Number */}
+          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
+            (03)
+          </div>
+
+          <div className="relative z-10">
+            <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">How We Work</p>
+            
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
+              <span className="font-serif italic font-light mr-2">Every step</span>
+              is intentional. <span className="font-serif italic font-light">Every outcome</span> is measurable.
+            </h2>
+
+            <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
+              In just 3 steps, we turn insights into impact. Every successful campaign starts with understanding the market and ends with measurable results. Our proven process ensures every strategy is intentional, creative, and built to perform.
+            </p>
+          </div>
+
+          <div className="relative z-10 flex lg:justify-end items-end h-full lg:pb-4">
+            <a 
+              href="#contact" 
+              className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[220px]"
+            >
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-primary)]/90">
+                Book A Call
+              </span>
+              
+              {/* Circular Dotted Spinning Indicator */}
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
+                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+                    <div 
+                      key={i} 
+                      className="absolute w-[2px] h-[2px] bg-[var(--text-primary)] rounded-full opacity-40"
+                      style={{ transform: `rotate(${angle}deg) translateY(-10px)` }}
+                    />
+                  ))}
+                </div>
+                <div className="w-[1.5px] h-[1.5px] bg-[var(--text-primary)] rounded-full" />
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        {/* Step 01: Research & Discovery */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
@@ -26,13 +74,14 @@ const EditorialWorkflow: React.FC = () => {
             </div>
             
             <div className="relative">
-              <h2 className="mb-8">
-                Campaign Strategy<br />& Planning
-              </h2>
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Research</span>
+                & Discovery
+              </h3>
             </div>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[420px] font-normal">
-              We map out your customized campaigns on a dedicated Notion board. Assign assets, review strategic timelines, track influencer outreach, and monitor launch stages. Your marketing team stays in complete alignment.
+              We begin with market research, audience understanding, and opportunity identification.
             </p>
           </div>
 
@@ -58,9 +107,6 @@ const EditorialWorkflow: React.FC = () => {
                   <div className="text-white/20 hover:text-white/60 transition-colors cursor-pointer">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                   </div>
-                  <div className="text-white/20 hover:text-white/60 transition-colors cursor-pointer">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>
-                  </div>
                 </div>
               </div>
               
@@ -69,28 +115,28 @@ const EditorialWorkflow: React.FC = () => {
                 {/* Header Item */}
                 <div className="p-4 sm:p-8 border-b border-white/10 flex justify-between items-center bg-white/[0.03]">
                   <div>
-                    <h3 className="text-[14px] sm:text-[18px] font-semibold text-white mb-1.5 sm:mb-2 tracking-tight">Campaign Launch Roadmap</h3>
+                    <h3 className="text-[14px] sm:text-[18px] font-semibold text-white mb-1.5 sm:mb-2 tracking-tight">Research & Discovery</h3>
                     <div className="flex items-center gap-1.5 sm:gap-2.5 text-[10px] sm:text-[12px] text-white/40 font-medium">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                      1 MAY 2026 — 31 MAY 2026
+                      STAGE 01 — UNDERSTANDING
                     </div>
                   </div>
-                  {/* Circular Progress (Yellow) */}
+                  {/* Circular Progress */}
                   <div className="relative w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90">
                       <circle cx="28" cy="28" r="26" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                      <circle cx="28" cy="28" r="26" fill="none" stroke="#facc15" strokeWidth="3" strokeDasharray="163" strokeDashoffset="41" strokeLinecap="round" />
+                      <circle cx="28" cy="28" r="26" fill="none" stroke="var(--accent-color)" strokeWidth="3" strokeDasharray="163" strokeDashoffset="0" strokeLinecap="round" />
                     </svg>
-                    <span className="text-[11px] font-bold text-white">75%</span>
+                    <span className="text-[11px] font-bold text-white">100%</span>
                   </div>
                 </div>
 
                 {/* Task List */}
                 <div className="flex flex-col">
                   {[
-                    { label: 'Influencer Outreach', sub: '5 Tasks', stat: '3/5' },
-                    { label: 'Arabic Content Creation', sub: '8 Tasks', stat: '7/8' },
-                    { label: 'Local SEO Keyword Map', sub: '3 Tasks', stat: '2/3' }
+                    { label: 'Market Competitor Analysis', sub: '3 Tasks', stat: '3/3' },
+                    { label: 'Target Audience Personas', sub: '2 Tasks', stat: '2/2' },
+                    { label: 'GCC & Jordan Keyword Mapping', sub: '5 Tasks', stat: '4/5' }
                   ].map((task, i) => (
                     <div key={i} className="p-4 px-5 sm:p-7 sm:px-8 border-b border-white/5 flex justify-between items-center hover:bg-white/[0.01] transition-colors group">
                       <div>
@@ -107,7 +153,7 @@ const EditorialWorkflow: React.FC = () => {
         </div>
 
 
-        {/* Step 02: Slack */}
+        {/* Step 02: Strategy & Execution */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Mockup */}
           <div className="relative order-1 lg:order-1 flex justify-start">
@@ -130,11 +176,6 @@ const EditorialWorkflow: React.FC = () => {
                       <img src="https://i.pravatar.cc/100?img=32" className="w-11 h-11 border border-white/20 object-cover p-[2px]" alt="" />
                       <div className="absolute bottom-0 right-0 w-3 h-3 bg-[#4ade80] border-2 border-[#0d0d0d] rounded-full"></div>
                     </div>
-                    {[1, 2].map(i => (
-                      <div key={i} className="w-11 h-11 bg-white/5 border border-white/10 flex items-center justify-center text-white/20">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                      </div>
-                    ))}
                   </div>
                 </div>
 
@@ -164,7 +205,7 @@ const EditorialWorkflow: React.FC = () => {
                       <span className="text-[10px] sm:text-[11px] text-white/30 font-medium">10 MAY 2026, 13:00PM</span>
                     </div>
                     <div className="text-[12px] sm:text-[14px] leading-relaxed text-white/40 font-medium p-4 sm:p-6 bg-white/[0.03] border border-white/5 relative">
-                      <span className="text-white font-bold">Hi @client</span>, the micro-influencer content drafts from Jordan and GCC are now ready in Notion for your review before the weekend! Let us know if you need any localized copy tweaks.
+                      <span className="text-white font-bold">Hi @client</span>, the marketing strategy proposal is complete! We have finalized the list of GCC influencers and the offline activations timeline for Amman. Let us know if you want to review the social media content plan.
                       <div className="hidden sm:block absolute top-4 -left-[6px] w-3 h-3 bg-white/[0.03] border-l border-b border-white/5 rotate-45" />
                     </div>
                   </div>
@@ -180,14 +221,115 @@ const EditorialWorkflow: React.FC = () => {
             </div>
             
             <div className="relative">
-              <h2 className="mb-8">
-                Seamless Async<br />Collaboration
-              </h2>
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Strategy</span>
+                & Execution
+              </h3>
             </div>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[420px] font-normal">
-              We collaborate asynchronously in a dedicated Slack channel. Zero endless threads or unnecessary status calls. Direct daily communication with our specialists from Jordan, GCC, and MENA.
+              Develop tailored online and offline marketing solutions, including content, influencers, social media, and activations.
             </p>
+          </div>
+        </div>
+
+        {/* Step 03: Measure & Optimize */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left: Content */}
+          <div className="relative order-2 lg:order-1">
+            {/* Background Number */}
+            <div className="absolute -top-20 -left-12 text-[180px] md:text-[240px] leading-none font-medium text-[var(--text-primary)]/[0.02] pointer-events-none tracking-tighter">
+              (03)
+            </div>
+            
+            <div className="relative">
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Measure</span>
+                & Optimize
+              </h3>
+            </div>
+
+            <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[420px] font-normal">
+              Track campaign KPIs, analyze performance, and optimize for growth and long-term customer loyalty.
+            </p>
+          </div>
+
+          {/* Right: Mockup */}
+          <div className="relative order-1 lg:order-2 flex justify-end">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="w-full max-w-[560px] bg-[#0a0a0a] border border-white/10 overflow-hidden shadow-[0_48px_96px_-24px_rgba(0,0,0,1)] flex"
+            >
+              {/* Sidebar */}
+              <div className="hidden sm:flex w-[70px] md:w-[85px] border-r border-white/10 flex-col bg-[#0d0d0d]">
+                <div className="h-[85px] flex items-center justify-center border-b border-white/10">
+                  <div className="w-10 h-10 bg-zinc-900 border border-white/5 flex items-center justify-center shadow-inner text-white/60">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  </div>
+                </div>
+                <div className="flex-1 flex flex-col items-center py-8 gap-10">
+                  <div className="p-3 bg-white/5 border border-white/5 text-white/40 hover:text-white transition-all cursor-pointer group">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:scale-110 transition-transform"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  <div className="text-white/20 hover:text-white/60 transition-colors cursor-pointer">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Main Area */}
+              <div className="flex-1 flex flex-col">
+                {/* Header Item */}
+                <div className="p-4 sm:p-8 border-b border-white/10 flex justify-between items-center bg-white/[0.03]">
+                  <div>
+                    <h3 className="text-[14px] sm:text-[18px] font-semibold text-white mb-1.5 sm:mb-2 tracking-tight">Performance Analytics</h3>
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 text-[10px] sm:text-[12px] text-[#4ade80] font-bold">
+                      <span className="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse mr-1"></span>
+                      CAMPAIGN ROI STATUS: OPTIMIZED
+                    </div>
+                  </div>
+                  {/* Circular Progress */}
+                  <div className="relative w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
+                    <svg className="absolute inset-0 w-full h-full -rotate-90">
+                      <circle cx="28" cy="28" r="26" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+                      <circle cx="28" cy="28" r="26" fill="none" stroke="#4ade80" strokeWidth="3" strokeDasharray="163" strokeDashoffset="16" strokeLinecap="round" />
+                    </svg>
+                    <span className="text-[11px] font-bold text-white">90%</span>
+                  </div>
+                </div>
+
+                {/* Dashboard Metrics */}
+                <div className="p-4 sm:p-6 grid grid-cols-3 gap-3 border-b border-white/10 bg-white/[0.01]">
+                  {[
+                    { title: 'ROI', val: '4.2x', change: '+18%' },
+                    { title: 'Reach', val: '1.8M', change: '+24%' },
+                    { title: 'CTR', val: '4.8%', change: '+12%' }
+                  ].map((metric, i) => (
+                    <div key={i} className="p-3 bg-white/[0.02] border border-white/5 flex flex-col">
+                      <span className="text-[9px] sm:text-[10px] text-white/40 uppercase font-bold tracking-wider">{metric.title}</span>
+                      <span className="text-[13px] sm:text-[16px] font-bold text-white mt-1">{metric.val}</span>
+                      <span className="text-[8px] sm:text-[9px] text-[#4ade80] font-bold mt-0.5">{metric.change}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Checklist */}
+                <div className="flex flex-col">
+                  {[
+                    { label: 'Adjust ad budget allocations', stat: 'Completed', color: 'text-[#4ade80]' },
+                    { label: 'Retarget high-intent GCC visitors', stat: 'Active', color: 'text-[#facc15]' },
+                    { label: 'Scale high-performing video assets', stat: 'Pending', color: 'text-white/40' }
+                  ].map((item, i) => (
+                    <div key={i} className="p-4 px-5 sm:p-5 sm:px-8 border-b border-white/5 flex justify-between items-center hover:bg-white/[0.01] transition-colors group">
+                      <span className="text-[12px] sm:text-[13px] font-medium text-white/70 group-hover:text-white transition-colors">{item.label}</span>
+                      <span className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${item.color}`}>{item.stat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
 
