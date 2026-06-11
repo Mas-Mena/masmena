@@ -375,9 +375,14 @@ const EditorialHero: React.FC = () => {
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.5 }
       );
 
+      gsap.fromTo('.stats-reveal',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.65 }
+      );
+
       gsap.fromTo('.cta-reveal',
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.7 }
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.8 }
       );
 
       return () => {
@@ -428,9 +433,22 @@ const EditorialHero: React.FC = () => {
         </h1>
 
         {/* Description Subtext */}
-        <p className="subtext-reveal text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[340px] md:max-w-[421px] mb-9 font-normal text-center md:text-left select-text pointer-events-auto">
-          Our dynamic team of strategists, creators, and analysts drives “Creativity, Strategy, Impact” by crafting innovative, culturally resonant campaigns that deliver measurable results.
+        <p className="subtext-reveal text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[340px] md:max-w-[450px] mb-8 font-normal text-center md:text-left select-text pointer-events-auto">
+          MAS is a full-service marketing agency delivering creative, data-driven, and culturally relevant campaigns for brands in FMCG, healthcare, beauty, and more. Our team blends digital and offline strategies to drive impact across Jordan, the GCC, and beyond.
         </p>
+
+        {/* Statistics Bar */}
+        <div className="stats-reveal pointer-events-auto flex gap-12 mb-9 text-left select-text">
+          <div className="flex flex-col">
+            <span className="text-[20px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">24+</span>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Countries Reached</span>
+          </div>
+          <div className="w-[1px] h-10 bg-[var(--border-color)] self-center" />
+          <div className="flex flex-col">
+            <span className="text-[20px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">200+</span>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Projects Completed</span>
+          </div>
+        </div>
 
         {/* Book A Call CTA */}
         <div className="cta-reveal pointer-events-auto w-full max-w-[340px] md:max-w-none flex justify-center md:justify-start">
