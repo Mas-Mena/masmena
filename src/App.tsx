@@ -8,6 +8,7 @@ import EditorialWorkflow from './components/sections/EditorialWorkflow';
 import EditorialTestimonials from './components/sections/EditorialTestimonials';
 import EditorialAwards from './components/sections/EditorialAwards';
 import EditorialAboutLegacy from './components/sections/EditorialAboutLegacy';
+import EditorialTools from './components/sections/EditorialTools';
 import EditorialPricing from './components/sections/EditorialPricing';
 import EditorialFAQ from './components/sections/EditorialFAQ';
 import EditorialContact from './components/sections/EditorialContact';
@@ -30,6 +31,7 @@ function App() {
           <EditorialTestimonials />
           <EditorialAwards />
           <EditorialAboutLegacy />
+          <EditorialTools />
           <EditorialPricing />
           <EditorialFAQ />
           <EditorialContact />
