@@ -3,28 +3,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqData = [
   {
-    question: "Why choose MAS as your marketing agency?",
-    answer: "MAS is a full-service marketing agency that blends digital and offline strategies. We deliver creative, data-driven, and culturally relevant campaigns tailored to Jordan, the GCC, and the MENA region, embodying our slogan 'Creativity, Strategy, Impact'."
+    question: "What services does MAS offer?",
+    answer: "We are a full-service marketing agency offering tailored online and offline solutions, from digital campaigns, branding, and social media to print, activations, and media planning, designed to grow your brand and drive results."
   },
   {
-    question: "What industries do you specialize in?",
-    answer: "We have extensive experience delivering high-impact marketing and brand solutions across multiple sectors, including FMCG, healthcare, beauty, pharmaceuticals, retail, and more."
+    question: "How does MAS ensure cultural relevance?",
+    answer: "We use Arabic-first strategies, local dialects, and market research to create campaigns that resonate with regional values and trends."
   },
   {
-    question: "Do you operate outside Jordan?",
-    answer: "Yes! While our primary headquarters is in Jordan, we blend digital and offline strategies to drive growth and deliver culturally resonant campaigns across Jordan, the GCC, and the wider MENA region."
+    question: "What is MAS’s campaign process?",
+    answer: "We start with market research, develop tailored strategies, execute hybrid campaigns, and track performance for measurable results."
   },
   {
-    question: "What is Presence Management?",
-    answer: "Presence Management is our specialized service designed for multi-location businesses. We help brands manage listing synchronization, review response workflows, local discoverability, and SEO performance from one centralized dashboard."
+    question: "How does MAS measure success?",
+    answer: "At MAS, we measure success by the tangible impact we create for our clients, including growth in brand awareness, engagement, sales, and long-term customer loyalty. We track key performance indicators (KPIs) across every campaign, combining data insights with strategic goals to ensure measurable and meaningful results."
   },
   {
-    question: "How do we collaborate and track projects?",
-    answer: "We collaborate efficiently using Slack for fast asynchronous communication and Notion for dedicated project management boards, giving you direct visibility into task lists, progress, and updates in real-time."
+    question: "Who are MAS’s target clients?",
+    answer: "MAS works with clients across all industries. Our strategies are built on deep marketing research and professional execution, tailored to fit any sector or business size."
   },
   {
-    question: "How quickly can a campaign launch?",
-    answer: "Typical campaign timelines vary based on scope, but simple campaigns and assets can be developed in 2-3 business days. Comprehensive full-service strategies are mapped out to ensure precision, strategy, and impact."
+    question: "Can MAS handle international campaigns?",
+    answer: "Yes, MAS has the expertise and network to manage international campaigns with local relevance and global impact, seamlessly handling strategy, execution, and performance across borders."
+  },
+  {
+    question: "How fast can MAS respond to an idea?",
+    answer: "Our agile team collaborates closely with clients and typically responds to ideas within 1–2 business days to kickstart strategy and execution."
   }
 ];
 
