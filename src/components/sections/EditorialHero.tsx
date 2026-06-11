@@ -31,6 +31,8 @@ const EditorialHero: React.FC = () => {
   const positionsRef = useRef<number[]>([]);
   const indicesRef = useRef<number[]>([]);
   const scrollPos = useRef<number>(0);
+  const targetScrollPos = useRef<number>(0);
+  const isPressingRef = useRef<boolean>(false);
   const startScrollPos = useRef<number>(0);
   const startX = useRef<number>(0);
   const halfWidth = useRef<number>(0);
@@ -243,12 +245,41 @@ const EditorialHero: React.FC = () => {
       }
 
       scrollPos.current = 0;
+      targetScrollPos.current = 0;
       renderCarousel();
 
       const progressState = { index: -Z };
       const enterTimelineState = { position: 0 };
       const transitionThreshold = Z + projectImages.length;
       let dragInstance: any = null;
+
+      // Smooth interpolation and background auto-scroll drift update loop
+      let rafId = 0;
+      const updateLoop = () => {
+        // Slow auto-scroll drift when not dragging or pressing
+        if (
+          !isDraggingRef.current && 
+          !isPressingRef.current && 
+          !revealTimeline.isActive() && 
+          animationPass.current === 'done'
+        ) {
+          targetScrollPos.current += 0.0012; // Gentle background drift (move 1 card every ~14 seconds at 60fps)
+        }
+
+        // Smoothly interpolate scrollPos towards targetScrollPos using Lerp
+        const diff = targetScrollPos.current - scrollPos.current;
+        if (Math.abs(diff) > 0.0001) {
+          scrollPos.current += diff * 0.05; // 0.05 lerp coefficient for super smooth fluid damping
+          renderCarousel();
+        } else if (!isDraggingRef.current && !isPressingRef.current && !revealTimeline.isActive() && animationPass.current === 'done') {
+          scrollPos.current = targetScrollPos.current;
+          renderCarousel();
+        }
+
+        rafId = requestAnimationFrame(updateLoop);
+      };
+      
+      rafId = requestAnimationFrame(updateLoop);
 
       // Construct dynamic GSAP Draggable for mouse/touch interactions
       const setupDraggable = () => {
@@ -262,7 +293,9 @@ const EditorialHero: React.FC = () => {
               revealTimeline.kill();
               animationPass.current = 'done';
               isDraggingRef.current = false;
+              isPressingRef.current = true;
               cancelAnimationFrame(dragAnimationFrameRef.current);
+              targetScrollPos.current = scrollPos.current; // Sync
               startScrollPos.current = scrollPos.current;
               startX.current = this.x;
               dragDeltaX.current = 0;
@@ -270,13 +303,14 @@ const EditorialHero: React.FC = () => {
             onDrag: function () {
               const sX = stepX.current;
               if (sX) {
-                const delta = (this.x - startX.current) * 0.3; // 0.3 sensitivity factor
+                const delta = (this.x - startX.current) * 0.22; // Slightly reduced sensitivity for smoother control
                 dragDeltaX.current = delta;
                 startX.current = this.x;
-                startScrollPos.current = scrollPos.current;
-                scrollPos.current = startScrollPos.current - delta / sX;
-                renderCarousel();
+                targetScrollPos.current = targetScrollPos.current - delta / sX;
               }
+            },
+            onRelease: function () {
+              isPressingRef.current = false;
             },
             onDragEnd: function () {
               const sX = stepX.current;
@@ -284,16 +318,15 @@ const EditorialHero: React.FC = () => {
                 isDraggingRef.current = true;
                 let velocity = dragDeltaX.current;
 
-                // Inertia momentum decay loop (decay factor 0.984 per frame)
+                // Inertia momentum decay loop (decay factor 0.94 for smooth dampening deceleration)
                 const decayLoop = () => {
                   if (isDraggingRef.current) {
-                     velocity *= 0.984; 
-                     if (Math.abs(velocity) < 1e-5) {
+                     velocity *= 0.94; 
+                     if (Math.abs(velocity) < 1e-4) {
                        isDraggingRef.current = false;
                        return;
                      }
-                     scrollPos.current -= velocity / sX;
-                     renderCarousel();
+                     targetScrollPos.current -= velocity / sX;
                      dragAnimationFrameRef.current = requestAnimationFrame(decayLoop);
                   }
                 };
@@ -304,6 +337,7 @@ const EditorialHero: React.FC = () => {
 
           container.addEventListener('touchstart', () => {
             isDraggingRef.current = false;
+            isPressingRef.current = true;
             cancelAnimationFrame(dragAnimationFrameRef.current);
           }, { passive: true });
         }
@@ -330,6 +364,7 @@ const EditorialHero: React.FC = () => {
           }
           animationPass.current = 'pass2';
           scrollPos.current = -transitionThreshold;
+          targetScrollPos.current = -transitionThreshold; // Sync target
           enterTimelineState.position = -transitionThreshold;
         },
       });
@@ -344,6 +379,7 @@ const EditorialHero: React.FC = () => {
         },
         onUpdate: () => {
           scrollPos.current = enterTimelineState.position;
+          targetScrollPos.current = enterTimelineState.position; // Sync target
           renderCarousel();
         },
         onComplete: () => {
@@ -390,6 +426,7 @@ const EditorialHero: React.FC = () => {
         if (dragInstance) dragInstance.kill();
         isDraggingRef.current = false;
         cancelAnimationFrame(dragAnimationFrameRef.current);
+        cancelAnimationFrame(rafId);
         resObserver.disconnect();
         cancelAnimationFrame(resizeTick);
       };
