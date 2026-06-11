@@ -1,6 +1,7 @@
 import SmoothScroll from './components/layout/SmoothScroll';
 import EditorialNavbar from './components/layout/EditorialNavbar';
 import EditorialHero from './components/sections/EditorialHero';
+import EditorialClients from './components/sections/EditorialClients';
 import EditorialAbout from './components/sections/EditorialAbout';
 import EditorialWorkflow from './components/sections/EditorialWorkflow';
 import EditorialTestimonials from './components/sections/EditorialTestimonials';
@@ -20,6 +21,7 @@ function App() {
         <EditorialNavbar />
         <main>
           <EditorialHero />
+          <EditorialClients />
           <EditorialAbout />
           <EditorialWorkflow />
           <EditorialTestimonials />
