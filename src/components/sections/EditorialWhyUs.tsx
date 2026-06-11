@@ -132,7 +132,7 @@ const EditorialWhyUs: React.FC = () => {
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Why Us</p>
             
             <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
-              <span className="font-cursive text-[1.4em] font-normal leading-none mr-2">Why</span>
+              <span className="font-serif italic font-light mr-2">Why</span>
               MAS?
             </h2>
 
@@ -186,7 +186,7 @@ const EditorialWhyUs: React.FC = () => {
                 </div>
 
                 <h3 className="relative z-10 flex flex-wrap items-baseline gap-x-1.5 leading-none">
-                  <span className="font-cursive text-[1.45em] font-normal text-[var(--text-primary)] leading-none">{item.cursiveTitle}</span>
+                  <span className="font-serif italic font-light text-[var(--text-primary)] text-[1.25em] leading-none">{item.cursiveTitle}</span>
                   <span className="font-display font-medium text-[var(--text-primary)] text-[15px] sm:text-[16px] md:text-[17px] tracking-tight">{item.normalTitle}</span>
                 </h3>
               </div>
