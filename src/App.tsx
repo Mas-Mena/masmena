@@ -1,13 +1,13 @@
 import SmoothScroll from './components/layout/SmoothScroll';
 import EditorialNavbar from './components/layout/EditorialNavbar';
 import EditorialHero from './components/sections/EditorialHero';
-import EditorialClients from './components/sections/EditorialClients';
+// import EditorialClients from './components/sections/EditorialClients';
 import EditorialWhyUs from './components/sections/EditorialWhyUs';
 import EditorialAbout from './components/sections/EditorialAbout';
 import EditorialWorkflow from './components/sections/EditorialWorkflow';
 import EditorialTestimonials from './components/sections/EditorialTestimonials';
 import EditorialAwards from './components/sections/EditorialAwards';
-import EditorialAboutLegacy from './components/sections/EditorialAboutLegacy';
+// import EditorialAboutLegacy from './components/sections/EditorialAboutLegacy';
 import EditorialTools from './components/sections/EditorialTools';
 import EditorialPricing from './components/sections/EditorialPricing';
 import EditorialFAQ from './components/sections/EditorialFAQ';
@@ -23,18 +23,40 @@ function App() {
         <GlobalGridLines />
         <EditorialNavbar />
         <main>
+          {/* 1. HERO SECTION */}
           <EditorialHero />
-          <EditorialClients />
+          
+          {/* 2. WHY US SECTION */}
           <EditorialWhyUs />
-          <EditorialAbout />
+          
+          {/* 3. HOW WE WORK SECTION */}
           <EditorialWorkflow />
+          
+          {/* 4. The Kind Of Work We Do For Our Partners */}
+          <EditorialAbout />
+          
+          {/* 5. From The Mouth Of Our Beloved Partners */}
           <EditorialTestimonials />
+          
+          {/* 6. AWARDS SECTION */}
           <EditorialAwards />
-          <EditorialAboutLegacy />
+          
+          {/* 7. The Tools Behind Our Work */}
           <EditorialTools />
+          
+          {/* 8. PRICING SECTION */}
           <EditorialPricing />
+          
+          {/* 9. FAQ SECTION */}
           <EditorialFAQ />
+          
+          {/* 10. FINAL CTA SECTION */}
           <EditorialContact />
+          
+          {/* Unused legacy/additional sections kept for reference
+          <EditorialClients />
+          <EditorialAboutLegacy />
+          */}
         </main>
         
         <footer className="border-t border-[var(--border-color)] text-[10px] uppercase tracking-[0.3em] text-[var(--text-secondary)] bg-[var(--bg-primary)] transition-colors duration-700">
