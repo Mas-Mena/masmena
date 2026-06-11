@@ -142,12 +142,12 @@ const EditorialTools: React.FC = () => {
         .animate-marquee-left {
           display: flex;
           width: max-content;
-          animation: marquee-left 25s linear infinite;
+          animation: marquee-left 45s linear infinite;
         }
         .animate-marquee-right {
           display: flex;
           width: max-content;
-          animation: marquee-right 25s linear infinite;
+          animation: marquee-right 45s linear infinite;
         }
         .animate-marquee-left:hover,
         .animate-marquee-right:hover {
