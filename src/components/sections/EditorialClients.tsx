@@ -1,12 +1,12 @@
 import React from 'react';
 
 const clientLogos = [
-  { src: 'images/partners/MOG-logo.png', alt: 'MOG', className: 'invert brightness-200' },
-  { src: 'images/partners/chupa-chups.png', alt: 'Chupa Chups', className: '' },
-  { src: 'images/partners/drfarah-1.png', alt: 'Dr. Farah', className: 'invert brightness-200' },
-  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan', className: 'invert brightness-200' },
-  { src: 'images/partners/serene-kogo.png', alt: 'Serene', className: 'invert brightness-200' },
-  { src: 'images/partners/super-logo.png', alt: 'Super', className: 'invert brightness-200' },
+  { src: 'images/partners/MOG-logo.png', alt: 'MOG' },
+  { src: 'images/partners/chupa-chups.png', alt: 'Chupa Chups' },
+  { src: 'images/partners/drfarah-1.png', alt: 'Dr. Farah' },
+  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan' },
+  { src: 'images/partners/serene-kogo.png', alt: 'Serene' },
+  { src: 'images/partners/super-logo.png', alt: 'Super' },
 ];
 
 const EditorialClients: React.FC = () => {
@@ -31,16 +31,16 @@ const EditorialClients: React.FC = () => {
           <div className="absolute top-0 right-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Inner Track */}
-          <div className="animate-marquee flex items-center gap-16 md:gap-24">
+          <div className="animate-marquee flex items-center gap-6 md:gap-8">
             {repeatedLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 group flex items-center justify-center cursor-pointer"
+                className="flex-shrink-0 group flex items-center justify-center cursor-pointer bg-white px-5 py-3 h-14 w-36 rounded-none border border-white/5 hover:border-white/10 transition-all duration-300 opacity-80 hover:opacity-100 shadow-md"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className={`h-8 md:h-10 w-auto object-contain opacity-35 group-hover:opacity-95 transition-all duration-500 ${logo.className}`}
+                  className="max-h-8 max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]"
                   loading="lazy"
                 />
               </div>
