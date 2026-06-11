@@ -8,9 +8,12 @@ interface EditorialMenuProps {
 }
 
 const navLinks = [
-  { name: 'About', href: '#about' },
+  { name: 'Why Us', href: '#why-us' },
   { name: 'Workflow', href: '#process' },
+  { name: 'About', href: '#about' },
   { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Awards', href: '#awards' },
+  { name: 'Tools', href: '#tools' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Contact', href: '#contact' },
