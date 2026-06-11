@@ -1,12 +1,12 @@
 import React from 'react';
 
 const clientLogos = [
-  { src: 'images/partners/MOG-logo.png', alt: 'MOG' },
-  { src: 'images/partners/chupa-chups.png', alt: 'Chupa Chups' },
-  { src: 'images/partners/drfarah-1.png', alt: 'Dr. Farah' },
-  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan' },
-  { src: 'images/partners/serene-kogo.png', alt: 'Serene' },
-  { src: 'images/partners/super-logo.png', alt: 'Super' },
+  { src: 'images/partners/MOG-logo.png', alt: 'MOG', isDark: true },
+  { src: 'images/partners/chupa-chups.png', alt: 'Chupa Chups', isDark: false },
+  { src: 'images/partners/drfarah-1.png', alt: 'Dr. Farah', isDark: true },
+  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan', isDark: true },
+  { src: 'images/partners/serene-kogo.png', alt: 'Serene', isDark: true },
+  { src: 'images/partners/super-logo.png', alt: 'Super', isDark: true },
 ];
 
 const EditorialClients: React.FC = () => {
@@ -35,12 +35,13 @@ const EditorialClients: React.FC = () => {
             {repeatedLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 group flex items-center justify-center cursor-pointer bg-white px-5 py-3 h-14 w-36 rounded-none border border-white/5 hover:border-white/10 transition-all duration-300 opacity-80 hover:opacity-100 shadow-md"
+                className="flex-shrink-0 group flex items-center justify-center cursor-pointer px-5 py-3 h-14 w-36 transition-all duration-300 opacity-80 hover:opacity-100"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   className="max-h-8 max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]"
+                  style={logo.isDark ? { filter: 'brightness(0) invert(1)' } : undefined}
                   loading="lazy"
                 />
               </div>
