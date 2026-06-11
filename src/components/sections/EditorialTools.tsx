@@ -5,8 +5,12 @@ const toolsData = [
     name: 'Figma',
     category: 'Design & Prototyping',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <path d="M12 6a3 3 0 1 1-3-3h3v3Zm0 0a3 3 0 1 0 3-3h-3v3Zm0 6a3 3 0 1 1-3-3h3v3Zm0 0a3 3 0 1 0 3-3h-3v3Zm-3 6a3 3 0 1 1-3-3h3v3Zm3-6v6a3 3 0 1 1-3-3h3Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" />
+      <svg width="40" height="40" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 0H9.5C4.25 0 0 4.25 0 9.5C0 14.75 4.25 19 9.5 19H19V0Z" fill="#F24E1E"/>
+        <path d="M38 9.5C38 4.25 33.75 0 28.5 0H19V19H28.5C33.75 19 38 14.75 38 9.5Z" fill="#FF7262"/>
+        <path d="M19 19H9.5C4.25 19 0 23.25 0 28.5C0 33.75 4.25 38 9.5 38H19V19Z" fill="#A259FF"/>
+        <path d="M19 38H28.5C33.75 38 38 33.75 38 28.5C38 23.25 33.75 19 28.5 19H19V38Z" fill="#1ABC9C"/>
+        <path d="M9.5 57C14.75 57 19 52.75 19 47.5V38H9.5C4.25 38 0 42.25 0 47.5C0 52.75 4.25 57 9.5 57Z" fill="#0ACF83"/>
       </svg>
     )
   },
@@ -14,9 +18,9 @@ const toolsData = [
     name: 'Photoshop',
     category: 'Creative Production',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M7 8.5h2.5c1 0 1.5.4 1.5 1.1s-.5 1.1-1.5 1.1H8V16H7V8.5ZM8 9.5v1.4h1.2c.4 0 .7-.1.7-.6s-.3-.8-.7-.8H8ZM13 13.5c.3.3.8.5 1.3.5.6 0 .9-.3.9-.7s-.3-.6-.8-.8l-.6-.2c-.8-.2-1.3-.7-1.3-1.4s.6-1.5 1.6-1.5c.6 0 1.1.2 1.4.5l-.4.7c-.3-.2-.7-.4-1.1-.4-.5 0-.7.2-.7.5s.3.5.7.6l.6.2c1 .3 1.4.8 1.4 1.5 0 .9-.7 1.5-1.7 1.5-.7 0-1.3-.3-1.6-.6l.4-.7Z" fill="currentColor" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="4" fill="#001829" stroke="#31A8FF" strokeWidth="2"/>
+        <path d="M6 7h3.2c1.2 0 2 .5 2 1.6s-.8 1.6-2 1.6H7.5V17H6V7Zm1.5 1.4v1.8H9c.5 0 .8-.2.8-.9s-.3-.9-.8-.9H7.5ZM12.5 13.5c.3.3.8.5 1.3.5.6 0 .9-.3.9-.7s-.3-.6-.8-.8l-.6-.2c-.8-.2-1.3-.7-1.3-1.4s.6-1.5 1.6-1.5c.6 0 1.1.2 1.4.5l-.4.7c-.3-.2-.7-.4-1.1-.4-.5 0-.7.2-.7.5s.3.5.7.6l.6.2c1 .3 1.4.8 1.4 1.5 0 .9-.7 1.5-1.7 1.5-.7 0-1.3-.3-1.6-.6l.4-.7Z" fill="#31A8FF" />
       </svg>
     )
   },
@@ -24,11 +28,13 @@ const toolsData = [
     name: 'React',
     category: 'Frontend Technology',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <ellipse rx="10" ry="4.5" cx="12" cy="12" stroke="currentColor" strokeWidth="1.5" transform="rotate(0 12 12)" />
-        <ellipse rx="10" ry="4.5" cx="12" cy="12" stroke="currentColor" strokeWidth="1.5" transform="rotate(60 12 12)" />
-        <ellipse rx="10" ry="4.5" cx="12" cy="12" stroke="currentColor" strokeWidth="1.5" transform="rotate(120 12 12)" />
-        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      <svg width="40" height="40" viewBox="-11.5 -10.23 23 20.46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="2.05" fill="#61DAFB"/>
+        <g stroke="#61DAFB" strokeWidth="1" fill="none">
+          <ellipse rx="11" ry="4.2"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+        </g>
       </svg>
     )
   },
@@ -36,9 +42,8 @@ const toolsData = [
     name: 'Webflow',
     category: 'Development & Hosting',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <path d="M12.5 5.5l1.5 8.5 2-8.5h2l-3.5 13h-2l-1.5-8.5-1.5 8.5h-2l-3.5-13h2l2 8.5z" fill="currentColor" />
-        <path d="M5.5 15.5l.5 3h13l.5-3z" fill="currentColor" className="opacity-30" />
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M91.8 19.4H74.3L60.5 61.1L49.3 26.6C48.5 24.1 46.2 22.3 43.5 22.3H26.2C23.6 22.3 21.4 24 20.6 26.5L7.2 68.6C6.4 71.1 8.2 73.7 10.9 73.7H28.4C30.7 73.7 32.7 72.2 33.3 70L40.7 45.4L51.9 80C52.7 82.5 55 84.3 57.7 84.3H75C77.6 84.3 79.8 82.6 80.6 80.1L94.1 38C95.5 33.6 92.2 29.2 87.6 29.2H76.7L83.5 52L91.8 19.4Z" fill="#4353FF"/>
       </svg>
     )
   },
@@ -46,8 +51,15 @@ const toolsData = [
     name: 'Framer',
     category: 'Interactive Design',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <path d="M5 2h14v7H12L5 2Zm7 7h7v7H5l7-7Zm-7 7h7v6l-7-6Z" fill="currentColor" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 2h14v7H12L5 2Zm7 7h7v7H5l7-7Zm-7 7h7v6l-7-6Z" fill="url(#framer-gradient-acc)"/>
+        <defs>
+          <linearGradient id="framer-gradient-acc" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#0055FF" />
+            <stop offset="50%" stopColor="#8833FF" />
+            <stop offset="100%" stopColor="#FF00AA" />
+          </linearGradient>
+        </defs>
       </svg>
     )
   },
@@ -55,9 +67,9 @@ const toolsData = [
     name: 'Shopify',
     category: 'E-Commerce Solutions',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <path d="M19 6.5h-2.5V6c0-1.7-1.3-3-3-3h-3c-1.7 0-3 1.3-3 3v.5H5c-.8 0-1.5.7-1.5 1.5l1.5 12c.1.8.8 1.5 1.6 1.5h10.8c.8 0 1.5-.7 1.6-1.5l1.5-12c.1-.8-.6-1.5-1.5-1.5ZM9 6c0-.8.7-1.5 1.5-1.5h3c.8 0 1.5.7 1.5 1.5v.5H9V6Zm8.5 13H6.5l-1.2-10h13.4l-1.2 10Z" fill="currentColor" />
-        <path d="M12 9.5c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5Z" fill="currentColor" className="opacity-30" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.5h-2.5V6c0-1.7-1.3-3-3-3h-3c-1.7 0-3 1.3-3 3v.5H5c-.8 0-1.5.7-1.5 1.5l1.5 12c.1.8.8 1.5 1.6 1.5h10.8c.8 0 1.5-.7 1.6-1.5l1.5-12c.1-.8-.6-1.5-1.5-1.5ZM10.5 4.5h3c.8 0 1.5.7 1.5 1.5v.5h-6V6c0-.8.7-1.5 1.5-1.5ZM18.5 8l-1.3 11H6.8L5.5 8h13Z" fill="#96bf48"/>
+        <path d="M12 9.5c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5Zm0 3.8c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3 1.3.6 1.3 1.3-.6 1.3-1.3 1.3Z" fill="#5e8e3e"/>
       </svg>
     )
   },
@@ -65,9 +77,10 @@ const toolsData = [
     name: 'WordPress',
     category: 'CMS Platforms',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-        <path d="M12.1 11.4l2.4 6.9c.4.1.8.2 1.2.2.8 0 1.6-.2 2.3-.6l-4.1-11.2c.1.2.1.4.1.6 0 .5-.1.9-.3 1.3l-1.6 2.8zm-2.8-.7L12 18.2l2.6-7.5-1.6-4.5c-.3-.8-.9-1.1-1.6-1.1-.3 0-.6.1-.9.2L9.3 10.7zM6.1 16.5c.7.8 1.6 1.3 2.7 1.5l-2.4-6.8c-.8 1.5-.9 3.4-.3 5.3zM18.8 9.5c0-.6-.2-1-.4-1.3-.3-.5-.7-.8-1.2-1 .3-.1.6-.2.9-.2 1.3 0 2.2.9 2.2 2.2 0 .8-.3 1.6-.8 2.5l-.7-2.2z" fill="currentColor" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11" fill="#21759B" />
+        <circle cx="12" cy="12" r="10" stroke="#ffffff" strokeWidth="1" />
+        <path d="M12.1 11.4l2.4 6.9c.4.1.8.2 1.2.2.8 0 1.6-.2 2.3-.6l-4.1-11.2c.1.2.1.4.1.6 0 .5-.1.9-.3 1.3l-1.6 2.8zm-2.8-.7L12 18.2l2.6-7.5-1.6-4.5c-.3-.8-.9-1.1-1.6-1.1-.3 0-.6.1-.9.2L9.3 10.7zM6.1 16.5c.7.8 1.6 1.3 2.7 1.5l-2.4-6.8c-.8 1.5-.9 3.4-.3 5.3zm12.7-7c0-.6-.2-1-.4-1.3-.3-.5-.7-.8-1.2-1 .3-.1.6-.2.9-.2 1.3 0 2.2.9 2.2 2.2 0 .8-.3 1.6-.8 2.5l-.7-2.2z" fill="#ffffff" />
       </svg>
     )
   },
@@ -75,8 +88,8 @@ const toolsData = [
     name: 'Squarespace',
     category: 'Digital Publishing',
     icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/80 group-hover:text-[var(--accent-color)] transition-colors duration-300">
-        <path d="M15.5 8.5c1.4 0 2.5 1.1 2.5 2.5v4.5c0 1.4-1.1 2.5-2.5 2.5H11c-1.4 0-2.5-1.1-2.5-2.5V11c0-1.4 1.1-2.5 2.5-2.5h4.5Zm0 1.5H11c-.6 0-1 .4-1 1v4.5c0 .6.4 1 1 1h4.5c.6 0 1-.4 1-1V11c0-.6-.4-1-1-1ZM8.5 15.5c-1.4 0-2.5-1.1-2.5-2.5V8.5C6 7.1 7.1 6 8.5 6H13c1.4 0 2.5 1.1 2.5 2.5V9h-1.5v-.5c0-.6-.4-1-1-1H8.5c-.6 0-1 .4-1 1v4.5c0 .6.4 1 1 1H9v1.5h-.5Z" fill="currentColor" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.5 8.5c1.4 0 2.5 1.1 2.5 2.5v4.5c0 1.4-1.1 2.5-2.5 2.5H11c-1.4 0-2.5-1.1-2.5-2.5V11c0-1.4 1.1-2.5 2.5-2.5h4.5Zm0 1.5H11c-.6 0-1 .4-1 1v4.5c0 .6.4 1 1 1h4.5c.6 0 1-.4 1-1V11c0-.6-.4-1-1-1ZM8.5 15.5c-1.4 0-2.5-1.1-2.5-2.5V8.5C6 7.1 7.1 6 8.5 6H13c1.4 0 2.5 1.1 2.5 2.5V9h-1.5v-.5c0-.6-.4-1-1-1H8.5c-.6 0-1 .4-1 1v4.5c0 .6.4 1 1 1H9v1.5h-.5Z" fill="#ffffff" />
       </svg>
     )
   }
