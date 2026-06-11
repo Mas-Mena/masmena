@@ -434,13 +434,13 @@ const EditorialHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
+    <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700" style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}>
       {/* 3D Wave Interactive Background Carousel */}
-      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 lg:left-auto lg:right-0 w-full lg:w-[75%] h-[calc(100svh-170px)] lg:h-full z-[1] lg:translate-x-[10%] flex items-center select-none pointer-events-auto">
+      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 lg:left-auto lg:right-0 w-full lg:w-[75%] h-[calc(100svh-170px)] lg:h-full z-[1] lg:translate-x-[10%] flex items-center select-none pointer-events-auto" style={{ transformStyle: 'preserve-3d' }}>
         <div 
           className="w-full h-[400px] md:h-[520px] lg:h-[700px] relative cursor-grab z-[10000]" 
           ref={containerRef}
-          style={{ touchAction: 'pan-y' }}
+          style={{ touchAction: 'pan-y', transformStyle: 'preserve-3d' }}
         >
           {Array.from({ length: CARDS_COUNT }).map((_, i) => (
             <div
@@ -458,14 +458,18 @@ const EditorialHero: React.FC = () => {
           ))}
         </div>
         
-        {/* Creative Solution: Smooth Left-Side Black Gradient Fade to prevent card overlap with Hero text */}
+        {/* Creative Solution: Smooth Left-Side Black Gradient Fade that participates in 3D compositing */}
         <div 
-          className="absolute inset-y-0 left-0 w-[55%] md:w-[48%] bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/90 to-transparent z-[10001] pointer-events-none hidden md:block" 
+          className="absolute inset-y-0 left-0 w-[60%] md:w-[52%] lg:w-[48%] bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/95 to-transparent z-[10001] pointer-events-none hidden md:block" 
+          style={{ transform: 'translate3d(0, 0, 50px)' }}
         />
       </div>
 
-      {/* Hero Content Section */}
-      <div className="hidden md:flex container-custom relative z-[10002] w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
+      {/* Hero Content Section - Translated forward in 3D space to sit cleanly on top of the black fade */}
+      <div 
+        className="hidden md:flex container-custom relative z-[10002] w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] select-none"
+        style={{ transform: 'translate3d(0, 0, 100px)', pointerEvents: 'none' }}
+      >
         
 
 
