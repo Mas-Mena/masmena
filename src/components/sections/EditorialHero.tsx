@@ -436,7 +436,7 @@ const EditorialHero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
       {/* 3D Wave Interactive Background Carousel */}
-      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 lg:left-auto lg:right-0 w-full lg:w-[80%] h-[calc(100svh-170px)] lg:h-full z-[1] lg:translate-x-[15%] flex items-center select-none pointer-events-auto">
+      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 lg:left-auto lg:right-0 w-full lg:w-[75%] h-[calc(100svh-170px)] lg:h-full z-[1] lg:translate-x-[10%] flex items-center select-none pointer-events-auto">
         <div 
           className="w-full h-[400px] md:h-[520px] lg:h-[700px] relative cursor-grab z-[10000]" 
           ref={containerRef}
@@ -457,10 +457,15 @@ const EditorialHero: React.FC = () => {
             </div>
           ))}
         </div>
+        
+        {/* Creative Solution: Smooth Left-Side Black Gradient Fade to prevent card overlap with Hero text */}
+        <div 
+          className="absolute inset-y-0 left-0 w-[55%] md:w-[48%] bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/90 to-transparent z-[10001] pointer-events-none hidden md:block" 
+        />
       </div>
 
       {/* Hero Content Section */}
-      <div className="hidden md:flex container-custom relative z-10 w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
+      <div className="hidden md:flex container-custom relative z-[10002] w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
 
 
