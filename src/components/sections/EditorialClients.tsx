@@ -40,7 +40,7 @@ const EditorialClients: React.FC = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-8 md:h-10 w-auto object-contain grayscale opacity-35 group-hover:grayscale-0 group-hover:opacity-95 transition-all duration-500"
+                  className="h-8 md:h-10 w-auto object-contain invert grayscale brightness-200 opacity-35 group-hover:opacity-95 transition-all duration-500"
                   loading="lazy"
                 />
               </div>
