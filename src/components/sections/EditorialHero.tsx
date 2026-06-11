@@ -109,6 +109,9 @@ const EditorialHero: React.FC = () => {
           const yPos = 80 * Math.sin(xPos / hW * U) + 0.2 * xPos;
           const scale = 0.4 + 0.4 * Math.exp(-(0.8 * absOffset));
           const zIndex = 100 - 10 * Math.round(absOffset);
+          
+          // Smooth distance-based opacity fade out (completely transparent at offset >= 5)
+          const opacity = Math.max(0, 1 - Math.pow(absOffset / 5, 2));
 
           if (pass === 'pass2' || pass === 'done') {
             gsap.set(card, {
@@ -118,8 +121,8 @@ const EditorialHero: React.FC = () => {
               xPercent: -50,
               yPercent: -50,
               zIndex: zIndex,
-              visibility: 'visible',
-              opacity: 1,
+              visibility: opacity > 0 ? 'visible' : 'hidden',
+              opacity: opacity,
             });
           } else if (pass === 'pass1') {
             // Staggered reveal timeline entrance logic
@@ -134,14 +137,14 @@ const EditorialHero: React.FC = () => {
                 xPercent: -50,
                 yPercent: -50,
                 zIndex: zIndex,
-                visibility: 'visible',
+                visibility: opacity > 0 ? 'visible' : 'hidden',
               });
               if (hasRevealed) {
-                gsap.set(card, { scale: scale, opacity: 1 });
+                gsap.set(card, { scale: scale, opacity: opacity });
               } else {
                 gsap.killTweensOf(card);
                 gsap.to(card, {
-                  opacity: 1,
+                  opacity: opacity,
                   scale: scale,
                   duration: 0.24,
                   ease: 'power2.out',
