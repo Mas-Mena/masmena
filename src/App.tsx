@@ -1,19 +1,25 @@
+import { Suspense, lazy } from 'react';
 import SmoothScroll from './components/layout/SmoothScroll';
 import EditorialNavbar from './components/layout/EditorialNavbar';
 import EditorialHero from './components/sections/EditorialHero';
-// import EditorialClients from './components/sections/EditorialClients';
-import EditorialWhyUs from './components/sections/EditorialWhyUs';
-import EditorialAbout from './components/sections/EditorialAbout';
-import EditorialWorkflow from './components/sections/EditorialWorkflow';
-import EditorialTestimonials from './components/sections/EditorialTestimonials';
-import EditorialAwards from './components/sections/EditorialAwards';
-// import EditorialAboutLegacy from './components/sections/EditorialAboutLegacy';
-import EditorialTools from './components/sections/EditorialTools';
-import EditorialPricing from './components/sections/EditorialPricing';
-import EditorialFAQ from './components/sections/EditorialFAQ';
-import EditorialContact from './components/sections/EditorialContact';
 import CustomCursor from './components/ui/CustomCursor';
 import GlobalGridLines from './components/ui/GlobalGridLines';
+
+// Lazy-load below-fold sections — each becomes its own JS chunk
+const EditorialWhyUs        = lazy(() => import('./components/sections/EditorialWhyUs'));
+const EditorialWorkflow     = lazy(() => import('./components/sections/EditorialWorkflow'));
+const EditorialAbout        = lazy(() => import('./components/sections/EditorialAbout'));
+const EditorialTestimonials = lazy(() => import('./components/sections/EditorialTestimonials'));
+const EditorialAwards       = lazy(() => import('./components/sections/EditorialAwards'));
+const EditorialTools        = lazy(() => import('./components/sections/EditorialTools'));
+const EditorialPricing      = lazy(() => import('./components/sections/EditorialPricing'));
+const EditorialFAQ          = lazy(() => import('./components/sections/EditorialFAQ'));
+const EditorialContact      = lazy(() => import('./components/sections/EditorialContact'));
+
+// Minimal invisible placeholder while lazy chunks load
+const SectionFallback = () => (
+  <div className="w-full border-t border-[var(--border-color)]" style={{ minHeight: '1px' }} />
+);
 
 function App() {
   return (
@@ -23,42 +29,47 @@ function App() {
         <GlobalGridLines />
         <EditorialNavbar />
         <main>
-          {/* 1. HERO SECTION */}
+          {/* 1. HERO SECTION — eager, visible immediately */}
           <EditorialHero />
-          
-          {/* 2. WHY US SECTION */}
-          <EditorialWhyUs />
-          
-          {/* 3. HOW WE WORK SECTION */}
-          <EditorialWorkflow />
-          
-          {/* 4. The Kind Of Work We Do For Our Partners */}
-          <EditorialAbout />
-          
-          {/* 5. From The Mouth Of Our Beloved Partners */}
-          <EditorialTestimonials />
-          
-          {/* 6. AWARDS SECTION */}
-          <EditorialAwards />
-          
-          {/* 7. The Tools Behind Our Work */}
-          <EditorialTools />
-          
-          {/* 8. PRICING SECTION */}
-          <EditorialPricing />
-          
-          {/* 9. FAQ SECTION */}
-          <EditorialFAQ />
-          
-          {/* 10. FINAL CTA SECTION */}
-          <EditorialContact />
-          
-          {/* Unused legacy/additional sections kept for reference
-          <EditorialClients />
-          <EditorialAboutLegacy />
-          */}
+
+          {/* Below-fold sections — lazy loaded on first render */}
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialWhyUs />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialWorkflow />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialAbout />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialTestimonials />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialAwards />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialTools />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialPricing />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialFAQ />
+          </Suspense>
+
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialContact />
+          </Suspense>
         </main>
-        
+
         <footer className="border-t border-[var(--border-color)] text-[10px] uppercase tracking-[0.3em] text-[var(--text-secondary)] bg-[var(--bg-primary)] transition-colors duration-700">
           <div className="container-custom py-12 flex justify-between items-center">
             <div>© {new Date().getFullYear()} MAS MENA®</div>

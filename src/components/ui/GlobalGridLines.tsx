@@ -11,18 +11,31 @@ const DynamicGridLines: React.FC = () => {
   const rightColRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let rafScheduled = false;
+    let latestX = 0;
+    let latestY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMouseY(e.clientY);
-      
-      // Calculate exact distance to each column using their real DOM position
-      if (leftColRef.current) {
-        const leftRect = leftColRef.current.getBoundingClientRect();
-        setIsNearLeft(Math.abs(e.clientX - leftRect.left) < 60); // 60px hover radius
-      }
-      
-      if (rightColRef.current) {
-        const rightRect = rightColRef.current.getBoundingClientRect();
-        setIsNearRight(Math.abs(e.clientX - rightRect.left) < 60);
+      latestX = e.clientX;
+      latestY = e.clientY;
+
+      if (!rafScheduled) {
+        rafScheduled = true;
+        requestAnimationFrame(() => {
+          rafScheduled = false;
+          setMouseY(latestY);
+
+          if (leftColRef.current) {
+            const leftRect = leftColRef.current.getBoundingClientRect();
+            const near = Math.abs(latestX - leftRect.left) < 60;
+            setIsNearLeft((prev) => (prev === near ? prev : near));
+          }
+          if (rightColRef.current) {
+            const rightRect = rightColRef.current.getBoundingClientRect();
+            const near = Math.abs(latestX - rightRect.left) < 60;
+            setIsNearRight((prev) => (prev === near ? prev : near));
+          }
+        });
       }
     };
 
@@ -31,7 +44,7 @@ const DynamicGridLines: React.FC = () => {
       setIsNearRight(false);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('mouseleave', handleMouseLeave);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);

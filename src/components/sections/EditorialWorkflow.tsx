@@ -65,7 +65,7 @@ const EditorialWorkflow: React.FC = () => {
         </div>
 
         {/* Step 01: Research & Discovery */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
             {/* Background Number */}
@@ -154,7 +154,7 @@ const EditorialWorkflow: React.FC = () => {
 
 
         {/* Step 02: Strategy & Execution */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           {/* Left: Mockup */}
           <div className="relative order-1 lg:order-1 flex justify-start">
             <motion.div 
@@ -234,7 +234,7 @@ const EditorialWorkflow: React.FC = () => {
         </div>
 
         {/* Step 03: Measure & Optimize */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
             {/* Background Number */}

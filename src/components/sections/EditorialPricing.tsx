@@ -17,7 +17,7 @@ const EditorialPricing: React.FC = () => {
     <section id="pricing" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] section-padding border-t border-[var(--border-color)] transition-colors duration-700">
       
       {/* Header Area */}
-      <div className="container-custom relative z-10 px-8 md:px-12 lg:px-16 mb-20">
+      <div className="container-custom relative z-10 mb-20">
         <div className="max-w-3xl relative">
           <h2 className="relative font-medium tracking-tight mb-8 leading-[1.05] text-[var(--text-primary)]">
             Plans Built for You.<br />Choose the perfect fit.

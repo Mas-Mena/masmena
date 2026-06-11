@@ -20,6 +20,7 @@ const projectImages = [
   'images/slider/slider.webp',
 ];
 
+
 const CARDS_COUNT = 24;
 
 const EditorialHero: React.FC = () => {
@@ -53,7 +54,7 @@ const EditorialHero: React.FC = () => {
     const width = el.offsetWidth;
     if (!width) return false;
     halfWidth.current = width / 2;
-    stepX.current = 0.08 * width; // Card spacing is exactly 8% of width
+    stepX.current = 0.08 * width; // Card spacing — 8% of width for dense collage effect
     return true;
   };
 
@@ -104,14 +105,24 @@ const EditorialHero: React.FC = () => {
         const img = imgElements[i];
 
         if (card && img) {
-          // Exact mathematical layout formulas from creativecue.co production chunk
-          const xPos = offset * sX;
-          const yPos = 80 * Math.sin(xPos / hW * U) + 0.2 * xPos;
-          const scale = 0.4 + 0.4 * Math.exp(-(0.8 * absOffset));
+          // Wave path: tanh tilt levels off far-left cards so they don't overshoot upward
+          const bias = hW * 0.32;
+          const xPos = offset * sX + bias;
+          const rawOffset = xPos - bias;
+          const r = rawOffset / hW;
+          
+          // Wave path: sine wave + linear tilt + quadratic term that pulls both ends down
+          const linearTilt = 0.24 * r * hW;
+          const quadCorrection = 0.16 * r * r * hW;
+          const sineTerm = 25 * Math.sin(r * U);
+          const yPos = sineTerm + linearTilt + quadCorrection;
+
+          // Scale: large cards that overlap densely for a collage effect
+          const scale = 0.45 + 0.55 * Math.exp(-(0.3 * absOffset));
           const zIndex = 100 - 10 * Math.round(absOffset);
           
-          // Smooth distance-based opacity fade out (completely transparent at offset >= 9)
-          const opacity = Math.max(0, 1 - Math.pow(absOffset / 9, 2));
+          // Cards are fully opaque — visibility hidden only for off-screen cards
+          const visible = absOffset < Z;
 
           if (pass === 'pass2' || pass === 'done') {
             gsap.set(card, {
@@ -121,8 +132,8 @@ const EditorialHero: React.FC = () => {
               xPercent: -50,
               yPercent: -50,
               zIndex: zIndex,
-              visibility: opacity > 0 ? 'visible' : 'hidden',
-              opacity: opacity,
+              visibility: visible ? 'visible' : 'hidden',
+              opacity: 1,
             });
           } else if (pass === 'pass1') {
             // Staggered reveal timeline entrance logic
@@ -137,14 +148,14 @@ const EditorialHero: React.FC = () => {
                 xPercent: -50,
                 yPercent: -50,
                 zIndex: zIndex,
-                visibility: opacity > 0 ? 'visible' : 'hidden',
+                visibility: visible ? 'visible' : 'hidden',
               });
               if (hasRevealed) {
-                gsap.set(card, { scale: scale, opacity: opacity });
+                gsap.set(card, { scale: scale, opacity: 1 });
               } else {
                 gsap.killTweensOf(card);
                 gsap.to(card, {
-                  opacity: opacity,
+                  opacity: 1,
                   scale: scale,
                   duration: 0.24,
                   ease: 'power2.out',
@@ -215,12 +226,6 @@ const EditorialHero: React.FC = () => {
   };
 
   useEffect(() => {
-    // Preload Unsplash Showcase Images
-    projectImages.forEach((url) => {
-      const img = new Image();
-      img.src = url;
-    });
-
     const container = containerRef.current;
     if (container && updateDimensions()) {
       const cardEls = cardsRef.current;
@@ -256,32 +261,30 @@ const EditorialHero: React.FC = () => {
       const transitionThreshold = Z + projectImages.length;
       let dragInstance: any = null;
 
-      // Smooth interpolation and background auto-scroll drift update loop
+      // Smooth interpolation update loop — pauses automatically when tab is hidden
       let rafId = 0;
+      let isPageVisible = !document.hidden;
+
+      const onVisibilityChange = () => {
+        isPageVisible = !document.hidden;
+      };
+      document.addEventListener('visibilitychange', onVisibilityChange);
+
       const updateLoop = () => {
-        // Slow auto-scroll drift when not dragging or pressing
-        if (
-          !isDraggingRef.current && 
-          !isPressingRef.current && 
-          !revealTimeline.isActive() && 
-          animationPass.current === 'done'
-        ) {
-          targetScrollPos.current += 0.0012; // Gentle background drift (move 1 card every ~14 seconds at 60fps)
+        if (isPageVisible) {
+          // Smoothly interpolate scrollPos towards targetScrollPos using Lerp
+          const diff = targetScrollPos.current - scrollPos.current;
+          if (Math.abs(diff) > 0.0001) {
+            scrollPos.current += diff * 0.028; // 0.028 lerp for ultra-smooth fluid easing
+            renderCarousel();
+          } else if (!isDraggingRef.current && !isPressingRef.current && !revealTimeline.isActive() && animationPass.current === 'done') {
+            scrollPos.current = targetScrollPos.current;
+            renderCarousel();
+          }
         }
-
-        // Smoothly interpolate scrollPos towards targetScrollPos using Lerp
-        const diff = targetScrollPos.current - scrollPos.current;
-        if (Math.abs(diff) > 0.0001) {
-          scrollPos.current += diff * 0.05; // 0.05 lerp coefficient for super smooth fluid damping
-          renderCarousel();
-        } else if (!isDraggingRef.current && !isPressingRef.current && !revealTimeline.isActive() && animationPass.current === 'done') {
-          scrollPos.current = targetScrollPos.current;
-          renderCarousel();
-        }
-
         rafId = requestAnimationFrame(updateLoop);
       };
-      
+
       rafId = requestAnimationFrame(updateLoop);
 
       // Construct dynamic GSAP Draggable for mouse/touch interactions
@@ -306,7 +309,7 @@ const EditorialHero: React.FC = () => {
             onDrag: function () {
               const sX = stepX.current;
               if (sX) {
-                const delta = (this.x - startX.current) * 0.22; // Slightly reduced sensitivity for smoother control
+                const delta = (this.x - startX.current) * 0.45; // Responsive drag speed
                 dragDeltaX.current = delta;
                 startX.current = this.x;
                 targetScrollPos.current = targetScrollPos.current - delta / sX;
@@ -324,7 +327,7 @@ const EditorialHero: React.FC = () => {
                 // Inertia momentum decay loop (decay factor 0.94 for smooth dampening deceleration)
                 const decayLoop = () => {
                   if (isDraggingRef.current) {
-                     velocity *= 0.94; 
+                     velocity *= 0.92; // Slow decay for a long, buttery glide
                      if (Math.abs(velocity) < 1e-4) {
                        isDraggingRef.current = false;
                        return;
@@ -432,6 +435,7 @@ const EditorialHero: React.FC = () => {
         cancelAnimationFrame(rafId);
         resObserver.disconnect();
         cancelAnimationFrame(resizeTick);
+        document.removeEventListener('visibilitychange', onVisibilityChange);
       };
     }
   }, []);
@@ -439,9 +443,15 @@ const EditorialHero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
       {/* 3D Wave Interactive Background Carousel */}
-      <div className="absolute top-[90px] md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[calc(100svh-170px)] lg:h-full z-[1] flex items-center select-none pointer-events-auto">
+      <div
+        className="absolute top-[75px] md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[calc(100svh-190px)] lg:h-full z-[1] flex items-start select-none pointer-events-auto"
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 0%, black 52%, transparent 78%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 52%, transparent 78%)',
+        }}
+      >
         <div 
-          className="w-full h-[400px] md:h-[520px] lg:h-[700px] relative cursor-grab z-[10000]" 
+          className="w-full h-full relative cursor-grab" 
           ref={containerRef}
           style={{ touchAction: 'pan-y' }}
         >
@@ -449,13 +459,14 @@ const EditorialHero: React.FC = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="absolute left-1/2 top-[28%] origin-center will-change-transform transform-style-preserve-3d"
+              className="absolute left-1/2 top-[28%] md:top-[40%] origin-center will-change-transform transform-style-preserve-3d"
             >
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
                 alt=""
-                className="w-[280px] h-[190px] md:w-[440px] md:h-[300px] lg:w-[640px] lg:h-[440px] object-cover pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] group-hover:grayscale-0 transition-all duration-700 select-none"
+                className="w-[210px] h-[142px] md:w-[320px] md:h-[216px] lg:w-[480px] lg:h-[328px] object-cover pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] select-none"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
@@ -463,38 +474,36 @@ const EditorialHero: React.FC = () => {
       </div>
 
       {/* Hero Content Section */}
-      <div className="hidden md:flex container-custom relative z-10 w-full flex-col items-start pb-12 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
+      <div className="flex container-custom relative z-10 w-full flex-col items-start pb-8 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
-
-
         {/* Hero Title */}
-        <h1 className="heading-reveal font-display text-[28px] md:text-[42px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[340px] md:max-w-[493px] mb-6 tracking-tight text-center md:text-left">
+        <h1 className="heading-reveal font-display text-[32px] md:text-[52px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[493px] mb-3 md:mb-6 tracking-tight text-left">
           Connect. Create. Thrive.
         </h1>
 
         {/* Description Subtext */}
-        <p className="subtext-reveal text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[340px] md:max-w-[450px] mb-8 font-normal text-center md:text-left select-text pointer-events-auto">
-          MAS is a full-service marketing agency delivering creative, data-driven, and culturally relevant campaigns for brands in FMCG, healthcare, beauty, and more. Our team blends digital and offline strategies to drive impact across Jordan, the GCC, and beyond.
+        <p className="subtext-reveal text-[var(--text-secondary)] text-[13px] md:text-[14px] leading-relaxed max-w-[450px] mb-5 md:mb-8 font-normal text-left select-text pointer-events-auto">
+          Creative, data-driven campaigns for FMCG, healthcare, beauty, and more. Blending digital and offline strategies to drive impact across Jordan, the GCC, and beyond.
         </p>
 
         {/* Statistics Bar */}
-        <div className="stats-reveal pointer-events-auto flex gap-12 mb-9 text-left select-text">
+        <div className="stats-reveal pointer-events-auto flex gap-8 md:gap-12 mb-6 md:mb-9 text-left select-text">
           <div className="flex flex-col">
-            <span className="text-[20px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">24+</span>
-            <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Countries Reached</span>
+            <span className="text-[18px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">24+</span>
+            <span className="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Countries Reached</span>
           </div>
-          <div className="w-[1px] h-10 bg-[var(--border-color)] self-center" />
+          <div className="w-[1px] h-8 md:h-10 bg-[var(--border-color)] self-center" />
           <div className="flex flex-col">
-            <span className="text-[20px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">200+</span>
-            <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Projects Completed</span>
+            <span className="text-[18px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">200+</span>
+            <span className="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Projects Completed</span>
           </div>
         </div>
 
         {/* Book A Call CTA */}
-        <div className="cta-reveal pointer-events-auto w-full max-w-[340px] md:max-w-none flex justify-center md:justify-start">
+        <div className="cta-reveal pointer-events-auto w-full flex justify-start">
           <a 
             href="#book" 
-            className="group flex items-center justify-between w-full md:max-w-[421px] border-b border-white/10 pb-6 pointer-events-auto transition-all hover:border-white"
+            className="group flex items-center justify-between w-full max-w-[421px] border-b border-white/10 pb-4 md:pb-6 pointer-events-auto transition-all hover:border-white"
           >
             <span className="text-[12px] md:text-[14px] font-bold uppercase tracking-widest text-[var(--text-primary)]">
               Book A Call

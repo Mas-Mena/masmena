@@ -201,7 +201,7 @@ const EditorialAbout: React.FC = () => {
         </div>
 
         {/* 6-Column / 3-Column Services List in Creative Cue Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 mt-28 md:mt-36 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 sm:gap-y-20 mt-16 md:mt-28 lg:mt-36 relative z-10">
           {servicesData.map((category, index) => (
             <div key={index} className="relative group flex flex-col items-start">
               

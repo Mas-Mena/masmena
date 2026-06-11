@@ -73,8 +73,8 @@ const EditorialTools: React.FC = () => {
         {/* Dual Marquee Track System */}
         <div className="flex flex-col gap-6 relative z-[2] w-full overflow-hidden select-none py-4">
           {/* Vignette Overlays for smooth side-fade edges (aligned exactly with the vertical grid lines) */}
-          <div className="absolute top-0 left-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
-          <div className="absolute top-0 right-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
+          <div className="absolute top-0 left-0 bottom-0 w-6 sm:w-16 md:w-32 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-6 sm:w-16 md:w-32 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
 
           {/* Track 1: Moving Left */}
           <div className="w-full overflow-hidden">

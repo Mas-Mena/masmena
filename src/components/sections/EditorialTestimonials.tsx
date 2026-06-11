@@ -65,10 +65,10 @@ const EditorialTestimonials: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: index * 0.1, duration: 1 }}
-              className="relative aspect-square md:aspect-[1.15/1] bg-black overflow-hidden group"
+              className="relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block"
             >
               {/* Background Image - monochromatic & desaturated */}
-              <div className="absolute inset-0 w-full h-[65%] grayscale contrast-125 brightness-75 transition-transform duration-[2s] group-hover:scale-105">
+              <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] grayscale contrast-125 brightness-75 transition-transform duration-[2s] group-hover:scale-105 flex-shrink-0">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.author} 
@@ -79,10 +79,10 @@ const EditorialTestimonials: React.FC = () => {
               </div>
               
               {/* Content Block */}
-              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+              <div className="relative md:absolute md:inset-0 p-6 sm:p-8 md:p-12 flex flex-col justify-end flex-1 md:flex-initial">
                 
                 {/* Quote Text */}
-                <p className="text-[13px] md:text-[14px] text-[var(--text-secondary)] leading-[1.7] mb-12 font-normal max-w-[95%]">
+                <p className="text-[13px] md:text-[14px] text-[var(--text-secondary)] leading-[1.7] mb-6 md:mb-12 font-normal max-w-[95%]">
                   {testimonial.quote}
                 </p>
 

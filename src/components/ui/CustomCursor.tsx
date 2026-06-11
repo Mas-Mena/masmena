@@ -10,6 +10,13 @@ const CustomCursor: React.FC = () => {
     const follower = followerRef.current;
     if (!cursor || !follower) return;
 
+    // Skip on pure touch devices — cursor is invisible there anyway
+    if (window.matchMedia('(hover: none)').matches) {
+      cursor.style.display = 'none';
+      follower.style.display = 'none';
+      return;
+    }
+
     const moveCursor = (e: MouseEvent) => {
       gsap.to(cursor, {
         x: e.clientX,
@@ -37,7 +44,7 @@ const CustomCursor: React.FC = () => {
       });
     };
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
 
