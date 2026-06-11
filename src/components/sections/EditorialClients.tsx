@@ -4,7 +4,7 @@ const clientLogos = [
   { src: 'images/partners/MOG-logo.png', alt: 'MOG', isDark: true },
   { src: 'images/partners/chupa-chups.png', alt: 'Chupa Chups', isDark: false },
   { src: 'images/partners/drfarah-1.png', alt: 'Dr. Farah', isDark: true },
-  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan', isDark: true },
+  { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan', isDark: false },
   { src: 'images/partners/serene-kogo.png', alt: 'Serene', isDark: true },
   { src: 'images/partners/super-logo.png', alt: 'Super', isDark: true },
 ];
@@ -20,7 +20,7 @@ const EditorialClients: React.FC = () => {
         {/* Left Column: Heading Text */}
         <div className="w-full lg:w-[25%] flex-shrink-0">
           <p className="text-[var(--text-secondary)] text-[14px] md:text-[15px] font-medium leading-relaxed tracking-tight select-text">
-            Trusted by world's<br className="hidden lg:block" /> most exciting brands
+            Trusted by Leading Brands
           </p>
         </div>
 
