@@ -451,7 +451,7 @@ const EditorialHero: React.FC = () => {
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
                 alt=""
-                className="w-auto h-auto max-w-[320px] md:max-w-[480px] lg:max-w-[700px] max-h-[350px] md:max-h-[500px] lg:max-h-[600px] pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] group-hover:grayscale-0 transition-all duration-700 select-none"
+                className="w-[280px] md:w-[420px] lg:w-[600px] aspect-[4/3] object-cover rounded-2xl md:rounded-3xl pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] group-hover:grayscale-0 transition-all duration-700 select-none"
                 loading="lazy"
               />
             </div>
