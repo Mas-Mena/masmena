@@ -110,8 +110,8 @@ const EditorialHero: React.FC = () => {
           const scale = 0.4 + 0.4 * Math.exp(-(0.8 * absOffset));
           const zIndex = 100 - 10 * Math.round(absOffset);
           
-          // Smooth distance-based opacity fade out (completely transparent at offset >= 5)
-          const opacity = Math.max(0, 1 - Math.pow(absOffset / 5, 2));
+          // Smooth distance-based opacity fade out (completely transparent at offset >= 9)
+          const opacity = Math.max(0, 1 - Math.pow(absOffset / 9, 2));
 
           if (pass === 'pass2' || pass === 'done') {
             gsap.set(card, {
@@ -439,7 +439,7 @@ const EditorialHero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
       {/* 3D Wave Interactive Background Carousel */}
-      <div className="absolute top-[170px] md:top-[130px] lg:top-[170px] left-0 md:left-auto md:right-0 w-full md:w-[60%] lg:w-[55%] h-[calc(100svh-170px)] lg:h-full z-[1] md:translate-x-[15%] lg:translate-x-[20%] flex items-center select-none pointer-events-auto">
+      <div className="absolute top-[90px] md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[calc(100svh-170px)] lg:h-full z-[1] flex items-center select-none pointer-events-auto">
         <div 
           className="w-full h-[400px] md:h-[520px] lg:h-[700px] relative cursor-grab z-[10000]" 
           ref={containerRef}
@@ -449,7 +449,7 @@ const EditorialHero: React.FC = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="absolute left-1/2 top-[46%] origin-center will-change-transform transform-style-preserve-3d"
+              className="absolute left-1/2 top-[28%] origin-center will-change-transform transform-style-preserve-3d"
             >
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
@@ -468,12 +468,12 @@ const EditorialHero: React.FC = () => {
 
 
         {/* Hero Title */}
-        <h1 className="heading-reveal font-display text-[28px] md:text-[36px] lg:text-[42px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[340px] md:max-w-[380px] lg:max-w-[493px] mb-6 tracking-tight text-center md:text-left">
+        <h1 className="heading-reveal font-display text-[28px] md:text-[42px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[340px] md:max-w-[493px] mb-6 tracking-tight text-center md:text-left">
           Connect. Create. Thrive.
         </h1>
 
         {/* Description Subtext */}
-        <p className="subtext-reveal text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[340px] md:max-w-[340px] lg:max-w-[450px] mb-8 font-normal text-center md:text-left select-text pointer-events-auto">
+        <p className="subtext-reveal text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[340px] md:max-w-[450px] mb-8 font-normal text-center md:text-left select-text pointer-events-auto">
           MAS is a full-service marketing agency delivering creative, data-driven, and culturally relevant campaigns for brands in FMCG, healthcare, beauty, and more. Our team blends digital and offline strategies to drive impact across Jordan, the GCC, and beyond.
         </p>
 
