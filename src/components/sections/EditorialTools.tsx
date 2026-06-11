@@ -23,7 +23,7 @@ const EditorialTools: React.FC = () => {
     <section id="tools" className="py-24 md:py-32 bg-[var(--bg-primary)] text-[var(--text-primary)] border-t border-[var(--border-color)] overflow-hidden transition-colors duration-700">
       <div className="container-custom">
         {/* Header Block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4 border-b border-[var(--border-color)] mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative z-10 pb-4 border-b border-[var(--border-color)] mb-16">
           
           {/* Background Faded Number */}
           <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
@@ -71,10 +71,10 @@ const EditorialTools: React.FC = () => {
         </div>
 
         {/* Dual Marquee Track System */}
-        <div className="flex flex-col gap-6 relative z-10 w-full overflow-hidden select-none py-4">
-          {/* Vignette Overlays for smooth side-fade edges (aligned inside the vertical white grid lines) */}
-          <div className="absolute top-0 left-[33px] md:left-[65px] bottom-0 w-16 md:w-32 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 right-[33px] md:right-[65px] bottom-0 w-16 md:w-32 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
+        <div className="flex flex-col gap-6 relative z-[2] w-full overflow-hidden select-none py-4">
+          {/* Vignette Overlays for smooth side-fade edges (aligned exactly with the vertical grid lines) */}
+          <div className="absolute top-0 left-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
 
           {/* Track 1: Moving Left */}
           <div className="w-full overflow-hidden">

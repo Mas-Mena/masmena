@@ -15,20 +15,20 @@ const EditorialClients: React.FC = () => {
 
   return (
     <section id="clients" className="relative w-full bg-[var(--bg-primary)] border-t border-[var(--border-color)] py-12 md:py-16 overflow-hidden transition-colors duration-700">
-      <div className="container-custom flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 relative z-10">
+      <div className="container-custom flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 relative">
         
         {/* Left Column: Heading Text */}
-        <div className="w-full lg:w-[25%] flex-shrink-0">
+        <div className="w-full lg:w-[25%] flex-shrink-0 relative z-10">
           <p className="text-[var(--text-secondary)] text-[14px] md:text-[15px] font-medium leading-relaxed tracking-tight select-text">
             Trusted by Leading Brands
           </p>
         </div>
 
         {/* Right Column: Infinite Marquee */}
-        <div className="w-full flex-1 overflow-hidden relative select-none">
+        <div className="w-full flex-1 overflow-hidden relative select-none z-[2]">
           {/* Left and right vignette overlays for premium fade effect */}
-          <div className="absolute top-0 left-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 right-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 left-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-[2] pointer-events-none" />
 
           {/* Marquee Inner Track */}
           <div className="animate-marquee flex items-center gap-6 md:gap-8">
