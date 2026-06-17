@@ -41,10 +41,6 @@ const EditorialFAQ: React.FC = () => {
         
         {/* ── Left Column: Header & Visuals ── */}
         <div className="w-full lg:w-[45%] flex flex-col items-start">
-          {/* Background Number (06) */}
-          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter">
-            (06)
-          </div>
 
           {/* Heading Structure */}
           <div className="relative mb-6">

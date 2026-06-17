@@ -135,11 +135,6 @@ const EditorialAbout: React.FC = () => {
       <div className="container-custom">
         {/* Header Block exactly like the image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4">
-          
-          {/* Background Faded Number */}
-          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
-            (02)
-          </div>
 
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Services</p>
@@ -203,12 +198,10 @@ const EditorialAbout: React.FC = () => {
         {/* 6-Column / 3-Column Services List in Creative Cue Style */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 sm:gap-y-20 mt-16 md:mt-28 lg:mt-36 relative z-10">
           {servicesData.map((category, index) => (
-            <div key={index} className="relative group flex flex-col items-start">
-              
-              {/* Background Faded Number */}
-              <div className="absolute -top-12 -left-6 text-[100px] font-sans font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none select-none z-0">
-                {category.num}
-              </div>
+            <div 
+              key={index}
+              className="relative aspect-square md:aspect-auto md:h-[320px] bg-black p-8 sm:p-10 border border-white/5 overflow-hidden flex flex-col justify-between group hover:bg-white/[0.01] transition-all duration-500"
+            >
 
               {/* Styled Title */}
               <h3 className="relative z-10 text-2xl md:text-3xl font-medium tracking-tight mb-8 leading-none">

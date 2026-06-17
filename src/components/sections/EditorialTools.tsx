@@ -24,11 +24,6 @@ const EditorialTools: React.FC = () => {
       <div className="container-custom">
         {/* Header Block */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative z-10 pb-4 border-b border-[var(--border-color)] mb-16">
-          
-          {/* Background Faded Number */}
-          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
-            (05)
-          </div>
 
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Stack</p>

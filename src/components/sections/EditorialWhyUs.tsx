@@ -123,11 +123,6 @@ const EditorialWhyUs: React.FC = () => {
       <div className="container-custom">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4">
-          
-          {/* Background Faded Number */}
-          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
-            (01)
-          </div>
 
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Why Us</p>
@@ -179,13 +174,8 @@ const EditorialWhyUs: React.FC = () => {
                 {item.icon}
               </div>
 
-              {/* Title Block with Background Number */}
+              {/* Title Block */}
               <div className="relative w-full mb-3 min-h-[44px] flex items-end">
-                {/* Background Number for Card */}
-                <div className="absolute -top-6 left-0 text-[64px] sm:text-[72px] md:text-[80px] font-sans font-medium text-[var(--text-primary)]/[0.015] leading-none pointer-events-none select-none z-0">
-                  {item.num}
-                </div>
-
                 <h3 className="relative z-10 flex flex-wrap items-baseline gap-x-1.5 leading-none">
                   <span className="font-serif italic font-light text-[var(--text-primary)] text-[1.25em] leading-none">{item.cursiveTitle}</span>
                   <span className="font-display font-medium text-[var(--text-primary)] text-[15px] sm:text-[16px] md:text-[17px] tracking-tight">{item.normalTitle}</span>

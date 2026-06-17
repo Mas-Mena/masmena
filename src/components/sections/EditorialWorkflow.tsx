@@ -18,11 +18,6 @@ const EditorialWorkflow: React.FC = () => {
         
         {/* Section Header Block */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4 border-b border-[var(--border-color)]">
-          
-          {/* Background Faded Number */}
-          <div className="absolute -top-12 -left-8 md:-top-24 md:-left-16 text-[180px] sm:text-[240px] md:text-[320px] font-medium text-[var(--text-primary)]/[0.012] leading-none pointer-events-none tracking-tighter select-none z-0">
-            (03)
-          </div>
 
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">How We Work</p>
@@ -68,10 +63,6 @@ const EditorialWorkflow: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
-            {/* Background Number */}
-            <div className="absolute -top-20 -left-12 text-[180px] md:text-[240px] leading-none font-medium text-[var(--text-primary)]/[0.02] pointer-events-none tracking-tighter">
-              (01)
-            </div>
             
             <div className="relative">
               <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
@@ -216,9 +207,6 @@ const EditorialWorkflow: React.FC = () => {
 
           {/* Right: Content */}
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
-            <div className="absolute -top-20 -left-12 text-[180px] md:text-[240px] leading-none font-medium text-[var(--text-primary)]/[0.02] pointer-events-none tracking-tighter">
-              (02)
-            </div>
             
             <div className="relative">
               <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
@@ -237,10 +225,6 @@ const EditorialWorkflow: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
-            {/* Background Number */}
-            <div className="absolute -top-20 -left-12 text-[180px] md:text-[240px] leading-none font-medium text-[var(--text-primary)]/[0.02] pointer-events-none tracking-tighter">
-              (03)
-            </div>
             
             <div className="relative">
               <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
