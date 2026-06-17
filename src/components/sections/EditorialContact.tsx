@@ -99,22 +99,37 @@ const EditorialContact: React.FC = () => {
       if (maskCtx && frameCount % 4 === 0) {
         maskCtx.clearRect(0, 0, W, H);
         
-        // Draw three MAS logo shapes: left, center, right
-        const offsets = [-scale * 0.75, 0, scale * 0.75];
-        
-        for (const dx of offsets) {
+        const drawLogoAtPath = (centerX: number, centerY: number, currentScale: number) => {
           const logoPath = new Path2D();
-          const curCx = cx + dx + offX;
-          const curCy = cy + offY;
+          logoPath.moveTo(centerX + offX - currentScale * 0.15, centerY + offY - currentScale * 0.35);
+          logoPath.bezierCurveTo(
+            centerX + offX + currentScale * 0.45, centerY + offY - currentScale * 0.45, 
+            centerX + offX + currentScale * 0.45, centerY + offY + currentScale * 0.1, 
+            centerX + offX, centerY + offY
+          );
+          logoPath.bezierCurveTo(
+            centerX + offX - currentScale * 0.45, centerY + offY + currentScale * 0.1, 
+            centerX + offX - currentScale * 0.45, centerY + offY + currentScale * 0.45, 
+            centerX + offX + currentScale * 0.1, centerY + offY + currentScale * 0.35
+          );
+          logoPath.bezierCurveTo(
+            centerX + offX + currentScale * 0.45, centerY + offY + currentScale * 0.25, 
+            centerX + offX + currentScale * 0.25, centerY + offY - currentScale * 0.1, 
+            centerX + offX - currentScale * 0.1, centerY + offY - currentScale * 0.2
+          );
           
-          logoPath.moveTo(curCx - scale * 0.15, curCy - scale * 0.35);
-          logoPath.bezierCurveTo(curCx + scale * 0.45, curCy - scale * 0.45, curCx + scale * 0.45, curCy + scale * 0.1, curCx, curCy);
-          logoPath.bezierCurveTo(curCx - scale * 0.45, curCy + scale * 0.1, curCx - scale * 0.45, curCy + scale * 0.45, curCx + scale * 0.1, curCy + scale * 0.35);
-          logoPath.bezierCurveTo(curCx + scale * 0.45, curCy + scale * 0.25, curCx + scale * 0.25, curCy - scale * 0.1, curCx - scale * 0.1, curCy - scale * 0.2);
-          
-          maskCtx.lineWidth = scale * 0.28;
+          maskCtx.lineWidth = currentScale * 0.28;
           maskCtx.strokeStyle = 'white';
           maskCtx.stroke(logoPath);
+        };
+
+        // Render main logo shape in the center
+        drawLogoAtPath(cx, cy, scale * 0.85);
+
+        // Render secondary logo shapes on the left & right sides for larger screens
+        if (W > 900) {
+          drawLogoAtPath(cx - W * 0.32, cy, scale * 0.65);
+          drawLogoAtPath(cx + W * 0.32, cy, scale * 0.65);
         }
 
         // Cache pixel data — only refresh every 4 frames to avoid 75% of GPU→CPU readbacks
