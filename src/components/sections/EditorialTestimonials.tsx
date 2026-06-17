@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 const testimonials = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
-    quote: `"They are very responsive. Thanks to MAS MENA, we successfully launched three digital campaigns and online listings for our new healthcare clinics. The team managed localized engagement and communicated constantly with us."`,
-    author: "Dr. Layla Qabbani",
-    title: "Marketing Director",
-    company: "Medica Care",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+    image: "images/testimonials/super.webp",
+    quote: `"We chose the amazing team at MAS to elevate Super's visual identity, and they exceeded all our expectations! Their creativity and eye for detail gave our products a massive competitive edge. We couldn't be happier with the results.."`,
+    author: "",
+    title: "",
+    company: "Super",
+    avatar: ""
   },
   {
     id: 2,
@@ -90,17 +90,23 @@ const EditorialTestimonials: React.FC = () => {
                 <div className="flex justify-between items-end w-full">
                   
                   {/* Author Info */}
-                  <div className="flex items-center gap-4">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.author} 
-                      className="w-11 h-11 object-cover grayscale brightness-110"
-                    />
-                    <div className="flex flex-col">
-                      <h4 className="text-[14px] font-semibold text-[var(--text-primary)] tracking-tight leading-tight">{testimonial.author}</h4>
-                      <p className="text-[12px] text-[var(--text-secondary)] mt-1 font-medium">{testimonial.title}</p>
+                  {testimonial.author ? (
+                    <div className="flex items-center gap-4">
+                      {testimonial.avatar && (
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.author} 
+                          className="w-11 h-11 object-cover grayscale brightness-110"
+                        />
+                      )}
+                      <div className="flex flex-col">
+                        <h4 className="text-[14px] font-semibold text-[var(--text-primary)] tracking-tight leading-tight">{testimonial.author}</h4>
+                        <p className="text-[12px] text-[var(--text-secondary)] mt-1 font-medium">{testimonial.title}</p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div />
+                  )}
 
                   {/* Company Logo */}
                   <div className="mix-blend-normal opacity-90">
