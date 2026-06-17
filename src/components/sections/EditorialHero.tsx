@@ -9,7 +9,6 @@ const projectImages = [
   'images/slider/MOG-design.webp',
   'images/slider/chai-karak.webp',
   'images/slider/serene3.webp',
-  'images/slider/slider (2).webp',
   'images/slider/slider-(1).webp',
   'images/slider/slider-(4).png',
   'images/slider/slider.webp',

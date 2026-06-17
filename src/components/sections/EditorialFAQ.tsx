@@ -90,7 +90,7 @@ const EditorialFAQ: React.FC = () => {
             {/* 3. Tall Portrait (col-span-4) */}
             <div className="col-span-4 relative aspect-[3/4] overflow-hidden border border-white/10 shadow-lg rounded-none group">
               <motion.img 
-                src="images/slider/slider (2).webp" 
+                src="images/slider/chai-karak.webp" 
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
