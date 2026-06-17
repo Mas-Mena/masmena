@@ -20,7 +20,7 @@ const EditorialPricing: React.FC = () => {
       <div className="container-custom relative z-10 mb-20">
         <div className="max-w-3xl relative">
           <h2 className="relative font-medium tracking-tight mb-8 leading-[1.05] text-[var(--text-primary)]">
-            Plans Built for You.<br />Choose the perfect fit.
+            Plans Built For You.<br />Choose The Perfect Fit.
           </h2>
           <p className="text-[var(--text-secondary)] text-[15px] leading-relaxed max-w-[500px] mt-6">
             Choose a plan tailored to scale your brand. From high-impact social media campaigns and custom web experiences to enterprise-grade omnichannel presence management.

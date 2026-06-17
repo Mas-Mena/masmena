@@ -49,7 +49,7 @@ const EditorialTestimonials: React.FC = () => {
         <div className="mb-20 relative px-4 md:px-0">
           <h2 className="relative font-medium tracking-tight mb-6 leading-[1.1]">
             <span className="font-serif italic font-light mr-2">From</span>{" "}
-            the mouth of our<br />beloved partners & winners
+            The Mouth Of Our<br />Beloved Partners & Winners
           </h2>
           <p className="text-[var(--text-secondary)] text-[14px] md:text-[15px] leading-relaxed max-w-[420px] mt-6">
             Don't take our word for it. These are the founders and marketing leads who trusted us with their companies and kept coming back.

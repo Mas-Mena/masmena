@@ -198,7 +198,7 @@ const EditorialContact: React.FC = () => {
       />
       <div className="relative z-10 text-center mb-12 px-4" style={{ pointerEvents: 'none' }}>
         <h2 className="mb-4 text-[var(--text-primary)]">
-          Ready when you are … Let's talk!
+          Ready When You Are … Let's Talk!
         </h2>
         <p className="text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
           Whether you operate in Jordan today or are preparing to scale across MENA, let's explore how we can create a plan that fits you perfectly. We will ask the right questions, discuss possibilities, and make an action plan.
