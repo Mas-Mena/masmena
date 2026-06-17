@@ -68,7 +68,7 @@ const EditorialTestimonials: React.FC = () => {
               className="relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block"
             >
               {/* Background Image - monochromatic & desaturated */}
-              <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] grayscale contrast-125 brightness-75 transition-transform duration-[2s] group-hover:scale-105 flex-shrink-0">
+              <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] grayscale contrast-125 brightness-75 transition-all duration-[1.2s] ease-in-out group-hover:scale-105 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-90 flex-shrink-0">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.author} 
