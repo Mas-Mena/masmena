@@ -75,9 +75,13 @@ const whyUsData = [
     description: 'Every campaign is tracked and optimized using measurable KPIs.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80">
-        <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="2.5" className="opacity-40" />
-        <path d="M12 40L40 12" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" className="opacity-80" />
-        <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="opacity-60" />
+        <path d="M16 16V48H48" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="opacity-40" />
+        <line x1="16" y1="32" x2="48" y2="32" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" className="opacity-20" />
+        <line x1="32" y1="16" x2="32" y2="48" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" className="opacity-20" />
+        <path d="M16 42L28 30L40 36L48 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80" />
+        <circle cx="28" cy="30" r="3" fill="currentColor" className="opacity-90" />
+        <circle cx="40" cy="36" r="3" fill="currentColor" className="opacity-90" />
+        <circle cx="48" cy="20" r="3" fill="currentColor" className="opacity-90" />
       </svg>
     )
   },
@@ -88,8 +92,13 @@ const whyUsData = [
     description: 'Campaign execution across Jordan, GCC, and international markets.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80">
-        <path d="M22 32C22 37.5228 26.4772 42 32 42C37.5228 42 42 37.5228 42 32C42 26.4772 37.5228 22 32 22C26.4772 22 22 26.4772 22 32Z" stroke="currentColor" strokeWidth="2" className="opacity-70" />
-        <path d="M32 10C20 10 10 20 10 32C10 44 20 54 32 54C44 54 54 44 54 32" stroke="currentColor" strokeWidth="1.2" className="opacity-30" />
+        <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="1.5" className="opacity-40" />
+        <path d="M8 32H56" stroke="currentColor" strokeWidth="1.2" className="opacity-60" />
+        <ellipse cx="32" cy="32" rx="12" ry="24" stroke="currentColor" strokeWidth="1.2" className="opacity-50" />
+        <line x1="32" y1="8" x2="32" y2="56" stroke="currentColor" strokeWidth="1.2" className="opacity-60" />
+        <circle cx="20" cy="24" r="2.5" fill="currentColor" className="opacity-80" />
+        <circle cx="44" cy="40" r="2.5" fill="currentColor" className="opacity-80" />
+        <circle cx="32" cy="18" r="2.5" fill="currentColor" className="opacity-85" />
       </svg>
     )
   },
@@ -100,17 +109,9 @@ const whyUsData = [
     description: 'Agile team responding to new ideas within 1–2 business days.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80">
-        <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="1" className="opacity-50" />
-        <mask id="circle-mask-why">
-          <circle cx="32" cy="32" r="23" fill="white" />
-        </mask>
-        <g mask="url(#circle-mask-why)">
-          <line x1="8" y1="56" x2="56" y2="8" stroke="currentColor" strokeWidth="2" className="opacity-40" />
-          <line x1="16" y1="64" x2="64" y2="16" stroke="currentColor" strokeWidth="2" className="opacity-40" />
-          <line x1="0" y1="48" x2="48" y2="0" stroke="currentColor" strokeWidth="2" className="opacity-40" />
-          <line x1="-8" y1="40" x2="40" y2="-8" stroke="currentColor" strokeWidth="2" className="opacity-40" />
-          <line x1="24" y1="72" x2="72" y2="24" stroke="currentColor" strokeWidth="2" className="opacity-40" />
-        </g>
+        <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="opacity-30" />
+        <path d="M36 12L20 34H32L28 52L44 30H32L36 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" className="opacity-40" />
+        <path d="M35 15L23 31H32L29 47L41 31H32L35 15Z" fill="currentColor" className="opacity-80" />
       </svg>
     )
   }
