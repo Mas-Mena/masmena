@@ -40,7 +40,7 @@ const EditorialFAQ: React.FC = () => {
       <div className="container-custom relative z-10 flex flex-col lg:flex-row gap-16 xl:gap-20">
         
         {/* ── Left Column: Header & Visuals ── */}
-        <div className="w-full lg:w-[45%] flex flex-col items-start">
+        <div className="w-full lg:w-[45%] flex flex-col items-start lg:sticky lg:top-32 lg:self-start">
 
           {/* Heading Structure */}
           <div className="relative mb-6">
