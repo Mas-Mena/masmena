@@ -78,7 +78,7 @@ const EditorialFAQ: React.FC = () => {
             {/* 2. Small Square (col-span-4) */}
             <div className="col-span-4 relative aspect-square overflow-hidden border border-white/10 shadow-lg rounded-none group">
               <motion.img 
-                src="images/slider/slider (1).webp" 
+                src="images/slider/super-design.webp" 
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -102,7 +102,7 @@ const EditorialFAQ: React.FC = () => {
             {/* 4. Long Panoramic Landscape (col-span-8) */}
             <div className="col-span-8 relative aspect-[16/7] overflow-hidden border border-white/10 shadow-lg rounded-none group">
               <motion.img 
-                src="images/slider/slider (3).webp" 
+                src="images/slider/MOG-design.webp" 
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

@@ -6,18 +6,17 @@ gsap.registerPlugin(Draggable);
 
 const projectImages = [
   'images/slider/dr-farah.slider.webp',
-  'images/slider/slider (1).webp',
+  'images/slider/MOG-design.webp',
+  'images/slider/chai-karak.webp',
+  'images/slider/serene3.webp',
   'images/slider/slider (2).webp',
-  'images/slider/slider (3).webp',
-  'images/slider/slider (4).webp',
-  'images/slider/slider (5).webp',
-  'images/slider/slider (6).webp',
-  'images/slider/slider (8).webp',
   'images/slider/slider-(1).webp',
-  'images/slider/slider-(2).webp',
   'images/slider/slider-(4).png',
-  'images/slider/slider-(5).webp',
   'images/slider/slider.webp',
+  'images/slider/super-design-2.webp',
+  'images/slider/super-design-3.webp',
+  'images/slider/super-design.webp',
+  'images/slider/super.webp',
 ];
 
 
