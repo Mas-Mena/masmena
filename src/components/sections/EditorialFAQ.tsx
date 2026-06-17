@@ -36,7 +36,7 @@ const EditorialFAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] section-padding border-t border-[var(--border-color)] overflow-hidden transition-colors duration-700">
+    <section id="faq" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] section-padding border-t border-[var(--border-color)] transition-colors duration-700">
       <div className="container-custom relative z-10 flex flex-col lg:flex-row gap-16 xl:gap-20">
         
         {/* ── Left Column: Header & Visuals ── */}
