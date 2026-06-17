@@ -13,12 +13,12 @@ const testimonials = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    quote: `"An outstanding partner! MAS MENA overhauled our brand's presence across the GCC. Their short-form video strategies on TikTok and Reels grew our engagement rates by 60% in less than three months."`,
-    author: "Brandon Al-Sabah",
-    title: "Founder & CMO",
-    company: "Al-Nassar Foods",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
+    image: "images/testimonials/MOG.webp",
+    quote: `"Building a unique marketplace like MOG from scratch was a massive challenge, but the amazing team at MASS handled it flawlessly!\n\nSince we cater to both genders with everything from apparel to accessories, our audience is huge and diverse. MAS managed all of our marketing, branding, brand identity, and website development seamlessly. They brought our vision to life perfectly!"`,
+    author: "",
+    title: "",
+    company: "MOG",
+    avatar: ""
   },
   {
     id: 3,
