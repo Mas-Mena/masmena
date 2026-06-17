@@ -88,6 +88,7 @@ const EditorialContact: React.FC = () => {
 
       const mx = mouseRef.current.x;
       const my = mouseRef.current.y;
+
       const scale = Math.min(W, H) * 0.95;
       const cx = W / 2;
       const cy = H / 2;
@@ -99,42 +100,41 @@ const EditorialContact: React.FC = () => {
       if (maskCtx && frameCount % 4 === 0) {
         maskCtx.clearRect(0, 0, W, H);
         
-        const drawLogoAtPath = (centerX: number, centerY: number, currentScale: number) => {
+        // Helper to draw a single logo shape
+        const drawLogo = (x: number, y: number, s: number) => {
           const logoPath = new Path2D();
-          logoPath.moveTo(centerX + offX - currentScale * 0.15, centerY + offY - currentScale * 0.35);
-          logoPath.bezierCurveTo(
-            centerX + offX + currentScale * 0.45, centerY + offY - currentScale * 0.45, 
-            centerX + offX + currentScale * 0.45, centerY + offY + currentScale * 0.1, 
-            centerX + offX, centerY + offY
-          );
-          logoPath.bezierCurveTo(
-            centerX + offX - currentScale * 0.45, centerY + offY + currentScale * 0.1, 
-            centerX + offX - currentScale * 0.45, centerY + offY + currentScale * 0.45, 
-            centerX + offX + currentScale * 0.1, centerY + offY + currentScale * 0.35
-          );
-          logoPath.bezierCurveTo(
-            centerX + offX + currentScale * 0.45, centerY + offY + currentScale * 0.25, 
-            centerX + offX + currentScale * 0.25, centerY + offY - currentScale * 0.1, 
-            centerX + offX - currentScale * 0.1, centerY + offY - currentScale * 0.2
-          );
+          logoPath.moveTo(x - s * 0.15, y - s * 0.35);
+          logoPath.bezierCurveTo(x + s * 0.45, y - s * 0.45, x + s * 0.45, y + s * 0.1, x, y);
+          logoPath.bezierCurveTo(x - s * 0.45, y + s * 0.1, x - s * 0.45, y + s * 0.45, x + s * 0.1, y + s * 0.35);
+          logoPath.bezierCurveTo(x + s * 0.45, y + s * 0.25, x + s * 0.25, y - s * 0.1, x - s * 0.1, y - s * 0.2);
           
-          maskCtx.lineWidth = currentScale * 0.28;
+          maskCtx.lineWidth = s * 0.28;
           maskCtx.strokeStyle = 'white';
           maskCtx.stroke(logoPath);
         };
 
-        // Render main logo shape in the center
-        drawLogoAtPath(cx, cy, scale * 0.85);
+        // Draw center logo
+        const sCenter = scale * 0.75; // slightly smaller so it frames the form well
+        drawLogo(cx + offX, cy + offY, sCenter);
 
-        // Render secondary logo shapes on the left & right sides for larger screens
-        if (W > 900) {
-          drawLogoAtPath(cx - W * 0.32, cy, scale * 0.65);
-          drawLogoAtPath(cx + W * 0.32, cy, scale * 0.65);
+        // Draw left and right logos on screens wider than mobile
+        if (W >= 768) {
+          const sSide = sCenter * 0.85; // side shapes are slightly smaller
+          const offXLeft = Math.sin(time * 0.0005 + 1.5) * 30;
+          const offYLeft = Math.cos(time * 0.0007 + 0.5) * 25;
+          const offXRight = Math.sin(time * 0.0007 + 3.0) * 35;
+          const offYRight = Math.cos(time * 0.0006 + 2.0) * 30;
+
+          // Draw left logo centered at 36% screen width offset
+          drawLogo(cx - W * 0.36 + offXLeft, cy + offYLeft, sSide);
+          // Draw right logo centered at 36% screen width offset
+          drawLogo(cx + W * 0.36 + offXRight, cy + offYRight, sSide);
         }
 
         // Cache pixel data — only refresh every 4 frames to avoid 75% of GPU→CPU readbacks
         cachedMaskData = maskCtx.getImageData(0, 0, W, H).data;
       }
+
       frameCount++;
 
       const maskData = cachedMaskData;
