@@ -14,7 +14,7 @@ const testimonials = [
   {
     id: 2,
     image: "images/testimonials/MOG.webp",
-    quote: `"Building a unique marketplace like MOG from scratch was a massive challenge, but the amazing team at MASS handled it flawlessly!\n\nSince we cater to both genders with everything from apparel to accessories, our audience is huge and diverse. MAS managed all of our marketing, branding, brand identity, and website development seamlessly. They brought our vision to life perfectly!"`,
+    quote: `"Building a unique marketplace like MOG from scratch was a massive challenge, but the team at MAS handled it flawlessly! They managed all our branding, marketing, and web development, bringing our vision to life perfectly."`,
     author: "",
     title: "",
     company: "MOG",
