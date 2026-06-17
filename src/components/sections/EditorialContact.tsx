@@ -139,7 +139,7 @@ const EditorialContact: React.FC = () => {
           opacity = 0.25 + hoverFactor * 0.75;
           ctx.fillStyle = ch.color;
         } else {
-          opacity = 0.01 + hoverFactor * 0.1;
+          opacity = 0.07 + hoverFactor * 0.15;
           ctx.fillStyle = '#ffffff';
         }
 
