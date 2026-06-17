@@ -200,7 +200,7 @@ const EditorialAbout: React.FC = () => {
           {servicesData.map((category, index) => (
             <div 
               key={index}
-              className="relative aspect-square md:aspect-auto md:h-[320px] bg-black p-8 sm:p-10 border border-white/5 overflow-hidden flex flex-col justify-between group hover:bg-white/[0.01] transition-all duration-500"
+              className="relative aspect-square md:aspect-auto md:h-[320px] bg-black p-8 sm:p-10 overflow-hidden flex flex-col justify-start group hover:bg-white/[0.01] transition-all duration-500"
             >
 
               {/* Styled Title */}
