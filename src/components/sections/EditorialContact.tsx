@@ -98,15 +98,24 @@ const EditorialContact: React.FC = () => {
       // 1. Draw logo to mask canvas — only redraw every 4 frames (animation is slow)
       if (maskCtx && frameCount % 4 === 0) {
         maskCtx.clearRect(0, 0, W, H);
-        const logoPath = new Path2D();
-        logoPath.moveTo(cx + offX - scale * 0.15, cy + offY - scale * 0.35);
-        logoPath.bezierCurveTo(cx + offX + scale * 0.45, cy + offY - scale * 0.45, cx + offX + scale * 0.45, cy + offY + scale * 0.1, cx + offX, cy + offY);
-        logoPath.bezierCurveTo(cx + offX - scale * 0.45, cy + offY + scale * 0.1, cx + offX - scale * 0.45, cy + offY + scale * 0.45, cx + offX + scale * 0.1, cy + offY + scale * 0.35);
-        logoPath.bezierCurveTo(cx + offX + scale * 0.45, cy + offY + scale * 0.25, cx + offX + scale * 0.25, cy + offY - scale * 0.1, cx + offX - scale * 0.1, cy + offY - scale * 0.2);
         
-        maskCtx.lineWidth = scale * 0.28;
-        maskCtx.strokeStyle = 'white';
-        maskCtx.stroke(logoPath);
+        // Draw three MAS logo shapes: left, center, right
+        const offsets = [-scale * 0.75, 0, scale * 0.75];
+        
+        for (const dx of offsets) {
+          const logoPath = new Path2D();
+          const curCx = cx + dx + offX;
+          const curCy = cy + offY;
+          
+          logoPath.moveTo(curCx - scale * 0.15, curCy - scale * 0.35);
+          logoPath.bezierCurveTo(curCx + scale * 0.45, curCy - scale * 0.45, curCx + scale * 0.45, curCy + scale * 0.1, curCx, curCy);
+          logoPath.bezierCurveTo(curCx - scale * 0.45, curCy + scale * 0.1, curCx - scale * 0.45, curCy + scale * 0.45, curCx + scale * 0.1, curCy + scale * 0.35);
+          logoPath.bezierCurveTo(curCx + scale * 0.45, curCy + scale * 0.25, curCx + scale * 0.25, curCy - scale * 0.1, curCx - scale * 0.1, curCy - scale * 0.2);
+          
+          maskCtx.lineWidth = scale * 0.28;
+          maskCtx.strokeStyle = 'white';
+          maskCtx.stroke(logoPath);
+        }
 
         // Cache pixel data — only refresh every 4 frames to avoid 75% of GPU→CPU readbacks
         cachedMaskData = maskCtx.getImageData(0, 0, W, H).data;
@@ -139,7 +148,7 @@ const EditorialContact: React.FC = () => {
           opacity = 0.25 + hoverFactor * 0.75;
           ctx.fillStyle = ch.color;
         } else {
-          opacity = 0.07 + hoverFactor * 0.15;
+          opacity = 0.01 + hoverFactor * 0.1;
           ctx.fillStyle = '#ffffff';
         }
 
