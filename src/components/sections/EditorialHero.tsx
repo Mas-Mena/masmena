@@ -487,7 +487,7 @@ const EditorialHero: React.FC = () => {
         {/* Statistics Bar */}
         <div className="stats-reveal pointer-events-auto flex gap-8 md:gap-12 mb-6 md:mb-9 text-left select-text">
           <div className="flex flex-col">
-            <span className="text-[18px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">24+</span>
+            <span className="text-[18px] md:text-[24px] font-semibold text-[var(--text-primary)] tracking-tight">12+</span>
             <span className="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-[var(--text-secondary)] font-bold mt-1">Countries Reached</span>
           </div>
           <div className="w-[1px] h-8 md:h-10 bg-[var(--border-color)] self-center" />
