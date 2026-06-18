@@ -22,21 +22,21 @@ const testimonials = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800",
-    quote: `"The quality of their content is unmatched. Their influencer collaborations felt like an organic extension of our beauty brand rather than a third-party agency. Highly professional and always on time."`,
-    author: "Sarah Haddad",
-    title: "Brand Lead",
-    company: "Glow & Co.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800",
+    quote: `"We would like to sincerely thank MAS Marketing Agency for their outstanding work on the Wild Tiger Energy Drink TVC. Their professionalism, creativity, and high production quality truly stood out, and they delivered everything on time despite tight requirements. We highly appreciate their effort and look forward to future collaborations."`,
+    author: "",
+    title: "",
+    company: "Wild Tiger",
+    avatar: ""
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
-    quote: `"We launched our Shopify-powered bilingual platform integrated with local payment gateways. MAS MENA managed the entire search-to-store funnel, lifting branch visits by 42%."`,
-    author: "Omar Al-Taji",
-    title: "Managing Director",
-    company: "Jordan Retail",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150"
+    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800",
+    quote: `"Great work on the 3D video for Chupa Chups sparkling drinks! The video perfectly captured the brand’s fun, vibrant, and refreshing spirit in a creative way. We appreciate the smooth collaboration and the effort put into delivering such a strong result."`,
+    author: "",
+    title: "",
+    company: "Chupa Chups",
+    avatar: ""
   }
 ];
 
