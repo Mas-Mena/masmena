@@ -3,14 +3,11 @@ import BookingForm from './BookingForm';
 
 const CHARS = '0123456789#@%&';
 const COLORS = [
-  '#ff3030', '#ff5050',
-  '#3b82f6', '#60a5fa',
-  '#22c55e', '#4ade80',
-  '#06b6d4', '#22d3ee',
-  '#a855f7', '#c084fc',
-  '#f59e0b', '#fbbf24',
-  '#ec4899', '#f472b6',
-  '#e5e5e5', '#ffffff',
+  '#ff2a5f', '#ff00a0',
+  '#d000ff', '#3b82f6',
+  '#00f0ff', '#00ffcc',
+  '#10ff50', '#ffe600',
+  '#ff7700', '#ffffff',
 ];
 
 interface Char {
@@ -160,10 +157,10 @@ const EditorialContact: React.FC = () => {
 
         let opacity = 0.04;
         if (isInside) {
-          opacity = 0.25 + hoverFactor * 0.75;
+          opacity = 0.55 + hoverFactor * 0.45;
           ctx.fillStyle = ch.color;
         } else {
-          opacity = 0.01 + hoverFactor * 0.1;
+          opacity = 0.02 + hoverFactor * 0.1;
           ctx.fillStyle = '#ffffff';
         }
 
@@ -217,7 +214,7 @@ const EditorialContact: React.FC = () => {
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,0.95) 0%, transparent 100%)',
+          background: 'radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,0.75) 0%, transparent 100%)',
         }}
       />
       <div className="relative z-10 text-center mb-12 px-4" style={{ pointerEvents: 'none' }}>
