@@ -108,7 +108,7 @@ const EditorialFAQ: React.FC = () => {
             </div>
           </div>
 
-          <a href="#book" className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[200px]">
+          <a href="#contact" className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[200px]">
              <span className="text-xs font-bold uppercase tracking-widest text-[var(--text-primary)]/90">Book A Call</span>
              <div className="relative w-6 h-6 flex items-center justify-center">
                <div className="absolute inset-0 border border-dotted border-[var(--border-color)] rounded-full animate-spin-slow" />

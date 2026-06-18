@@ -500,7 +500,7 @@ const EditorialHero: React.FC = () => {
         {/* Book A Call CTA */}
         <div className="cta-reveal pointer-events-auto w-full flex justify-start">
           <a 
-            href="#book" 
+            href="#contact" 
             className="group flex items-center justify-between w-full max-w-[421px] border-b border-white/10 pb-4 md:pb-6 pointer-events-auto transition-all hover:border-white"
           >
             <span className="text-[12px] md:text-[14px] font-bold uppercase tracking-widest text-[var(--text-primary)]">
