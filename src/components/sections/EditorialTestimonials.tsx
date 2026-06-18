@@ -23,7 +23,7 @@ const testimonials = [
   {
     id: 3,
     image: "", // Image is no longer needed as the video's first frame serves as the thumbnail
-    quote: `"We would like to sincerely thank MAS Marketing Agency for their outstanding work on the Wild Tiger Energy Drink TVC. Their professionalism, creativity, and high production quality truly stood out, and they delivered everything on time despite tight requirements. We highly appreciate their effort and look forward to future collaborations."`,
+    quote: `"We sincerely thank MAS Marketing Agency for their outstanding work on the Wild Tiger TVC. Their professionalism, creativity, and production quality truly stood out, delivering everything on time despite tight requirements. We highly appreciate their effort and look forward to future collaborations."`,
     author: "",
     title: "",
     company: "Wild Tiger",
