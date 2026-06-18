@@ -6,6 +6,7 @@ import CustomCursor from './components/ui/CustomCursor';
 import GlobalGridLines from './components/ui/GlobalGridLines';
 
 // Lazy-load below-fold sections — each becomes its own JS chunk
+const EditorialClients     = lazy(() => import('./components/sections/EditorialClients'));
 const EditorialWhyUs        = lazy(() => import('./components/sections/EditorialWhyUs'));
 const EditorialWorkflow     = lazy(() => import('./components/sections/EditorialWorkflow'));
 const EditorialAbout        = lazy(() => import('./components/sections/EditorialAbout'));
@@ -31,6 +32,11 @@ function App() {
         <main>
           {/* 1. HERO SECTION — eager, visible immediately */}
           <EditorialHero />
+
+          {/* 1.5 PARTNERS MARQUEE SLIDER */}
+          <Suspense fallback={<SectionFallback />}>
+            <EditorialClients />
+          </Suspense>
 
           {/* Below-fold sections — lazy loaded on first render */}
           <Suspense fallback={<SectionFallback />}>
