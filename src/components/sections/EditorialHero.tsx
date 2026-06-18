@@ -5,17 +5,17 @@ import { Draggable } from 'gsap/Draggable';
 gsap.registerPlugin(Draggable);
 
 const projectImages = [
+  'images/slider/super-design-3.webp',
   'images/slider/MOG-design.webp',
-  'images/slider/POST7.webp',
   'images/slider/chai-karak.webp',
-  'images/slider/mr-king-1.webp',
+  'images/slider/super-design.webp',
   'images/slider/serene-2.webp',
+  'images/slider/mr-king-1.webp',
+  'images/slider/super.webp',
   'images/slider/serene3.webp',
   'images/slider/slider-(1).webp',
   'images/slider/slider-(4).png',
-  'images/slider/super-design-3.webp',
-  'images/slider/super-design.webp',
-  'images/slider/super.webp',
+  'images/slider/POST7.webp',
 ];
 
 
