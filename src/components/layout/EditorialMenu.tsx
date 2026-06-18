@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, Dribbble, Linkedin, Twitter, Sparkle } from 'lucide-react';
+import { Instagram, Linkedin, Facebook, Sparkle } from 'lucide-react';
 
 interface EditorialMenuProps {
   isOpen: boolean;
@@ -90,10 +90,33 @@ const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
 
             {/* Social Links */}
             <div className="flex items-center gap-6">
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Instagram size={18} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Dribbble size={18} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Twitter size={18} /></a>
+              <a 
+                href="https://www.facebook.com/ModernAdvancedServices" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/40 hover:text-white transition-colors flex items-center justify-center"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://www.instagram.com/modern.advanced.services/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/40 hover:text-white transition-colors flex items-center justify-center"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/mas-modern-advanced-services/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/40 hover:text-white transition-colors flex items-center justify-center"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
+              </a>
             </div>
           </div>
         </motion.div>

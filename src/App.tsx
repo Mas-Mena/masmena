@@ -4,6 +4,7 @@ import EditorialNavbar from './components/layout/EditorialNavbar';
 import EditorialHero from './components/sections/EditorialHero';
 import CustomCursor from './components/ui/CustomCursor';
 import GlobalGridLines from './components/ui/GlobalGridLines';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 // Lazy-load below-fold sections — each becomes its own JS chunk
 const EditorialClients     = lazy(() => import('./components/sections/EditorialClients'));
@@ -79,9 +80,34 @@ function App() {
         <footer className="border-t border-[var(--border-color)] text-[10px] uppercase tracking-[0.3em] text-[var(--text-secondary)] bg-[var(--bg-primary)] transition-colors duration-700">
           <div className="container-custom py-12 flex justify-between items-center">
             <div>© {new Date().getFullYear()} MAS MENA®</div>
-            <div className="flex gap-8">
-              <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Instagram</a>
-              <a href="#" className="hover:text-[var(--text-primary)] transition-colors">LinkedIn</a>
+            <div className="flex gap-6 items-center">
+              <a 
+                href="https://www.facebook.com/ModernAdvancedServices" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-[var(--text-primary)] transition-colors flex items-center justify-center p-1"
+                aria-label="Facebook"
+              >
+                <Facebook size={16} />
+              </a>
+              <a 
+                href="https://www.instagram.com/modern.advanced.services/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-[var(--text-primary)] transition-colors flex items-center justify-center p-1"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/mas-modern-advanced-services/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-[var(--text-primary)] transition-colors flex items-center justify-center p-1"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={16} />
+              </a>
             </div>
           </div>
         </footer>
