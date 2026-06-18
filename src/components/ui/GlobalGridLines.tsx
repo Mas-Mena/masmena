@@ -55,7 +55,7 @@ const DynamicGridLines: React.FC = () => {
   return (
     <div 
       ref={gridRef}
-      className="fixed inset-0 pointer-events-none z-[5] flex justify-center"
+      className="fixed inset-0 pointer-events-none z-[30] flex justify-center"
     >
       <div className="container-custom relative h-full">
         
