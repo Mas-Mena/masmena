@@ -56,7 +56,7 @@ const EditorialTestimonials: React.FC = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border-color)] border border-[var(--border-color)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={testimonial.id}
@@ -64,7 +64,7 @@ const EditorialTestimonials: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: index * 0.1, duration: 1 }}
-              className="relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block"
+              className="relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block border border-[var(--border-color)]"
             >
               {/* Background Image - monochromatic & desaturated */}
               <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] overflow-hidden grayscale contrast-125 brightness-75 transition-all duration-[1.2s] ease-in-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-90 flex-shrink-0">
