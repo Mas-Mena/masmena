@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800",
+    image: "", // Image is no longer needed as the video's first frame serves as the thumbnail
     quote: `"We would like to sincerely thank MAS Marketing Agency for their outstanding work on the Wild Tiger Energy Drink TVC. Their professionalism, creativity, and high production quality truly stood out, and they delivered everything on time despite tight requirements. We highly appreciate their effort and look forward to future collaborations."`,
     author: "",
     title: "",
@@ -32,7 +32,7 @@ const testimonials = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800",
+    image: "", // Image is no longer needed as the video's first frame serves as the thumbnail
     quote: `"Great work on the 3D video for Chupa Chups sparkling drinks! The video perfectly captured the brand’s fun, vibrant, and refreshing spirit in a creative way. We appreciate the smooth collaboration and the effort put into delivering such a strong result."`,
     author: "",
     title: "",
@@ -56,7 +56,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
     if ('video' in testimonial && testimonial.video && videoRef.current) {
       if (timerRef.current) clearTimeout(timerRef.current);
       
-      videoRef.current.currentTime = 0;
       videoRef.current.play().then(() => {
         setIsPlaying(true);
       }).catch((err) => {
@@ -108,22 +107,18 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
       onClick={handleClick}
       className={`relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block border border-[var(--border-color)] ${hasVideo ? 'cursor-pointer' : ''}`}
     >
-      {/* Background Image - monochromatic & desaturated */}
+      {/* Background Image/Video - monochromatic & desaturated */}
       <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] overflow-hidden grayscale contrast-125 brightness-75 transition-all duration-[1.2s] ease-in-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-90 flex-shrink-0">
         {hasVideo ? (
           <>
-            <img 
-              src={testimonial.image} 
-              alt={testimonial.company} 
-              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}
-            />
             <video 
               ref={videoRef}
               src={testimonial.video}
               muted
               playsInline
               loop
-              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
+              preload="auto"
+              className="w-full h-full object-cover absolute inset-0"
               onError={(e) => {
                 const target = e.currentTarget;
                 if (target.src !== 'images/show-case.mp4') {
