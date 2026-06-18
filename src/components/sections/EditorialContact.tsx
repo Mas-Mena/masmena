@@ -157,7 +157,7 @@ const EditorialContact: React.FC = () => {
 
         let opacity = 0.04;
         if (isInside) {
-          opacity = 0.55 + hoverFactor * 0.45;
+          opacity = 0.95; // Bright and clear neon colors all the time without needing hover!
           ctx.fillStyle = ch.color;
         } else {
           opacity = 0.02 + hoverFactor * 0.1;
@@ -214,7 +214,7 @@ const EditorialContact: React.FC = () => {
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,0.75) 0%, transparent 100%)',
+          background: 'radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,0.5) 0%, transparent 100%)',
         }}
       />
       <div className="relative z-10 text-center mb-12 px-4" style={{ pointerEvents: 'none' }}>
