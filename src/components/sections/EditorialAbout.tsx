@@ -46,8 +46,8 @@ const servicesData = [
     firstLetter: 'D',
     restOfTitle: 'igital Marketing',
     items: [
-      { num: '(4.1)', label: 'SEO & Digital PR' },
-      { num: '(4.2)', label: 'Arabic SEO' },
+      { num: '(4.1)', label: 'Search Engine Optimization (SEO) & Digital PR' },
+      { num: '(4.2)', label: 'Generative Engine Optimization (GEO) & Ai Search Visibility' },
       { num: '(4.3)', label: 'Media Outreach' },
       { num: '(4.4)', label: 'Online Reputation & Authority' }
     ]
