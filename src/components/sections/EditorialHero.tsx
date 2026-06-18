@@ -5,6 +5,7 @@ import { Draggable } from 'gsap/Draggable';
 gsap.registerPlugin(Draggable);
 
 const projectImages = [
+  'images/slider/POST7.webp',
   'images/slider/super-design-3.webp',
   'images/slider/MOG-design.webp',
   'images/slider/chai-karak.webp',
@@ -15,7 +16,6 @@ const projectImages = [
   'images/slider/serene3.webp',
   'images/slider/slider-(1).webp',
   'images/slider/slider-(4).png',
-  'images/slider/POST7.webp',
 ];
 
 
