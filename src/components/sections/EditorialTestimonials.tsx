@@ -115,8 +115,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
           <>
             <video 
               ref={videoRef}
-              src={testimonial.video}
-              poster={testimonial.image}
+              src={testimonial.video ? `${testimonial.video}#t=0.1` : undefined}
               muted
               playsInline
               loop
@@ -124,8 +123,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
               className="w-full h-full object-cover absolute inset-0"
               onError={(e) => {
                 const target = e.currentTarget;
-                if (target.src !== 'images/show-case.mp4') {
-                  target.src = 'images/show-case.mp4';
+                const fallback = 'images/show-case.mp4';
+                if (!target.src.includes(fallback)) {
+                  target.src = fallback;
                   if (isPlaying) {
                     target.play().catch(() => {});
                   }
