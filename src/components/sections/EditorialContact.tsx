@@ -218,7 +218,7 @@ const EditorialContact: React.FC = () => {
         }}
       />
       <div className="relative z-10 text-center mb-12 px-4" style={{ pointerEvents: 'none' }}>
-        <h2 className="mb-4 text-[var(--text-primary)] text-[36px] md:text-[50px] font-medium tracking-tight leading-[1.05]">
+        <h2 className="mb-4 text-[var(--text-primary)] text-[36px] md:text-[50px] font-medium tracking-tight leading-[1.05] uppercase">
           Ready When You Are … Let's Talk!
         </h2>
         <p className="text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">

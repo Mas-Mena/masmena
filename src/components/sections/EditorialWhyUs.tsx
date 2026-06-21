@@ -127,9 +127,8 @@ const EditorialWhyUs: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Why Us</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
-              <span className="font-serif italic font-light mr-2">Why</span>
-              MAS?
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8 uppercase">
+              Why MAS?
             </h2>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">

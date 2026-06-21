@@ -49,9 +49,8 @@ const EditorialAwards: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Recognition</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8">
-              <span className="font-serif italic font-light mr-2">Recognized</span>
-              Excellence
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8 uppercase">
+              Recognized Excellence
             </h2>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">

@@ -22,9 +22,8 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">How We Work</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
-              <span className="font-serif italic font-light mr-2">Every Step</span>
-              Is Intentional. <span className="font-serif italic font-light">Every Outcome</span> Is Measurable.
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8 uppercase">
+              Every Step Is Intentional. Every Outcome Is Measurable.
             </h2>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
@@ -65,9 +64,8 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
-                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Research</span>
-                & Discovery
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+                Research & Discovery
               </h3>
             </div>
 
@@ -209,9 +207,8 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
-                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Strategy</span>
-                & Execution
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+                Strategy & Execution
               </h3>
             </div>
 
@@ -227,9 +224,8 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
-                <span className="font-serif italic font-light text-[var(--accent-color)] text-[1.15em] mr-2">Measure</span>
-                & Optimize
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+                Measure & Optimize
               </h3>
             </div>
 

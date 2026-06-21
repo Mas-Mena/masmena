@@ -82,7 +82,7 @@ const EditorialAbout: React.FC = () => {
 
   useEffect(() => {
     if (textRef.current) {
-      const textToSplit = "The Kind Of Work";
+      const textToSplit = "THE KIND OF WORK";
       textRef.current.innerHTML = textToSplit
         .split("")
         .map(char => `<span class="char inline-block">${char === " " ? "&nbsp;" : char}</span>`)
@@ -139,7 +139,7 @@ const EditorialAbout: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Services</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8">
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8 uppercase">
               <span ref={textRef}>The Kind Of Work</span><br />
               We Do For Our Partners
             </h2>

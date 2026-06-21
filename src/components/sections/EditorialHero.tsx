@@ -475,7 +475,7 @@ const EditorialHero: React.FC = () => {
       <div className="flex container-custom relative z-10 w-full flex-col items-start pb-8 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
         {/* Hero Title */}
-        <h1 className="heading-reveal font-display text-[32px] md:text-[52px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[493px] mb-3 md:mb-6 tracking-tight text-left">
+        <h1 className="heading-reveal font-display text-[32px] md:text-[52px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[493px] mb-3 md:mb-6 tracking-tight text-left uppercase">
           Connect. Create. Thrive.
         </h1>
 
