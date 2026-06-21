@@ -140,10 +140,10 @@ const EditorialWhyUs: React.FC = () => {
           <div className="relative z-10 flex lg:justify-end items-end h-full lg:pb-4">
             <a 
               href="#contact" 
-              className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[220px]"
+              className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[260px]"
             >
               <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-primary)]/90">
-                Book A Call
+                Book Your Appointment
               </span>
               
               {/* Circular Dotted Spinning Indicator */}

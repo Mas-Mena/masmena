@@ -504,7 +504,7 @@ const EditorialHero: React.FC = () => {
             className="group flex items-center justify-between w-full max-w-[421px] border-b border-white/10 pb-4 md:pb-6 pointer-events-auto transition-all hover:border-white"
           >
             <span className="text-[12px] md:text-[14px] font-bold uppercase tracking-widest text-[var(--text-primary)]">
-              Book A Call
+              Book Your Appointment
             </span>
             
             {/* Custom Circular Dotted Spinning Indicator */}
