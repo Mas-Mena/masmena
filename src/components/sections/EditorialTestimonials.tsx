@@ -45,9 +45,10 @@ const testimonials = [
 interface TestimonialCardProps {
   testimonial: typeof testimonials[number];
   onVideoClick: (videoUrl: string) => void;
+  index: number;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoClick }) => {
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoClick, index }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -107,7 +108,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      className={`relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block border border-[var(--border-color)] ${hasVideo ? 'cursor-pointer' : ''}`}
+      className={`relative aspect-auto min-h-[420px] md:min-h-0 md:aspect-[1.15/1] bg-black overflow-hidden group flex flex-col md:block ${
+        index % 2 === 0 
+          ? "border-t border-b border-l-0 border-r-0 md:border-l-0 md:border-r border-[var(--border-color)]"
+          : "border-t border-b border-l-0 border-r-0 md:border-l md:border-r-0 border-[var(--border-color)]"
+      } ${hasVideo ? 'cursor-pointer' : ''}`}
     >
       {/* Background Image - monochromatic & desaturated */}
       <div className="relative md:absolute top-0 left-0 right-0 h-[200px] sm:h-[240px] md:h-[65%] overflow-hidden grayscale contrast-125 brightness-75 transition-all duration-[1.2s] ease-in-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-90 flex-shrink-0">
@@ -218,12 +223,13 @@ const EditorialTestimonials: React.FC = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-1">
-          {testimonials.map((testimonial) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {testimonials.map((testimonial, idx) => (
             <TestimonialCard 
               key={testimonial.id}
               testimonial={testimonial}
               onVideoClick={setActiveVideoUrl}
+              index={idx}
             />
           ))}
         </div>

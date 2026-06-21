@@ -30,7 +30,7 @@ const EditorialPricing: React.FC = () => {
 
       {/* Pricing Grid Container */}
       <div className="container-custom relative z-10 mt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 border border-[var(--border-color)] divide-y lg:divide-y-0 lg:divide-x divide-[var(--border-color)]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-b border-[var(--border-color)] divide-y lg:divide-y-0 lg:divide-x divide-[var(--border-color)]">
           
           {/* ── Basic Card ── */}
           <div className="relative min-h-[580px] overflow-hidden group bg-black/40 backdrop-blur-sm flex flex-col transition-all hover:bg-black/60">
