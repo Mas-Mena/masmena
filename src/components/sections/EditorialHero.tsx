@@ -497,13 +497,13 @@ const EditorialHero: React.FC = () => {
           </div>
         </div>
 
-        {/* Book A Call CTA */}
+        {/* Book Your Appointment CTA */}
         <div className="cta-reveal pointer-events-auto w-full flex justify-start">
           <a 
             href="#contact" 
-            className="group flex items-center justify-between w-full max-w-[421px] border-b border-white/10 pb-4 md:pb-6 pointer-events-auto transition-all hover:border-white"
+            className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 md:pb-6 transition-all hover:border-[var(--text-primary)] w-[260px]"
           >
-            <span className="text-[12px] md:text-[14px] font-bold uppercase tracking-widest text-[var(--text-primary)]">
+            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-primary)]/90">
               Book Your Appointment
             </span>
             
