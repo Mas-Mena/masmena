@@ -214,7 +214,7 @@ const EditorialTestimonials: React.FC = () => {
         
         {/* Header Area */}
         <div className="mb-20 relative px-4 md:px-0">
-          <h2 className="relative font-medium tracking-tight mb-6 leading-[1.1] text-[36px] md:text-[50px] uppercase">
+          <h2 className="relative font-medium tracking-tight mb-6 leading-[1.1] text-[36px] md:text-[50px]">
             From The Mouth Of Our<br />Beloved Partners & Winners
           </h2>
           <p className="text-[var(--text-secondary)] text-[14px] md:text-[15px] leading-relaxed max-w-[420px] mt-6">

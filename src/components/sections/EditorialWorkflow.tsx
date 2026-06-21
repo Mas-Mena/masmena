@@ -22,7 +22,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">How We Work</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-4xl md:text-5xl lg:text-[56px] mb-8 uppercase">
+            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8">
               Every Step Is Intentional. Every Outcome Is Measurable.
             </h2>
 
@@ -64,7 +64,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Research & Discovery
               </h3>
             </div>
@@ -207,7 +207,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Strategy & Execution
               </h3>
             </div>
@@ -224,7 +224,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)] uppercase">
+              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Measure & Optimize
               </h3>
             </div>
