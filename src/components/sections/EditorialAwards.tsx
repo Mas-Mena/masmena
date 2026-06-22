@@ -78,36 +78,39 @@ const EditorialAwards: React.FC = () => {
             {awardsData.map((award, index) => (
               <div 
                 key={index} 
-                className="py-6 md:py-8 border-b border-[var(--border-color)] flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-300 hover:bg-white/[0.01] hover:px-4 group cursor-pointer"
+                className="py-5 md:py-8 border-b border-[var(--border-color)] flex flex-row md:items-center justify-between md:justify-start gap-4 transition-all duration-300 hover:bg-white/[0.01] hover:px-4 group cursor-pointer"
               >
-                {/* Category */}
-                <div className="w-full md:w-[30%]">
-                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[var(--text-secondary)] block mb-1">Award Category</span>
-                  <h4 className="text-[17px] md:text-[19px] font-display font-medium text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors duration-300">
+                {/* Mobile: Category + Subtext | Desktop: Category Only */}
+                <div className="w-full md:w-[30%] flex flex-col gap-1 md:gap-0 pr-4 md:pr-0">
+                  <h4 className="text-[16px] md:text-[19px] font-display font-medium text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors duration-300">
                     {award.category}
                   </h4>
+                  
+                  {/* Mobile-only subtext showing Organization & Recognition */}
+                  <div className="flex md:hidden items-center gap-1.5 text-[12px] text-[var(--text-secondary)] font-medium leading-none mt-1">
+                    <span>{award.organization}</span>
+                    <span className="opacity-30">•</span>
+                    <span className="opacity-80">{award.recognition}</span>
+                  </div>
                 </div>
 
-                {/* Organization */}
-                <div className="w-full md:w-[25%]">
-                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[var(--text-secondary)] block mb-1">Organization</span>
+                {/* Desktop-only Organization column */}
+                <div className="hidden md:block md:w-[25%]">
                   <span className="text-[13.5px] md:text-[14.5px] text-[var(--text-secondary)] font-medium group-hover:text-[var(--text-primary)] transition-colors duration-300">
                     {award.organization}
                   </span>
                 </div>
 
-                {/* Recognition */}
-                <div className="w-full md:w-[30%]">
-                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[var(--text-secondary)] block mb-1">Recognition</span>
+                {/* Desktop-only Recognition column */}
+                <div className="hidden md:block md:w-[30%]">
                   <span className="text-[13.5px] md:text-[14.5px] text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]/90 transition-colors duration-300">
                     {award.recognition}
                   </span>
                 </div>
 
-                {/* Year */}
-                <div className="w-full md:w-[15%] md:text-right flex items-center md:justify-end">
-                  <span className="md:hidden text-[9px] uppercase tracking-widest text-[var(--text-secondary)] mr-3">Year</span>
-                  <span className="inline-block border border-[var(--border-color)] group-hover:border-[var(--accent-color)]/30 text-[var(--text-secondary)] group-hover:text-[var(--accent-color)] px-3 py-1 text-[11px] font-mono tracking-wider rounded-none transition-all duration-300">
+                {/* Year column (Works on both mobile & desktop, aligned right on mobile & desktop) */}
+                <div className="w-auto md:w-[15%] md:text-right flex items-center justify-end flex-shrink-0">
+                  <span className="inline-block border border-[var(--border-color)] group-hover:border-[var(--accent-color)]/30 text-[var(--text-secondary)] group-hover:text-[var(--accent-color)] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] md:text-[11px] font-mono tracking-wider rounded-none transition-all duration-300">
                     {award.year}
                   </span>
                 </div>
