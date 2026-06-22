@@ -115,7 +115,7 @@ const EditorialPricing: React.FC = () => {
 
               {/* Features List */}
               <div className="flex-1 flex flex-col justify-start mb-10">
-                <ul className="flex flex-col gap-[14px] text-[12px] lg:text-[13px] text-white/95 font-medium">
+                <ul className="flex flex-col gap-[14px] text-[12px] lg:text-[13px] text-white/70 font-normal">
                   <li className="flex items-start gap-3.5">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 text-[var(--accent-color)] flex-shrink-0"><path d="M20 6L9 17l-5-5"/></svg>
                     <span>Everything in the Social Media plan included</span>
@@ -142,11 +142,11 @@ const EditorialPricing: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-3.5">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 text-[var(--accent-color)] flex-shrink-0"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span className="text-white">Dedicated account manager & bi-weekly syncs</span>
+                    <span>Dedicated account manager & bi-weekly syncs</span>
                   </li>
                   <li className="flex items-start gap-3.5">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 text-[var(--accent-color)] flex-shrink-0"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span className="text-white">Premium customer care support & priority access</span>
+                    <span>Premium customer care support & priority access</span>
                   </li>
                 </ul>
               </div>
