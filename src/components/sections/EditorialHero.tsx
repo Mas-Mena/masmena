@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import CtaButton from '../ui/CtaButton';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 gsap.registerPlugin(Draggable);
 
@@ -406,11 +407,7 @@ const EditorialHero: React.FC = () => {
       });
       resObserver.observe(container);
 
-      // Elegant Editorial Headline Reveal
-      gsap.fromTo('.heading-reveal',
-        { opacity: 0, y: 35 },
-        { opacity: 1, y: 0, duration: 1.0, ease: 'power4.out', delay: 0.2 }
-      );
+
 
       gsap.fromTo('.subtext-reveal',
         { opacity: 0, y: 20 },
@@ -473,9 +470,11 @@ const EditorialHero: React.FC = () => {
       <div className="flex container-custom relative z-10 w-full flex-col items-start pt-10 md:pt-0 pb-8 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
         {/* Hero Title */}
-        <h1 className="heading-reveal font-display text-[32px] md:text-[52px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[493px] mb-3 md:mb-6 tracking-tight text-left">
-          Connect. Create. Thrive.
-        </h1>
+        <AnimatedTitle
+          tag="h1"
+          lines={['Connect. Create. Thrive.']}
+          className="font-display text-[32px] md:text-[52px] leading-[1.15] max-w-[493px] mb-3 md:mb-6 text-left"
+        />
 
         {/* Description Subtext */}
         <p className="subtext-reveal text-[var(--text-secondary)] text-[13px] md:text-[14px] leading-relaxed max-w-[450px] mb-5 md:mb-8 font-normal text-left select-text pointer-events-auto">

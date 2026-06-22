@@ -8,13 +8,14 @@ interface AnimatedTitleProps {
   /** Each string becomes one line. Separate multi-line headings into an array. */
   lines: string[];
   className?: string;
+  tag?: 'h1' | 'h2' | 'h3' | 'span';
 }
 
 /**
- * Renders an h2 where each character animates in on scroll —
+ * Renders an heading where each character animates in on scroll —
  * the same effect as "The Kind Of Work" in EditorialAbout.
  */
-const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ lines, className = '' }) => {
+const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ lines, className = '', tag = 'h2' }) => {
   const ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -39,27 +40,32 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ lines, className = '' }) 
     );
   }, []);
 
+  const Tag = tag;
+  const hasCustomSize = className.includes('text-[') || className.includes('text-');
+  const sizeClass = hasCustomSize ? '' : 'text-[36px] md:text-[50px]';
+
   return (
-    <h2
+    <Tag
       ref={ref}
-      className={`relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] ${className}`}
+      className={`relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] ${sizeClass} ${className}`}
       style={{ perspective: '600px' }}
     >
       {lines.map((line, i) => (
-        <React.Fragment key={i}>
-          <span className="block overflow-hidden">
-            {line.split('').map((char, j) => (
-              <span
-                key={j}
-                className="anim-char inline-block"
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            ))}
-          </span>
-        </React.Fragment>
+        <span key={i} className="block overflow-hidden">
+          {line.split(' ').map((word, wIdx) => (
+            <span key={wIdx} className="inline-block whitespace-nowrap">
+              {word.split('').map((char, cIdx) => (
+                <span key={cIdx} className="anim-char inline-block">
+                  {char}
+                </span>
+              ))}
+              {/* Add space after the word, but not after the last word */}
+              {wIdx < line.split(' ').length - 1 && '\u00A0'}
+            </span>
+          ))}
+        </span>
       ))}
-    </h2>
+    </Tag>
   );
 };
 

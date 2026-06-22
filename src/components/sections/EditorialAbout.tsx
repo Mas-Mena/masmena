@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CtaButton from '../ui/CtaButton';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,39 +74,9 @@ const servicesData = [
 ];
 
 const EditorialAbout: React.FC = () => {
-  const textRef = useRef<HTMLSpanElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (textRef.current) {
-      const textToSplit = "The Kind Of Work";
-      textRef.current.innerHTML = textToSplit
-        .split("")
-        .map(char => `<span class="char inline-block">${char === " " ? "&nbsp;" : char}</span>`)
-        .join("");
-
-      gsap.fromTo(
-        textRef.current.querySelectorAll(".char"),
-        { 
-          opacity: 0,
-          y: 50,
-          rotateX: -90,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          stagger: 0.05,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: textRef.current,
-            start: "top 85%",
-          }
-        }
-      );
-    }
-
     if (videoContainerRef.current) {
       gsap.fromTo(
         videoContainerRef.current,
@@ -135,10 +106,7 @@ const EditorialAbout: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Services</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8">
-              <span ref={textRef}>The Kind Of Work</span><br />
-              We Do For Our Partners
-            </h2>
+            <AnimatedTitle lines={['The Kind Of Work', 'We Do For Our Partners']} className="mb-8" />
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
               Marketing today requires more than a single service. That's why MAS combines strategy, content, media, influencers, technology, and experiences to help brands grow through a fully integrated approach.
