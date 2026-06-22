@@ -5,8 +5,7 @@ import CtaButton from '../ui/CtaButton';
 const whyUsData = [
   {
     num: '(01)',
-    cursiveTitle: 'Strategy',
-    normalTitle: 'First',
+    title: 'Strategy First',
     description: 'We start with market research and tailored strategies before execution.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -18,8 +17,7 @@ const whyUsData = [
   },
   {
     num: '(02)',
-    cursiveTitle: 'Arabic-First',
-    normalTitle: 'Marketing',
+    title: 'Arabic-First Marketing',
     description: 'Local dialects, cultural understanding, and regionally relevant campaigns.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -33,8 +31,7 @@ const whyUsData = [
   },
   {
     num: '(03)',
-    cursiveTitle: 'Online & Offline',
-    normalTitle: 'Expertise',
+    title: 'Online & Offline Expertise',
     description: 'Integrated campaigns across digital, experiential, and traditional channels.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -46,8 +43,7 @@ const whyUsData = [
   },
   {
     num: '(04)',
-    cursiveTitle: 'Influencer',
-    normalTitle: 'Network',
+    title: 'Influencer Network',
     description: 'Jordanian and GCC influencers, athletes, and creators.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -61,8 +57,7 @@ const whyUsData = [
   },
   {
     num: '(05)',
-    cursiveTitle: 'Creative',
-    normalTitle: 'Production',
+    title: 'Creative Production',
     description: 'Photography, short-form video, content creation, and campaign assets.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -72,8 +67,7 @@ const whyUsData = [
   },
   {
     num: '(06)',
-    cursiveTitle: 'Data-Driven',
-    normalTitle: 'Decisions',
+    title: 'Data-Driven Decisions',
     description: 'Every campaign is tracked and optimized using measurable KPIs.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -89,8 +83,7 @@ const whyUsData = [
   },
   {
     num: '(07)',
-    cursiveTitle: 'Regional',
-    normalTitle: 'Reach',
+    title: 'Regional Reach',
     description: 'Campaign execution across Jordan, GCC, and international markets.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -106,8 +99,7 @@ const whyUsData = [
   },
   {
     num: '(08)',
-    cursiveTitle: 'Fast',
-    normalTitle: 'Execution',
+    title: 'Fast Execution',
     description: 'Agile team responding to new ideas within 1–2 business days.',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-[var(--text-primary)] opacity-80 transition-all duration-500 group-hover:text-[var(--accent-color)]">
@@ -150,15 +142,14 @@ const EditorialWhyUs: React.FC = () => {
             <div key={index} className="group relative flex flex-col items-start">
               
               {/* Icon Frame */}
-              <div className="w-16 h-16 rounded-full bg-[var(--text-primary)]/[0.02] border border-[var(--border-color)] flex items-center justify-center mb-3 group-hover:bg-[var(--text-primary)]/[0.04] group-hover:border-[var(--accent-color)]/30 group-hover:shadow-[0_0_20px_rgba(166,115,255,0.15)] transition-all duration-500 group-hover:scale-105">
+              <div className="w-16 h-16 flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-105">
                 {item.icon}
               </div>
 
               {/* Title Block */}
               <div className="relative w-full mb-3">
-                <h3 className="relative z-10 flex flex-wrap items-baseline gap-x-2 leading-none text-[19px] sm:text-[21px] md:text-[23px]">
-                  <span className="font-serif italic font-light text-[var(--text-primary)] text-[1.25em] leading-none">{item.cursiveTitle}</span>
-                  <span className="font-display font-medium text-[var(--text-primary)] tracking-tight">{item.normalTitle}</span>
+                <h3 className="relative z-10 leading-tight text-[19px] sm:text-[21px] md:text-[23px] font-medium tracking-tight text-[var(--text-primary)]">
+                  {item.title}
                 </h3>
               </div>
 

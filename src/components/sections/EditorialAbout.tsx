@@ -9,8 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const servicesData = [
   {
     num: '(01)',
-    firstLetter: 'I',
-    restOfTitle: 'nfluencer & Creator',
+    title: 'Influencer & Creator',
     items: [
       { num: '(1.1)', label: 'Influencer Marketing' },
       { num: '(1.2)', label: 'Affiliate Marketing' },
@@ -21,8 +20,7 @@ const servicesData = [
   },
   {
     num: '(02)',
-    firstLetter: 'C',
-    restOfTitle: 'ontent Production',
+    title: 'Content Production',
     items: [
       { num: '(2.1)', label: 'Short-Form Video Production' },
       { num: '(2.2)', label: 'Professional Photography' },
@@ -34,8 +32,7 @@ const servicesData = [
   },
   {
     num: '(03)',
-    firstLetter: 'S',
-    restOfTitle: 'ocial Media',
+    title: 'Social Media',
     items: [
       { num: '(3.1)', label: 'Content Planning & Strategy' },
       { num: '(3.2)', label: 'Community Management' },
@@ -45,8 +42,7 @@ const servicesData = [
   },
   {
     num: '(04)',
-    firstLetter: 'D',
-    restOfTitle: 'igital Marketing',
+    title: 'Digital Marketing',
     items: [
       { num: '(4.1)', label: 'Search Engine Optimization (SEO) & Digital PR' },
       { num: '(4.2)', label: 'Generative Engine Optimization (GEO) & Ai Search Visibility' },
@@ -56,8 +52,7 @@ const servicesData = [
   },
   {
     num: '(05)',
-    firstLetter: 'E',
-    restOfTitle: '-Commerce',
+    title: 'E-Commerce',
     items: [
       { num: '(5.1)', label: 'Shopify Store Development' },
       { num: '(5.2)', label: 'Conversion Rate Optimization' },
@@ -67,8 +62,7 @@ const servicesData = [
   },
   {
     num: '(06)',
-    firstLetter: 'E',
-    restOfTitle: 'xperiential',
+    title: 'Experiential',
     items: [
       { num: '(6.1)', label: 'Brand Activations' },
       { num: '(6.2)', label: 'Pop-Up Experiences' },
@@ -185,10 +179,7 @@ const EditorialAbout: React.FC = () => {
             >
 
               {/* Styled Title */}
-              <h3 className="relative z-10 text-2xl md:text-3xl font-medium tracking-tight mb-8 leading-none">
-                <span className="font-serif italic font-light text-[1.25em] mr-0.5">{category.firstLetter}</span>
-                <span className="font-display font-medium text-[var(--text-primary)]">{category.restOfTitle}</span>
-              </h3>
+              <h3 className="relative z-10 text-2xl md:text-3xl font-medium tracking-tight mb-8 leading-none text-[var(--text-primary)]">{category.title}</h3>
 
               {/* Sub-items Indented List */}
               <ul className="space-y-4 relative z-10 w-full">
