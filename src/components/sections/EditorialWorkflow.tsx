@@ -62,9 +62,9 @@ const EditorialWorkflow: React.FC = () => {
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
             
-            <div className="relative">
-              <span className="absolute -left-4 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
-                01
+            <div className="relative inline-block">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0">
+                (01)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Research & Discovery
@@ -208,9 +208,9 @@ const EditorialWorkflow: React.FC = () => {
           {/* Right: Content */}
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
             
-            <div className="relative">
-              <span className="absolute -left-4 lg:left-12 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
-                02
+            <div className="relative inline-block">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0">
+                (02)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Strategy & Execution
@@ -228,9 +228,9 @@ const EditorialWorkflow: React.FC = () => {
           {/* Left: Content */}
           <div className="relative order-2 lg:order-1">
             
-            <div className="relative">
-              <span className="absolute -left-4 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
-                03
+            <div className="relative inline-block">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0">
+                (03)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Measure & Optimize
