@@ -8,7 +8,6 @@ const EditorialWorkflow: React.FC = () => {
       {/* Background Vertical Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="container-custom h-full relative">
-          <div className="absolute left-[50%] top-0 bottom-0 w-[1px] bg-white/10" />
           <div className="absolute left-[75%] top-0 bottom-0 w-[1px] bg-white/5" />
           <div className="absolute left-[25%] top-0 bottom-0 w-[1px] bg-white/5" />
         </div>
@@ -17,7 +16,7 @@ const EditorialWorkflow: React.FC = () => {
       <div className="container-custom relative z-10 flex flex-col gap-24 md:gap-32">
         
         {/* Section Header Block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4 border-b border-[var(--border-color)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end relative pb-4">
 
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">How We Work</p>
