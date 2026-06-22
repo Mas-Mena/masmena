@@ -108,13 +108,7 @@ const EditorialFAQ: React.FC = () => {
             </div>
           </div>
 
-          <a href="#contact" className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[240px]">
-             <span className="text-xs font-bold uppercase tracking-widest text-[var(--text-primary)]/90">Book Your Appointment</span>
-             <div className="relative w-6 h-6 flex items-center justify-center">
-               <div className="absolute inset-0 border border-dotted border-[var(--border-color)] rounded-full animate-spin-slow" />
-               <div className="w-[2px] h-[2px] bg-[var(--text-primary)] rounded-full" />
-             </div>
-          </a>
+
         </div>
 
         {/* ── Right Column: Interactive Accordion ── */}

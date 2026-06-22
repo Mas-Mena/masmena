@@ -64,7 +64,10 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+              <span className="absolute -left-4 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
+                01
+              </span>
+              <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Research & Discovery
               </h3>
             </div>
@@ -207,7 +210,10 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+              <span className="absolute -left-4 lg:left-12 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
+                02
+              </span>
+              <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Strategy & Execution
               </h3>
             </div>
@@ -224,7 +230,10 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative">
-              <h3 className="mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
+              <span className="absolute -left-4 -top-8 text-[70px] sm:text-[80px] md:text-[90px] font-display font-bold text-[var(--text-primary)]/[0.04] pointer-events-none select-none z-0">
+                03
+              </span>
+              <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
                 Measure & Optimize
               </h3>
             </div>
