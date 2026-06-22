@@ -218,12 +218,14 @@ const EditorialContact: React.FC = () => {
         }}
       />
       <div className="relative z-10 text-center mb-12 px-4" style={{ pointerEvents: 'none' }}>
-        <h2 className="mb-4 text-[var(--text-primary)] text-[36px] md:text-[50px] font-medium tracking-tight leading-[1.05]">
-          Ready When You Are … Let's Talk!
-        </h2>
-        <p className="text-white text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
-          Whether you operate in Jordan today or are preparing to scale across MENA, let's explore how we can create a plan that fits you perfectly. We will ask the right questions, discuss possibilities, and make an action plan.
-        </p>
+        <div className="inline-block px-8 py-6 rounded-sm" style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+          <h2 className="mb-4 text-[var(--text-primary)] text-[36px] md:text-[50px] font-medium tracking-tight leading-[1.05]">
+            Ready When You Are … Let's Talk!
+          </h2>
+          <p className="text-white/80 text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
+            Whether you operate in Jordan today or are preparing to scale across MENA, let's explore how we can create a plan that fits you perfectly. We will ask the right questions, discuss possibilities, and make an action plan.
+          </p>
+        </div>
       </div>
       <div className="relative z-10 w-full flex-1 flex justify-center px-4" style={{ pointerEvents: 'auto' }}>
         <BookingForm />
