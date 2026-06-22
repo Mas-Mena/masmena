@@ -1,4 +1,6 @@
 import React from 'react';
+import CtaButton from '../ui/CtaButton';
+
 
 const whyUsData = [
   {
@@ -137,28 +139,7 @@ const EditorialWhyUs: React.FC = () => {
           </div>
 
           <div className="relative z-10 flex lg:justify-end items-end h-full lg:pb-4">
-            <a 
-              href="#contact" 
-              className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 transition-all hover:border-[var(--text-primary)] w-[260px]"
-            >
-              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-primary)]/90">
-                Book Your Appointment
-              </span>
-              
-              {/* Circular Dotted Spinning Indicator */}
-              <div className="relative w-6 h-6 flex items-center justify-center">
-                <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
-                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                    <div 
-                      key={i} 
-                      className="absolute w-[2px] h-[2px] bg-[var(--text-primary)] rounded-full opacity-40"
-                      style={{ transform: `rotate(${angle}deg) translateY(-10px)` }}
-                    />
-                  ))}
-                </div>
-                <div className="w-[1.5px] h-[1.5px] bg-[var(--text-primary)] rounded-full" />
-              </div>
-            </a>
+            <CtaButton href="#contact" text="Book Your Appointment" />
           </div>
 
         </div>
@@ -190,17 +171,6 @@ const EditorialWhyUs: React.FC = () => {
           ))}
         </div>
       </div>
-      
-      {/* Custom slow spin styles */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes spin-slow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
-        }
-      `}} />
     </section>
   );
 };

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/Draggable';
+import CtaButton from '../ui/CtaButton';
 
 gsap.registerPlugin(Draggable);
+
 
 const projectImages = [
   'images/slider/POST7.webp',
@@ -499,40 +501,9 @@ const EditorialHero: React.FC = () => {
 
         {/* Book Your Appointment CTA */}
         <div className="cta-reveal pointer-events-auto w-full flex justify-start">
-          <a 
-            href="#contact" 
-            className="group flex items-center justify-between border-b border-[var(--border-color)] pb-4 md:pb-6 transition-all hover:border-[var(--text-primary)] w-[260px]"
-          >
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-primary)]/90">
-              Book Your Appointment
-            </span>
-            
-            {/* Custom Circular Dotted Spinning Indicator */}
-            <div className="relative w-6 h-6 flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                  <div 
-                    key={i} 
-                    className="absolute w-[2px] h-[2px] bg-[var(--text-primary)] rounded-full opacity-40"
-                    style={{ transform: `rotate(${angle}deg) translateY(-10px)` }}
-                  />
-                ))}
-              </div>
-              <div className="w-[1.5px] h-[1.5px] bg-[var(--text-primary)] rounded-full" />
-            </div>
-          </a>
+          <CtaButton href="#contact" text="Book Your Appointment" />
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes spin-slow { 
-          from { transform: rotate(0deg); } 
-          to { transform: rotate(360deg); } 
-        }
-        .animate-spin-slow { 
-          animation: spin-slow 12s linear infinite; 
-        }
-      `}} />
     </section>
   );
 };

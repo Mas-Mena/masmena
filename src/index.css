@@ -136,3 +136,18 @@ html.lenis { height: auto; }
 .status-ping {
   animation: StatusIndicator_ping 3s ease-in-out infinite;
 }
+
+/* Custom Dotted Spin Animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-spin {
+  animation: spin-slow 12s linear infinite;
+}
+
+.group:hover .cta-spin {
+  animation-duration: 2.5s;
+}
+
