@@ -441,7 +441,7 @@ const EditorialHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-start md:justify-end overflow-hidden transition-colors duration-700">
+    <section className="relative min-h-0 md:min-h-[calc(100vh-72px)] md:min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-start md:justify-end overflow-hidden transition-colors duration-700 pb-12 md:pb-0">
       {/* 3D Wave Interactive Background Carousel */}
       <div
         className="relative md:absolute top-0 md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[230px] sm:h-[290px] md:h-full z-[1] flex items-start select-none pointer-events-auto mt-24 md:mt-0"
