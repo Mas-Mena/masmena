@@ -35,12 +35,12 @@ const EditorialClients: React.FC = () => {
             {repeatedLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 group flex items-center justify-center cursor-pointer px-5 py-3 h-14 w-36 transition-all duration-300 opacity-80 hover:opacity-100"
+                className="flex-shrink-0 group flex items-center justify-center cursor-pointer px-6 py-4 h-20 w-44 transition-all duration-300 opacity-80 hover:opacity-100"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-8 max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]"
+                  className="max-h-12 max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]"
                   style={logo.isDark ? { filter: 'brightness(0) invert(1)' } : undefined}
                   loading="lazy"
                 />
