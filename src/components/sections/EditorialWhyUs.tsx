@@ -169,15 +169,15 @@ const EditorialWhyUs: React.FC = () => {
             <div key={index} className="group relative flex flex-col items-start">
               
               {/* Icon Frame */}
-              <div className="w-16 h-16 rounded-full bg-[var(--text-primary)]/[0.02] border border-[var(--border-color)] flex items-center justify-center mb-4 group-hover:bg-[var(--text-primary)]/[0.04] group-hover:border-[var(--text-primary)]/20 transition-all duration-500 group-hover:scale-105">
+              <div className="w-16 h-16 rounded-full bg-[var(--text-primary)]/[0.02] border border-[var(--border-color)] flex items-center justify-center mb-3 group-hover:bg-[var(--text-primary)]/[0.04] group-hover:border-[var(--text-primary)]/20 transition-all duration-500 group-hover:scale-105">
                 {item.icon}
               </div>
 
               {/* Title Block */}
-              <div className="relative w-full mb-3 min-h-[44px] flex items-end">
-                <h3 className="relative z-10 flex flex-wrap items-baseline gap-x-1.5 leading-none">
+              <div className="relative w-full mb-3">
+                <h3 className="relative z-10 flex flex-wrap items-baseline gap-x-2 leading-none text-[19px] sm:text-[21px] md:text-[23px]">
                   <span className="font-serif italic font-light text-[var(--text-primary)] text-[1.25em] leading-none">{item.cursiveTitle}</span>
-                  <span className="font-display font-medium text-[var(--text-primary)] text-[15px] sm:text-[16px] md:text-[17px] tracking-tight">{item.normalTitle}</span>
+                  <span className="font-display font-medium text-[var(--text-primary)] tracking-tight">{item.normalTitle}</span>
                 </h3>
               </div>
 
