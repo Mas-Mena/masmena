@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 const faqData = [
   {
@@ -44,10 +45,7 @@ const EditorialFAQ: React.FC = () => {
 
           {/* Heading Structure */}
           <div className="relative mb-6">
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px]">
-              Frequently Asked<br />
-              <span className="inline-block">Questions</span>
-            </h2>
+            <AnimatedTitle lines={['Frequently Asked', 'Questions']} />
           </div>
           
           {/* Indented Text Area */}

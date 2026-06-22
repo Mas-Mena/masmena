@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 const track1 = [
   { name: 'Figma', category: 'Design & Prototyping', iconSrc: 'images/skills/figma.png' },
@@ -28,9 +29,7 @@ const EditorialTools: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Our Stack</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8">
-              The Tools Behind Our Work
-            </h2>
+            <AnimatedTitle lines={['The Tools Behind Our Work']} className="mb-8" />
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
               We leverage industry-leading design, development, and publishing platforms to build robust, scalable, and visually arresting campaigns.

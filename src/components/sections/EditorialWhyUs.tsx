@@ -1,5 +1,6 @@
 import React from 'react';
 import CtaButton from '../ui/CtaButton';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 
 const whyUsData = [
@@ -121,9 +122,7 @@ const EditorialWhyUs: React.FC = () => {
           <div className="relative z-10">
             <p className="text-[var(--text-secondary)] uppercase tracking-[0.3em] text-[10px] font-bold mb-6">Why Us</p>
             
-            <h2 className="relative font-medium tracking-tight leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px] mb-8">
-              Why MAS?
-            </h2>
+            <AnimatedTitle lines={['Why MAS?']} className="mb-8" />
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
               Because great marketing is more than visibility. We help brands build meaningful connections, accelerate growth, and deliver measurable results.

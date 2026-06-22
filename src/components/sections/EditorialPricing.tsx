@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedTitle from '../ui/AnimatedTitle';
 
 const DotIcon = () => (
   <div className="relative w-[18px] h-[18px] flex-shrink-0 flex items-center justify-center">
@@ -19,9 +20,7 @@ const EditorialPricing: React.FC = () => {
       {/* Header Area */}
       <div className="container-custom relative z-10 mb-20">
         <div className="max-w-3xl relative">
-          <h2 className="relative font-medium tracking-tight mb-8 leading-[1.05] text-[var(--text-primary)] text-[36px] md:text-[50px]">
-            Plans Built For You.<br />Choose The Perfect Fit.
-          </h2>
+          <AnimatedTitle lines={['Plans Built For You.', 'Choose The Perfect Fit.']} className="mb-8" />
           <p className="text-[var(--text-secondary)] text-[15px] leading-relaxed max-w-[500px] mt-6">
             Choose a plan tailored to scale your brand. From high-impact social media campaigns and custom web experiences to enterprise-grade omnichannel presence management.
           </p>
