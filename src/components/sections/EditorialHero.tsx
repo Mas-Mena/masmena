@@ -459,12 +459,12 @@ const EditorialHero: React.FC = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="absolute left-1/2 top-[28%] md:top-[40%] origin-center will-change-transform transform-style-preserve-3d"
+              className="hero-card-pos absolute left-1/2 top-[28%] md:top-[40%] origin-center will-change-transform transform-style-preserve-3d"
             >
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
                 alt=""
-                className="w-[210px] h-[142px] md:w-[320px] md:h-[216px] lg:w-[480px] lg:h-[328px] object-cover pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] select-none"
+                className="hero-card-img w-[210px] h-[142px] md:w-[320px] md:h-[216px] lg:w-[480px] lg:h-[328px] object-cover pointer-events-none block shadow-2xl bg-[#080808] grayscale-[0.25] select-none"
                 loading="lazy"
                 decoding="async"
               />

@@ -153,3 +153,52 @@ html.lenis { height: auto; }
   animation-duration: 2.5s;
 }
 
+/* Responsive Height Adjustments for EditorialHero to prevent overlap on short screens */
+@media (max-height: 850px) {
+  @media (min-width: 768px) {
+    .hero-card-pos {
+      top: 34% !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-card-img {
+      width: 380px !important;
+      height: 260px !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-card-img {
+      width: 260px !important;
+      height: 175px !important;
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-card-pos {
+    top: 26% !important;
+  }
+  @media (min-width: 1024px) {
+    .hero-card-img {
+      width: 300px !important;
+      height: 205px !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-card-img {
+      width: 220px !important;
+      height: 148px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .hero-card-pos {
+      top: 22% !important;
+    }
+    .hero-card-img {
+      width: 170px !important;
+      height: 115px !important;
+    }
+  }
+}
+
+
