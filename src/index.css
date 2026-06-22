@@ -190,4 +190,16 @@ html.lenis { height: auto; }
   }
 }
 
+.hero-carousel-mask {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+@media (min-width: 768px) {
+  .hero-carousel-mask {
+    mask-image: linear-gradient(to bottom, black 0%, black 52%, transparent 78%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 52%, transparent 78%);
+  }
+}
+
 
