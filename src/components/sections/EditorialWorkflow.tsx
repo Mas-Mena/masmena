@@ -28,7 +28,9 @@ const EditorialWorkflow: React.FC = () => {
             </h2>
 
             <p className="text-[var(--text-secondary)] text-[15px] md:text-[16px] leading-relaxed max-w-[500px] font-normal">
-              In just 3 steps, we turn insights into impact. Every successful campaign starts with understanding the market and ends with measurable results. Our proven process ensures every strategy is intentional, creative, and built to perform.
+              <span className="block">In just 3 steps, we turn insights into impact.</span>
+              <span className="block">Every successful campaign starts with understanding the market and ends with measurable results.</span>
+              <span className="block">Our proven process ensures every strategy is intentional, creative, and built to perform.</span>
             </p>
           </div>
 
