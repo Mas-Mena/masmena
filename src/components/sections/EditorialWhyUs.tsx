@@ -141,8 +141,8 @@ const EditorialWhyUs: React.FC = () => {
           {whyUsData.map((item, index) => (
             <div key={index} className="group relative flex flex-col items-start">
               
-              {/* Icon Frame */}
-              <div className="w-16 h-16 flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-105">
+              {/* Icon */}
+              <div className="mb-4 transition-all duration-500 group-hover:scale-105">
                 {item.icon}
               </div>
 
