@@ -44,7 +44,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative inline-block">
-              <span className="absolute -top-[50px] sm:-top-[80px] md:-top-[100px] -left-4 sm:-left-8 md:-left-12 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0 leading-none">
+              <span className="absolute -top-[25px] sm:-top-[35px] md:-top-[42px] -left-2 sm:-left-3 md:-left-4 text-[42px] sm:text-[56px] md:text-[70px] font-serif font-light text-[var(--text-primary)]/[0.08] pointer-events-none select-none z-0 leading-none">
                 (01)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
@@ -190,7 +190,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-2 pl-0 lg:pl-16">
             
             <div className="relative inline-block">
-              <span className="absolute -top-[50px] sm:-top-[80px] md:-top-[100px] -left-4 sm:-left-8 md:-left-12 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0 leading-none">
+              <span className="absolute -top-[25px] sm:-top-[35px] md:-top-[42px] -left-2 sm:-left-3 md:-left-4 text-[42px] sm:text-[56px] md:text-[70px] font-serif font-light text-[var(--text-primary)]/[0.08] pointer-events-none select-none z-0 leading-none">
                 (02)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
@@ -210,7 +210,7 @@ const EditorialWorkflow: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             
             <div className="relative inline-block">
-              <span className="absolute -top-[50px] sm:-top-[80px] md:-top-[100px] -left-4 sm:-left-8 md:-left-12 text-[100px] sm:text-[130px] md:text-[160px] font-serif font-light text-[var(--text-primary)]/[0.035] pointer-events-none select-none z-0 leading-none">
+              <span className="absolute -top-[25px] sm:-top-[35px] md:-top-[42px] -left-2 sm:-left-3 md:-left-4 text-[42px] sm:text-[56px] md:text-[70px] font-serif font-light text-[var(--text-primary)]/[0.08] pointer-events-none select-none z-0 leading-none">
                 (03)
               </span>
               <h3 className="relative z-10 mb-6 font-display font-medium text-3xl md:text-4xl text-[var(--text-primary)]">
