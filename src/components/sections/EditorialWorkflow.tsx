@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CtaButton from '../ui/CtaButton';
 import AnimatedTitle from '../ui/AnimatedTitle';
 
 
@@ -31,10 +30,6 @@ const EditorialWorkflow: React.FC = () => {
               <span className="block">Every successful campaign starts with understanding the market and ends with measurable results.</span>
               <span className="block">Our proven process ensures every strategy is intentional, creative, and built to perform.</span>
             </p>
-          </div>
-
-          <div className="relative z-10 flex lg:justify-end items-end h-full lg:pb-4">
-            <CtaButton href="#contact" text="Book Your Appointment" />
           </div>
 
         </div>
