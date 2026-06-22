@@ -81,7 +81,7 @@ const EditorialPricing: React.FC = () => {
 
               {/* Price & CTA */}
               <div className="pointer-events-auto mt-auto">
-                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white/10 pb-4 transition-all hover:border-white cursor-pointer">
+                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white/20 pb-4 transition-all hover:border-white/60 cursor-pointer">
                   <span className="text-[12px] font-bold uppercase tracking-widest text-white">Pick This Package</span>
                   <DotIcon />
                 </a>
@@ -153,7 +153,7 @@ const EditorialPricing: React.FC = () => {
 
               {/* Price & CTA */}
               <div className="pointer-events-auto mt-auto">
-                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white pb-4 transition-all cursor-pointer">
+                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white/20 pb-4 transition-all hover:border-white/60 cursor-pointer">
                   <span className="text-[12px] font-bold uppercase tracking-widest text-white">Pick This Package</span>
                   <DotIcon />
                 </a>
@@ -210,7 +210,7 @@ const EditorialPricing: React.FC = () => {
 
               {/* Price & CTA */}
               <div className="pointer-events-auto mt-auto">
-                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white/10 pb-4 transition-all hover:border-white cursor-pointer">
+                <a href="#contact" className="group/btn flex items-center justify-between w-full border-b border-white/20 pb-4 transition-all hover:border-white/60 cursor-pointer">
                   <span className="text-[12px] font-bold uppercase tracking-widest text-white">Talk to Sales</span>
                   <DotIcon />
                 </a>
