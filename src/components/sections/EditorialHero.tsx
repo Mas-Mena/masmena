@@ -441,10 +441,10 @@ const EditorialHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-end overflow-hidden transition-colors duration-700">
+    <section className="relative min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] lg:min-h-screen w-full bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col justify-start md:justify-end overflow-hidden transition-colors duration-700">
       {/* 3D Wave Interactive Background Carousel */}
       <div
-        className="absolute top-[75px] md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[calc(100svh-190px)] lg:h-full z-[1] flex items-start select-none pointer-events-auto"
+        className="relative md:absolute top-0 md:top-[60px] lg:top-[80px] left-0 right-0 w-full h-[230px] sm:h-[290px] md:h-full z-[1] flex items-start select-none pointer-events-auto mt-24 md:mt-0"
         style={{
           maskImage: 'linear-gradient(to bottom, black 0%, black 52%, transparent 78%)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 52%, transparent 78%)',
@@ -459,7 +459,7 @@ const EditorialHero: React.FC = () => {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="hero-card-pos absolute left-1/2 top-[28%] md:top-[40%] origin-center will-change-transform transform-style-preserve-3d"
+              className="hero-card-pos absolute left-1/2 top-1/2 md:top-[40%] origin-center will-change-transform transform-style-preserve-3d"
             >
               <img
                 ref={(el) => { imagesRef.current[i] = el; }}
@@ -474,7 +474,7 @@ const EditorialHero: React.FC = () => {
       </div>
 
       {/* Hero Content Section */}
-      <div className="flex container-custom relative z-10 w-full flex-col items-start pb-8 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
+      <div className="flex container-custom relative z-10 w-full flex-col items-start pt-10 md:pt-0 pb-8 md:pb-20 lg:pb-[72px] pointer-events-none select-none">
         
         {/* Hero Title */}
         <h1 className="heading-reveal font-display text-[32px] md:text-[52px] leading-[1.15] font-medium text-[var(--text-primary)] max-w-[493px] mb-3 md:mb-6 tracking-tight text-left">

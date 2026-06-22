@@ -154,11 +154,9 @@ html.lenis { height: auto; }
 }
 
 /* Responsive Height Adjustments for EditorialHero to prevent overlap on short screens */
-@media (max-height: 850px) {
-  @media (min-width: 768px) {
-    .hero-card-pos {
-      top: 34% !important;
-    }
+@media (max-height: 850px) and (min-width: 768px) {
+  .hero-card-pos {
+    top: 34% !important;
   }
   @media (min-width: 1024px) {
     .hero-card-img {
@@ -166,7 +164,7 @@ html.lenis { height: auto; }
       height: 260px !important;
     }
   }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (max-width: 1023px) {
     .hero-card-img {
       width: 260px !important;
       height: 175px !important;
@@ -174,7 +172,7 @@ html.lenis { height: auto; }
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 700px) and (min-width: 768px) {
   .hero-card-pos {
     top: 26% !important;
   }
@@ -184,19 +182,10 @@ html.lenis { height: auto; }
       height: 205px !important;
     }
   }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (max-width: 1023px) {
     .hero-card-img {
       width: 220px !important;
       height: 148px !important;
-    }
-  }
-  @media (max-width: 767px) {
-    .hero-card-pos {
-      top: 22% !important;
-    }
-    .hero-card-img {
-      width: 170px !important;
-      height: 115px !important;
     }
   }
 }
