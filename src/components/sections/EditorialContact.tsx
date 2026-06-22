@@ -221,7 +221,7 @@ const EditorialContact: React.FC = () => {
         <h2 className="mb-4 text-[var(--text-primary)] text-[36px] md:text-[50px] font-medium tracking-tight leading-[1.05]">
           Ready When You Are … Let's Talk!
         </h2>
-        <p className="text-[var(--text-secondary)] text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
+        <p className="text-white text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
           Whether you operate in Jordan today or are preparing to scale across MENA, let's explore how we can create a plan that fits you perfectly. We will ask the right questions, discuss possibilities, and make an action plan.
         </p>
       </div>
