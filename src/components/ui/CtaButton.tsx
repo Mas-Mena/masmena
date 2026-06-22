@@ -10,7 +10,7 @@ const CtaButton: React.FC<CtaButtonProps> = ({ href, text, className = '' }) => 
   return (
     <a 
       href={href} 
-      className={`group relative inline-flex items-center justify-between gap-6 px-6 py-3 md:px-8 md:py-4 border border-[var(--border-color)] rounded-full hover:border-[var(--text-primary)] bg-transparent hover:bg-[var(--text-primary)]/[0.03] transition-all duration-300 w-fit cursor-pointer ${className}`}
+      className={`group relative inline-flex items-center justify-between gap-6 px-6 py-3 md:px-8 md:py-4 border border-[var(--border-color)] rounded-none hover:border-[var(--text-primary)] bg-transparent hover:bg-[var(--text-primary)]/[0.03] transition-all duration-300 w-fit cursor-pointer ${className}`}
     >
       <span className="text-[11px] md:text-[11.5px] font-bold uppercase tracking-[0.25em] text-[var(--text-primary)]/80 group-hover:text-[var(--text-primary)] transition-colors duration-300 whitespace-nowrap">
         {text}
