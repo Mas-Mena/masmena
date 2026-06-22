@@ -140,7 +140,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
             {/* Action Indicators */}
             <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2 pointer-events-none transition-opacity duration-300 group-hover:opacity-0 z-10">
               <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping" />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-white/90">Hover to Preview</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/90">
+                <span className="inline md:hidden">Tap to Play</span>
+                <span className="hidden md:inline">Hover to Preview</span>
+              </span>
             </div>
             <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-full scale-90 group-hover:scale-100 transition-transform duration-500">
