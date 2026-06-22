@@ -7,12 +7,12 @@ const clientLogos = [
   { src: 'images/partners/nasmat-watan-1.png', alt: 'Nasmat Watan', isDark: false },
   { src: 'images/partners/serene-kogo.png', alt: 'Serene', isDark: true },
   { src: 'images/partners/super-logo.png', alt: 'Super', isDark: true },
-  { src: 'images/partners/giz.png', alt: 'GIZ', isDark: true },
-  { src: 'images/partners/halcon.png', alt: 'Halcon', isDark: true },
-  { src: 'images/partners/icedchaikarak.png', alt: 'Iced Chai Karak', isDark: true },
+  { src: 'images/partners/giz.png', alt: 'GIZ', isDark: false },
+  { src: 'images/partners/halcon.png', alt: 'Halcon', isDark: false },
+  { src: 'images/partners/icedchaikarak.png', alt: 'Iced Chai Karak', isDark: false },
   { src: 'images/partners/jordan-esport.png', alt: 'Jordan Esport', isDark: false },
   { src: 'images/partners/megshark.png', alt: 'Megashark', isDark: false },
-  { src: 'images/partners/vio-logo.png', alt: 'Vio', isDark: true },
+  { src: 'images/partners/vio-logo.png', alt: 'Vio', isDark: false },
 ];
 
 const EditorialClients: React.FC = () => {
