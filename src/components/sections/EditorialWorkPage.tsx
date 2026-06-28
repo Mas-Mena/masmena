@@ -18,13 +18,7 @@ const workVideos: VideoItem[] = [
     description: 'A relaxing, sensory audio-visual experience capturing the crispness of Nesmet Watan.',
     src: 'https://dimgrey-camel-334801.hostingersite.com/wp-content/uploads/2026/06/V4-ASMR-NesmetWatan.mp4FinalEdit-3.mp4'
   },
-  {
-    id: 'wild-tiger-v3',
-    title: 'Wild Tiger Energy',
-    category: 'Promo Campaign V3',
-    description: 'High-energy, fast-paced commercial showcase highlighting the untamed spirit of the drink.',
-    src: 'https://dimgrey-camel-334801.hostingersite.com/wp-content/uploads/2026/06/WildTiger-V3-4.mp4'
-  },
+
   {
     id: 'wild-tiger-asmr',
     title: 'Wild Tiger ASMR',
