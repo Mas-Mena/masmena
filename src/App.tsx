@@ -25,20 +25,28 @@ const SectionFallback = () => (
 );
 
 function App() {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [currentHash, setCurrentHash] = useState(window.location.hash);
 
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
       setCurrentHash(window.location.hash);
       
       // Scroll to top when switching view
       window.scrollTo(0, 0);
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
-  const isWorkPage = currentHash === '#work';
+  const isWorkPage = currentPath === '/work' || currentHash === '#work';
 
   return (
     <SmoothScroll>

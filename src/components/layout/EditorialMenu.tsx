@@ -39,9 +39,8 @@ const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
                 className="h-7 w-auto object-contain" 
               />
             </a>
-            
             <div className="flex items-center gap-8 md:gap-16">
-              <a href="#work" className="hidden md:block text-[11px] uppercase tracking-[0.4em] font-bold text-white/60 hover:text-white transition-colors">
+              <a href="/work" className="hidden md:block text-[11px] uppercase tracking-[0.4em] font-bold text-white/60 hover:text-white transition-colors">
                 View Works
               </a>
               <button 

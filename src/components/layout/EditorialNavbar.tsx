@@ -34,7 +34,7 @@ const EditorialNavbar: React.FC = () => {
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <a
-                href="#work"
+                href="/work"
                 className="text-[11px] uppercase tracking-[0.4em] font-bold hover:opacity-50 transition-opacity"
               >
                 View Works
