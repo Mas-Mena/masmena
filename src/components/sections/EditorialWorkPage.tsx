@@ -45,6 +45,13 @@ const workVideos: VideoItem[] = [
     category: 'Event Recap Reel',
     description: 'Recap of the night capturing the crowd, DJ set, and the electric atmosphere.',
     src: 'https://dimgrey-camel-334801.hostingersite.com/wp-content/uploads/2026/06/Reel-02-Event-Recap-Prince-Omar.mp4'
+  },
+  {
+    id: 'mr-king',
+    title: 'Mr. King',
+    category: 'Promo Campaign',
+    description: 'A bold promotional campaign showcasing the unique flavor and brand identity of Mr. King.',
+    src: 'https://dimgrey-camel-334801.hostingersite.com/wp-content/uploads/2026/06/MR-King.mp4'
   }
 ];
 
