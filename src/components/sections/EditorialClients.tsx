@@ -14,8 +14,9 @@ const clientLogos = [
   { src: 'images/partners/megshark.png', alt: 'Megashark', isDark: false },
   { src: 'images/partners/vio-logo.png', alt: 'Vio', isDark: false },
   { src: 'images/partners/al-wazah.png', alt: 'Al Wazah', isDark: false },
-  { src: 'images/partners/sama-logo.png', alt: 'Sama', isDark: true },
-  { src: 'images/partners/wild-tiger-logo.png', alt: 'Wild Tiger', isDark: true },
+  { src: 'images/partners/sama-logo.png', alt: 'Sama', isDark: false },
+  { src: 'images/partners/wild-tiger-logo.png', alt: 'Wild Tiger', isDark: false },
+  { src: 'images/partners/24-Logo.png', alt: '24', isDark: false },
 ];
 
 const EditorialClients: React.FC = () => {
