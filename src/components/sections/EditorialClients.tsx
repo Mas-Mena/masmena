@@ -13,6 +13,9 @@ const clientLogos = [
   { src: 'images/partners/jordan-esport.png', alt: 'Jordan Esport', isDark: false },
   { src: 'images/partners/megshark.png', alt: 'Megashark', isDark: false },
   { src: 'images/partners/vio-logo.png', alt: 'Vio', isDark: false },
+  { src: 'images/partners/al-wazah.png', alt: 'Al Wazah', isDark: false },
+  { src: 'images/partners/sama-logo.png', alt: 'Sama', isDark: true },
+  { src: 'images/partners/wild-tiger-logo.png', alt: 'Wild Tiger', isDark: true },
 ];
 
 const EditorialClients: React.FC = () => {
