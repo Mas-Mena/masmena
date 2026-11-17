@@ -46,7 +46,7 @@ function App() {
     };
   }, []);
 
-  const isWorkPage = currentPath === '/work' || currentHash === '#work';
+  const isWorkPage = currentPath.replace(/\/+$/, '') === '/work' || currentHash === '#work';
 
   return (
     <SmoothScroll>
