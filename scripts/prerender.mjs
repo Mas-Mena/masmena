@@ -131,21 +131,64 @@ async function main() {
 
   const server = await preview({ root: ROOT, preview: { port: 4179, strictPort: false, open: false }, logLevel: 'warn' });
   const baseUrl = server.resolvedUrls.local[0].replace(/\/$/, '');
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
 
   try {
-    for (const route of ROUTES) {
-      const { rootHtml, textLength } = await renderRoute(browser, baseUrl, route);
-      await writeFile(path.join(DIST, route.out), buildPage(template, route, rootHtml));
-      console.log(`  ✓ prerendered ${route.path} → dist/${route.out} (${textLength.toLocaleString()} chars of text)`);
+    // Render every route first, then write them all, so a failure never leaves
+    // dist/ half-prerendered.
+    let lastError;
+    for (const attempt of LAUNCH_ATTEMPTS) {
+      let browser;
+      try {
+        browser = await puppeteer.launch({ headless: attempt.headless, args: attempt.args });
+        const results = [];
+        for (const route of ROUTES) {
+          results.push({ route, ...(await renderRoute(browser, baseUrl, route)) });
+        }
+        for (const { route, rootHtml, textLength } of results) {
+          await writeFile(path.join(DIST, route.out), buildPage(template, route, rootHtml));
+          console.log(`  ✓ prerendered ${route.path} → dist/${route.out} (${textLength.toLocaleString()} chars of text)`);
+        }
+        return;
+      } catch (err) {
+        lastError = err;
+        console.warn(`  ! prerender attempt "${attempt.name}" failed: ${describe(err)}`);
+      } finally {
+        await browser?.close().catch(() => {});
+      }
     }
+    throw lastError;
   } finally {
-    await browser.close();
     await new Promise((resolve) => server.httpServer.close(resolve));
   }
 }
 
-main().catch((err) => {
-  console.error('Prerender failed:', err);
-  process.exit(1);
-});
+// Build servers are often minimal containers where Chrome crashes on start-up
+// (tiny /dev/shm, no sandbox support). Try the lightweight headless shell with
+// container-safe flags first, then a single-process fallback.
+const CONTAINER_ARGS = [
+  '--no-sandbox',
+  '--disable-setuid-sandbox',
+  '--disable-dev-shm-usage',
+  '--disable-gpu',
+  '--no-first-run',
+  '--no-default-browser-check',
+];
+const LAUNCH_ATTEMPTS = [
+  { name: 'headless-shell', headless: 'shell', args: CONTAINER_ARGS },
+  { name: 'headless-shell, single process', headless: 'shell', args: [...CONTAINER_ARGS, '--no-zygote', '--single-process'] },
+  { name: 'chrome', headless: true, args: CONTAINER_ARGS },
+];
+
+const describe = (err) =>
+  err?.message ?? err?.[Object.getOwnPropertySymbols(err ?? {}).find((s) => String(s) === 'Symbol(kMessage)')] ?? String(err);
+
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    // Never block a deploy because of prerendering: the app still works as a
+    // normal client-side SPA, it just won't have prerendered HTML for crawlers.
+    // Set PRERENDER_STRICT=1 to make the build fail instead.
+    console.warn('\n⚠️  PRERENDER SKIPPED: ' + describe(err));
+    console.warn('   The site will deploy as a normal client-side app (no prerendered HTML for crawlers).\n');
+    process.exit(process.env.PRERENDER_STRICT === '1' ? 1 : 0);
+  });
