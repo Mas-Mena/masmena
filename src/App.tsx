@@ -1,3 +1,4 @@
+import { BUSINESS } from './data/business';
 import { Suspense, lazy, useState, useEffect } from 'react';
 import SmoothScroll from './components/layout/SmoothScroll';
 import EditorialNavbar from './components/layout/EditorialNavbar';
@@ -110,7 +111,14 @@ function App() {
 
             <footer className="border-t border-[var(--border-color)] text-[10px] uppercase tracking-[0.3em] text-[var(--text-secondary)] bg-[var(--bg-primary)] transition-colors duration-700">
               <div className="container-custom py-12 flex justify-between items-center">
-                <div>© {new Date().getFullYear()} MAS MENA®</div>
+                <div className="flex flex-col gap-2">
+                  <div>© {new Date().getFullYear()} MAS MENA®</div>
+                  <address className="not-italic normal-case tracking-[0.1em] flex flex-wrap gap-x-4 gap-y-1">
+                    <a href={BUSINESS.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text-primary)] transition-colors">{BUSINESS.address}</a>
+                    <a href={BUSINESS.phoneHref} className="hover:text-[var(--text-primary)] transition-colors" dir="ltr">{BUSINESS.phoneDisplay}</a>
+                    <a href={`mailto:${BUSINESS.email}`} className="hover:text-[var(--text-primary)] transition-colors">{BUSINESS.email}</a>
+                  </address>
+                </div>
                 <div className="flex gap-6 items-center">
                   <a 
                     href="https://www.facebook.com/ModernAdvancedServices" 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import BookingForm from './BookingForm';
 import AnimatedTitle from '../ui/AnimatedTitle';
+import { BUSINESS } from '../../data/business';
 
 const CHARS = '0123456789#@%&';
 const COLORS = [
@@ -224,6 +225,29 @@ const EditorialContact: React.FC = () => {
           <p className="text-white/80 text-[14px] leading-relaxed max-w-[500px] mx-auto mt-3">
             Whether you operate in Jordan today or are preparing to scale across MENA, let's explore how we can create a plan that fits you perfectly. We will ask the right questions, discuss possibilities, and make an action plan.
           </p>
+          <address
+            className="not-italic mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-left text-[13px] text-white/80 max-w-[520px] mx-auto"
+            style={{ pointerEvents: 'auto' }}
+          >
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.25em] text-white/40">Office</span>
+              <a href={BUSINESS.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                {BUSINESS.address}
+              </a>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.25em] text-white/40">Hours</span>
+              {BUSINESS.hours}
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.25em] text-white/40">Phone</span>
+              <a href={BUSINESS.phoneHref} className="hover:text-white transition-colors" dir="ltr">{BUSINESS.phoneDisplay}</a>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-[0.25em] text-white/40">Email</span>
+              <a href={`mailto:${BUSINESS.email}`} className="hover:text-white transition-colors">{BUSINESS.email}</a>
+            </div>
+          </address>
         </div>
       </div>
       <div className="relative z-10 w-full flex-1 flex justify-center px-4" style={{ pointerEvents: 'auto' }}>
