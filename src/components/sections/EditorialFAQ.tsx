@@ -33,11 +33,24 @@ const faqData = [
   }
 ];
 
+// FAQPage structured data, built from the same questions shown on the page so
+// search engines and AI platforms can quote the answers directly.
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+}).replace(/</g, '\\u003c');
+
 const EditorialFAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <section id="faq" className="relative w-full bg-[var(--bg-primary)] text-[var(--text-primary)] section-padding border-t border-[var(--border-color)] transition-colors duration-700">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
       <div className="container-custom relative z-10 flex flex-col lg:flex-row gap-16 xl:gap-20">
         
         {/* ── Left Column: Header & Visuals ── */}
@@ -64,7 +77,7 @@ const EditorialFAQ: React.FC = () => {
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                alt="Dr. Farah Brand Identity" 
+                alt="Serene peach juice can, product photography with fresh peaches" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
             </div>
@@ -76,7 +89,7 @@ const EditorialFAQ: React.FC = () => {
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                alt="MAS MENA Digital Campaign" 
+                alt="Super Drink campaign design with product photography and branded merchandise" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
             </div>
@@ -88,7 +101,7 @@ const EditorialFAQ: React.FC = () => {
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                alt="Creative Visual Design" 
+                alt="Iced Chai Karak cans, product photography on traditional red fabric" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
             </div>
@@ -100,7 +113,7 @@ const EditorialFAQ: React.FC = () => {
                 className="w-full h-full object-cover grayscale-[0.25] group-hover:grayscale-0" 
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                alt="Social Media Management" 
+                alt="MOG brand identity and fashion campaign visuals" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
             </div>

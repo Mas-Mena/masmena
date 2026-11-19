@@ -29,7 +29,8 @@ const testimonials = [
     title: "",
     company: "Wild Tiger",
     avatar: "",
-    video: "videos/wild-tiger.mp4"
+    video: "videos/wild-tiger.mp4",
+    poster: "videos/wild-tiger-poster.webp"
   },
   {
     id: 4,
@@ -39,7 +40,8 @@ const testimonials = [
     title: "",
     company: "Chupa Chups",
     avatar: "",
-    video: "videos/chupa-chups.mp4"
+    video: "videos/chupa-chups.mp4",
+    poster: "videos/chupa-chups-poster.webp"
   }
 ];
 
@@ -122,10 +124,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
             <video 
               ref={videoRef}
               src={testimonial.video ? `${testimonial.video}#t=0.1` : undefined}
+              poster={'poster' in testimonial ? testimonial.poster : undefined}
               muted
               playsInline
               loop
-              preload="metadata"
+              preload="none"
               className="w-full h-full object-cover absolute inset-0"
               onError={(e) => {
                 const target = e.currentTarget;
@@ -157,7 +160,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, onVideoC
         ) : (
           <img 
             src={testimonial.image} 
-            alt={testimonial.company} 
+            alt={`${testimonial.company} campaign`} 
             className="w-full h-full object-cover transition-transform duration-[1.2s] ease-in-out group-hover:scale-105"
           />
         )}

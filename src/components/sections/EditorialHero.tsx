@@ -18,8 +18,23 @@ const projectImages = [
   'images/slider/super.webp',
   'images/slider/serene3.webp',
   'images/slider/slider-(1).webp',
-  'images/slider/slider-(4).png',
+  'images/slider/slider-4.webp',
 ];
+
+// Alt text for each carousel image (set whenever a card's image changes).
+const IMAGE_ALT: Record<string, string> = {
+  'images/slider/POST7.webp': 'Chupa Chups Sparkling "Taste the Splash" social media post',
+  'images/slider/super-design-3.webp': 'Super Drink brand identity: colour palette, packaging, social media and van livery',
+  'images/slider/chai-karak.webp': 'Iced Chai Karak cans, product photography on traditional red fabric',
+  'images/slider/MOG-design.webp': 'MOG brand identity and fashion campaign visuals',
+  'images/slider/super-design.webp': 'Super Drink campaign design with product photography and branded merchandise',
+  'images/slider/serene-2.webp': 'Serene peach juice can, product photography with fresh peaches',
+  'images/slider/mr-king-1.webp': 'Mr. King iced coffee cans, Mocha and Original, product photography',
+  'images/slider/super.webp': 'Super Drink blueberry can, lifestyle photography',
+  'images/slider/serene3.webp': 'Serene juice cans flat-lay with mango and orange juice',
+  'images/slider/slider-(1).webp': 'Peri-peri chicken and rice meal, restaurant campaign visual',
+  'images/slider/slider-4.webp': '"Unleash creative potential, elevate your vision" digital campaign banner',
+};
 
 
 const CARDS_COUNT = 24;
@@ -193,6 +208,7 @@ const EditorialHero: React.FC = () => {
           if (img.dataset.src !== src) {
             img.src = src;
             img.dataset.src = src;
+            img.alt = IMAGE_ALT[src] ?? '';
           }
         }
       }
@@ -211,6 +227,7 @@ const EditorialHero: React.FC = () => {
           if (img.dataset.src !== src) {
             img.src = src;
             img.dataset.src = src;
+            img.alt = IMAGE_ALT[src] ?? '';
           }
         }
       }
@@ -249,6 +266,7 @@ const EditorialHero: React.FC = () => {
           const src = projectImages[imgIdx];
           img.src = src;
           img.dataset.src = src;
+            img.alt = IMAGE_ALT[src] ?? '';
           gsap.set(card, { visibility: 'hidden', opacity: 0 });
         }
       }

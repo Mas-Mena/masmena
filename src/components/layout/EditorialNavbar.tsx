@@ -43,6 +43,9 @@ const EditorialNavbar: React.FC = () => {
 
             <motion.button
               onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={isMenuOpen}
+              aria-haspopup="dialog"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               className="magnetic flex flex-col justify-center items-end gap-[6px] group h-10 w-10 pl-4"

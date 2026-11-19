@@ -75,6 +75,23 @@ const servicesData = [
 
 const EditorialAbout: React.FC = () => {
   const videoContainerRef = useRef<HTMLDivElement>(null);
+  const showcaseVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Only download and play the showcase video once it's near the viewport,
+  // and pause it again when it scrolls out of view.
+  useEffect(() => {
+    const video = showcaseVideoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: '200px 0px' }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (videoContainerRef.current) {
@@ -127,8 +144,10 @@ const EditorialAbout: React.FC = () => {
             style={{ transformOrigin: 'center center' }}
           >
             <video
+              ref={showcaseVideoRef}
               src="images/show-case.mp4"
-              autoPlay
+              poster="images/show-case-poster.webp"
+              preload="none"
               loop
               muted
               playsInline

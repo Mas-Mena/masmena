@@ -45,6 +45,7 @@ const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
               </a>
               <button 
                 onClick={onClose}
+                aria-label="Close menu"
                 className="group flex flex-col items-center justify-center h-10 w-10 relative"
               >
                 <div className="absolute w-8 h-[1px] bg-white rotate-45 group-hover:scale-x-125 transition-transform duration-300" />
