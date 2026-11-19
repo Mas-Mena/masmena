@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Instagram, Linkedin, Facebook, Sparkle } from 'lucide-react';
 
@@ -20,6 +20,18 @@ const navLinks = [
 ];
 
 const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
+  // Freeze the page behind the menu while it's open, and close it with Escape.
+  useEffect(() => {
+    if (!isOpen) return;
+    window.dispatchEvent(new Event('scroll-lock'));
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      window.dispatchEvent(new Event('scroll-unlock'));
+    };
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,7 +40,11 @@ const EditorialMenu: React.FC<EditorialMenuProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-xl flex flex-col"
+          data-lenis-prevent
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
+          className="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-xl flex flex-col overflow-y-auto overscroll-contain"
         >
           {/* Header */}
           <div className="w-full py-12 px-8 md:px-16 flex justify-between items-center">

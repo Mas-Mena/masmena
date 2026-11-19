@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import EditorialMenu from './EditorialMenu';
 
 const EditorialNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   return (
     <>
@@ -57,7 +58,7 @@ const EditorialNavbar: React.FC = () => {
         </div>
       </nav>
 
-      <EditorialMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <EditorialMenu isOpen={isMenuOpen} onClose={closeMenu} />
     </>
   );
 };
